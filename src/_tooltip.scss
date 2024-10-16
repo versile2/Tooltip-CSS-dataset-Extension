@@ -1,0 +1,78 @@
+﻿@use 'tooltip/_variables.scss' as vars;
+
+.mud-tooltip-root {
+  width: fit-content;
+
+  &.mud-tooltip-inline {
+    display: inline-block;
+  }
+}
+
+.mud-tooltip {
+  padding: vars.$tooltip-padding;
+  text-align: center;
+  max-width: vars.$tooltip-max-width;
+  align-items: center;
+  justify-content: center;
+  font-weight: vars.$tooltip-font-weight;
+  font-size: vars.$tooltip-font-size;
+  line-height: vars.$tooltip-font-lineheight;
+  border-radius: vars.$tooltip-borderradius;
+  z-index: vars.$tooltip-z-index;
+
+  &.mud-tooltip-default {
+    color: vars.$tooltip-color;
+    background-color: vars.$tooltip-background-color;
+
+    &.mud-tooltip-arrow::after {
+      border-color: vars.$tooltip-border-color transparent transparent transparent;
+    }
+  }
+
+  &.mud-tooltip {
+    &-center-left:not([data-mudpopover-flip]), &-center-right[data-mudpopover-flip] {
+      transform: translateX(-10px);
+
+      &.mud-tooltip-arrow::after {
+        left: 100%;
+        transform: rotate(270deg);
+      }
+    }
+
+    &-center-right:not([data-mudpopover-flip]), &-center-left[data-mudpopover-flip] {
+      transform: translateX(10px);
+
+      &.mud-tooltip-arrow::after {
+        right: 100%;
+        transform: rotate(90deg);
+      }
+    }
+
+    &-top-center:not([data-mudpopover-flip]), &-bottom-center[data-mudpopover-flip] {
+      transform: translateY(-10px);
+
+      &.mud-tooltip-arrow::after {
+        top: 100%;
+        transform: rotate(0deg);
+      }
+    }
+
+    &-bottom-center:not([data-mudpopover-flip]), &-top-center[data-mudpopover-flip] {
+      transform: translateY(10px);
+
+      &.mud-tooltip-arrow::after {
+        bottom: 100%;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &.mud-tooltip-arrow::after {
+    content: "";
+    position: absolute;
+    border-width: vars.$tooltip-arrow-size;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: inherit;
+  }
+}

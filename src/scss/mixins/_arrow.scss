@@ -1,0 +1,43 @@
+@use "../_variables" as vars;
+@use "./position" as pos;
+
+@mixin tooltip-arrow {
+	&::after {
+		box-sizing: border-box;
+		color: vars.$tooltip-color;
+		display: inline-block;
+		font-family: vars.$tooltip-font-family;
+		font-size: vars.$tooltip-font-size;
+		hyphens: auto;
+		opacity: 0;
+		overflow: hidden;
+		pointer-events: none;
+		position: absolute;
+		visibility: hidden;
+		z-index: vars.$tooltip-z-index;
+		content: "";
+		border-style: solid;
+		border-width: vars.$tooltip-arrow-size;
+	}
+
+	&.has-tooltip-top {
+		@include pos.tooltip-arrow-top;
+	}
+
+	&.has-tooltip-right {
+		@include pos.tooltip-arrow-right;
+	}
+
+	&.has-tooltip-bottom {
+		@include pos.tooltip-arrow-bottom;
+	}
+
+	&.has-tooltip-left {
+		@include pos.tooltip-arrow-left;
+	}
+
+	// Default to bottom if no direction is specified
+	&:not(.has-tooltip-top):not(.has-tooltip-right):not(.has-tooltip-bottom):not(.has-tooltip-left) {
+		@include pos.tooltip-arrow-bottom;
+	}
+}

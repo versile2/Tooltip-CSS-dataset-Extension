@@ -1,0 +1,15 @@
+@use "../_variables" as vars;
+
+@mixin tooltip-fade {
+  &::before {
+    transition: opacity vars.$tooltip-animation-duration vars.$tooltip-animation-transition-timing-function vars.$tooltip-animation-duration,
+                visibility vars.$tooltip-animation-duration vars.$tooltip-animation-transition-timing-function vars.$tooltip-animation-duration;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}

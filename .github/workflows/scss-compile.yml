@@ -1,0 +1,44 @@
+name: Compile SCSS to CSS
+
+# Trigger the workflow on push to the main branch, or whenever there are changes to SCSS files
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.scss'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository to the runner
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Install Sass globally
+      - name: Install Sass
+        run: npm install -g sass
+
+      # Compile SCSS to CSS and minified CSS
+      - name: Compile SCSS to CSS
+        run: |
+          sass --no-source-map src/scss/*.scss dist/ToolTipExtensions.css
+          sass --no-source-map --style=compressed src/scss/*.scss dist/ToolTipExtensions.min.css
+
+      # Optionally commit the compiled CSS files back to the repository
+      - name: Commit and push changes
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "actions@github.com"
+          git add src/scss/*.css dist/ToolTipExtensions.min.css
+          git commit -m "Automated CSS compilation [skip ci]" || echo "No changes to commit"
+          git push

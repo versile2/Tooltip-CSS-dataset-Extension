@@ -1,0 +1,77 @@
+@use "./_variables" as vars;
+@use "./mixins" as mx;
+
+[data-tooltip] {
+	&:not(.is-loading),
+	&:not(.is-disabled),
+	&:not([disabled]) {
+		cursor: pointer;
+		overflow: visible;
+		position: relative;
+
+		@include mx.tooltip-box;
+
+		&.has-tooltip-arrow {
+			@include mx.tooltip-arrow;
+		}
+
+		&.has-tooltip-top {
+			@include mx.tooltip-direction("top");
+		}
+
+		&.has-tooltip-bottom {
+			@include mx.tooltip-direction("bottom");
+		}
+
+		&.has-tooltip-left {
+			@include mx.tooltip-direction("left");
+		}
+
+		&.has-tooltip-right {
+			@include mx.tooltip-direction("right");
+		}
+
+		&.has-tooltip-multiline {
+			@include mx.tooltip-multiline;
+		}
+
+		&.has-tooltip-text-left {
+			&::before {
+				text-align: left;
+			}
+		}
+
+		&.has-tooltip-text-centered {
+			&::before {
+				text-align: center;
+			}
+		}
+
+		&.has-tooltip-text-right {
+			&::before {
+				text-align: right;
+			}
+		}
+
+		@each $name, $pair in vars.$tooltip-colors {
+			&.has-tooltip-#{$name} {
+				--tooltip-background-color: #{map-get($pair, "background-color")};
+				--tooltip-color: #{map-get($pair, "color")};
+			}
+		}
+
+		@include mx.tooltip-fade;
+	}
+}
+
+span[data-tooltip] {
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: vars.$tooltip-border-color;
+}
+
+.control {
+	span[data-tooltip] {
+		border-bottom: none;
+	}
+}

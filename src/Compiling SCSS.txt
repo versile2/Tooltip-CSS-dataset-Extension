@@ -1,0 +1,2 @@
+As simple as running this from Terminal
+node src/compile-scss.js
