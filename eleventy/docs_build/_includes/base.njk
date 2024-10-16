@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/css/bulma.min.css" />
+    <link rel="stylesheet" href="/css/highlight-default.min.css">    
+    <!-- https://pictogrammers.com/library/mdi/ -->
+     <link rel="stylesheet" href="/css/docs.css" />
+    <link rel="stylesheet" href="/css/tooltip-extensions.min.css" />
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+          <div class="field is-grouped is-grouped-multiline">
+            <div class="control">
+              <div class="tags has-addons are-large">
+                <span class="tag is-dark">TOOLTIP EXTENSION</span>
+                <span class="tag is-primary">A PURE CSS SOLUTION</span>
+              </div>
+            </div>
+          </div>
+        </a> 
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item"> #1 </a>
+          <a class="navbar-item"> #2 </a>
+          <a class="navbar-item is-square" href="{{ gitlink }}" alt="Github repository" target="_blank">
+            <span class="icon">
+              <img src="/icons/github.svg" alt="GitHub Icon" width="24" height="24">
+            </span>
+        </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-medium">
+    <div class="hero-body has-text-centered" style="margin: -100px 0 -110px 0;">
+
+      <section class="featured">
+        <div class="columns is-centered mb-4">        
+        {% for page in collections.orderedPages %}
+          {% set href = page.url %}
+          {% set src = "/images/placeholder-image-368x246.png" %}
+          {% set pageTitle = page.data.title %}
+            {% if pageTitle === title %}
+              {% set cardClass = "is-1-25" %}
+            {% else %}
+              {% set cardClass = "is-1" %}
+            {% endif %}          
+          {% include "card.njk" %}
+        {% endfor %}
+        </div>      
+      </section>      
+
+      <div id="hero-input-group" class="field has-addons has-addons-centered">
+        <div class="control">
+          <input class="input is-medium" type="text" placeholder="Search documentation..." />
+        </div>
+        <div class="control">
+          <a class="button is-medium is-primary">
+            <img src="/icons/selection-search.svg" alt="Search Icon" width="30" height="30">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container is-max-desktop">
+    
+    <main>
+        {{ content | safe }}
+    </main>
+
+  </div>
+  <script>
+    // Hamburger menu functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+  </script>
+    <script src="/js/highlight.min.js" type="text/javascript"></script>
+  <script src="/js/clipboard.min.js" type="text/javascript"></script>
+  <script src="/js/docs.js" type="text/javascript"></script>
+</body>
+</html>

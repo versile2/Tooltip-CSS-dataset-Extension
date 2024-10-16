@@ -1,0 +1,28 @@
+---
+title: "Introduction"
+layout: "base"
+order: 1
+---
+
+<section class="section">
+  <div class="container">
+    <h1 class="title has-text-centered">👋 Welcome to Tooltip Extension Documentation 👋</h1>
+    
+    <div class="content">
+      <p>Tooltip Extensions is a lightweight, pure CSS library that makes it easy to add stylish, customizable tooltips to any HTML element. Whether you're a beginner or an experienced developer, this documentation will guide you in maximizing the potential of Tooltip Extensions.</p>
+
+      <h2 class="subtitle">Why Tooltip Extensions?</h2>
+      <ul>
+        <li>📌 Easy to implement with no JavaScript required.</li>
+        <li>🎨 Works seamlessly with nearly all CSS libaries.</li>
+        <li>⚙️ Offers versatile positioning options and built-in styling for MudBlazor with fallback defaults.</li>
+      </ul>
+
+      <p class="has-text-centered">
+        Show your support by giving us a <a href="{{ gitlink }}" target="_blank" class="has-text-primary has-text-weight-bold">star 🌟 on GitHub</a> and sharing with your network!
+      </p>
+
+      <p>Tooltip Extensions is inspired by <a href="https://github.com/CreativeBulma/bulma-tooltip" target="_blank" class="has-text-link">Bulma CSS Tooltip Extensions</a> and is designed to blend beautifully with MudBlazor's tooltips, all while staying flexible and lightweight. No additional dependencies required!</p>
+    </div>
+  </div>
+</section>

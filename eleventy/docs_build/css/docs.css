@@ -1,0 +1,22 @@
+.panel-height {
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden; 
+    overflow-y: auto;   
+    word-wrap: break-word; 
+    text-align: center; 
+}
+.panel-height pre {
+    white-space: pre-wrap; /* Allows word wrapping in <pre> tags */
+    word-break: break-word; /* Breaks long words in <pre> tags if necessary */
+}
+.is-1-25 {
+    flex: none;
+    width: calc((100% / 12) * 1.25);
+}
+.is-vertically-centered {
+    display: flex;
+    align-items: center;
+  }
