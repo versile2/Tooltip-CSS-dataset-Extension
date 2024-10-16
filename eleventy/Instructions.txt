@@ -1,0 +1,9 @@
+Not sure why npm run start doesn't work.
+but...
+npx eleventy will build the application
+npx eleventy --serve will build and serve (locally port 8080) the application
+
+TODO: Stylize the application make it cleaner 
+TODO: Add old Bulma Docs in
+TODO: Incorporate Tooltips Testing
+TODO: Search Functionality

@@ -1,0 +1,15 @@
+[submodule "docs/themes/PaperMod"]
+	path = docs/themes/PaperMod
+	url = https://github.com/adityatelange/hugo-PaperMod.git
+[submodule "docs/themes/paper"]
+	path = docs/themes/paper
+	url = https://github.com/nanxiaobei/hugo-paper
+[submodule "docs/themes/ananke"]
+	path = docs/themes/ananke
+	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
+[submodule "docs/themes/tophat"]
+	path = docs/themes/tophat
+	url = https://github.com/sergiobarriel/tophat-theme.git
+[submodule "docs/themes/hugo-theme-stack"]
+	path = docs/themes/hugo-theme-stack
+	url = https://github.com/CaiJimmy/hugo-theme-stack.git
