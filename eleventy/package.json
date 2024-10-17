@@ -3,14 +3,15 @@
   "version": "0.3.1",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "start": "npx eleventy --serve",
+    "build": "npx eleventy"
   },
   "keywords": ["tooltip", "css", "dataset", "extension"],
   "author": "Versile R. Johnson II",
   "license": "MIT",
   "description": "A Pure CSS extension to get tooltips anywhere the HTML dataset attribute is available.",
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "gray-matter": "^4.0.3"
   }
 }

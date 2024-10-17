@@ -2,10 +2,11 @@
 title: "Introduction"
 layout: "base"
 order: 1
+permalink: "/"
 ---
 
 <section class="section">
-  <div class="container">
+  <div class="container" style="margin-top: -50px;">
     <h1 class="title has-text-centered">👋 Welcome to Tooltip Extension Documentation 👋</h1>
     
     <div class="content">
@@ -22,7 +23,7 @@ order: 1
         Show your support by giving us a <a href="{{ gitlink }}" target="_blank" class="has-text-primary has-text-weight-bold">star 🌟 on GitHub</a> and sharing with your network!
       </p>
 
-      <p>Tooltip Extensions is inspired by <a href="https://github.com/CreativeBulma/bulma-tooltip" target="_blank" class="has-text-link">Bulma CSS Tooltip Extensions</a> and is designed to blend beautifully with MudBlazor's tooltips, all while staying flexible and lightweight. No additional dependencies required!</p>
+      <p>Tooltip Extensions is inspired by and modeled from <a href="https://github.com/CreativeBulma/bulma-tooltip" target="_blank" class="has-text-link">Bulma CSS Tooltip Extensions</a>. It is designed to blend beautifully with Bulma and MudBlazor styles, all while staying flexible and lightweight. It will work without any dependencies whatsoever!</p>
     </div>
   </div>
 </section>

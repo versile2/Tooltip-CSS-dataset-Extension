@@ -9,7 +9,7 @@ order: 5
 <div class="panel mt-4">
   <p class="panel-heading">Known Issues</p>
   <div class="panel-block">
-    <ol>
+    <ol class="ml-4">
       <li>Example 1.</li>
       <li>Example 2.</li>
       <li>Example 3.</li>

@@ -4,8 +4,10 @@ layout: "base"
 order: 3
 ---
 
+<h2 class="subtitle is-2 my-4">How To Use Your Tooltip</h2>
+
 <!-- Default Tab -->
-<div class="panel mt-4">
+<div class="panel mt-2">
   <div class="panel-heading is-flex is-justify-content-space-between is-align-items-center">
     <p class="is-flex-grow-1">Default</p>
     <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">data-tooltip='Tooltip content'</code>

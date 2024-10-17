@@ -4,7 +4,6 @@ layout: "base"
 order: 2
 ---
 
-<br/>
 <center><strong>You only need 1 CSS file to use Tooltip Extension</strong></center>
 
 <h2 class="subtitle is-2 mt-2">Installation</h2>

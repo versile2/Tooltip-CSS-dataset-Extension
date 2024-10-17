@@ -73,7 +73,7 @@ $tooltip-colors: (
 
 <p>Once the compilation is complete, your custom tooltip styles will be ready to use. Include the generated CSS file in your project to see the changes.</p>
 
-<h2 class="subtitle is-3 my-4">Additional Tips</h2>
+<h2 class="subtitle is-3 my-4">🌟 Additional Tips</h2>
 <div class="content">
 <ul>
     <li>The <code>$tooltip-colors</code>&nbsp;map allows you to define custom color schemes for different tooltip variants.</li>

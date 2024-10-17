@@ -1,10 +1,12 @@
-<div class="column {{ cardClass }}">
-  <article>
-    <figure class="image is-5by3">
-      <a href="{{ href }}">
-        <img src="{{ src }}" alt="{{ pageTitle }}" />
-      </a>
-    </figure>
-    <h2 class="subtitle has-text-centered">{{ pageTitle }}</h2>
-  </article>
-</div>
+<a href="{{ href }}">
+  <div class="card custom-card {{ cardClass }}">
+    <div class="card-header">
+      <div class="card-header-title">
+        <span class="tag is-full-width is-primary">{{ pageTitle }}</span>
+      </div>
+    </div>
+    <div class="card-image">    
+      <img src="{{ src }}" alt="{{ pageTitle }}" />      
+    </div>
+  </div> 
+</a>
