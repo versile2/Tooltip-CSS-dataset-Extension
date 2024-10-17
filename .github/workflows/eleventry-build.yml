@@ -9,26 +9,21 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        node-version: [18.x]
+  deploy:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       
-      - name: Set up Node.js
+      - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '18.x'
       
       - name: Install dependencies
         run: |
           cd eleventy
           npm install
-
-      - name: Ensure Eleventy executable permissions
-        run: chmod +x ./node_modules/.bin/eleventy
+          npm ci
 
       - name: Build Eleventy
         run: |
