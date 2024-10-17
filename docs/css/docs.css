@@ -1,0 +1,150 @@
+.panel-height {
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden; 
+    overflow-y: auto;   
+    word-wrap: break-word; 
+    text-align: center; 
+}
+.panel-height pre {
+    white-space: pre-wrap; /* Allows word wrapping in <pre> tags */
+    word-break: break-word; /* Breaks long words in <pre> tags if necessary */
+}
+.is-vertically-centered {
+    display: flex;
+    align-items: center;
+  }
+
+  .is-divider {
+    height: 1px;
+    background-color: #dbdbdb;
+    margin: 1.5rem 0;
+  }  
+
+  /* NAVBAR + SEARCH */
+
+.search-container {
+    position: relative;
+}
+#search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+  /* Make sure container items are vertically centered on larger screens */
+.navbar .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping to new rows on smaller screens */
+  }
+  
+  /* Ensure the navbar-brand takes up the full width on mobile */
+  .navbar-brand {
+    flex-grow: 1;
+  }
+  
+  /* Center the search bar on larger screens */
+  .navbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+  }
+  
+  /* Mobile styling to push the search bar to the second row, left-aligned */
+  @media (max-width: 768px) {
+    .navbar-center {
+      width: 100%; /* Take full width to move it to the second row */
+      justify-content: flex-start; /* Align left on the second row */
+      padding: 10px 0; /* Add some vertical spacing */
+      order: 2; /* Ensure it appears after the navbar-brand and burger */
+    }
+    .navbar-burger {
+      order: 1; /* Place the burger menu after the brand but before the search */
+    }
+    .navbar-menu {
+      order: 3; /* Ensure the menu appears after the search bar */
+    }
+    /* Adjust the search input group width for mobile */
+    #hero-input-group {
+      width: 100%;
+    }
+    #hero-input-group .control:first-child {
+      flex-grow: 1;
+    }
+  }
+  
+  /* Ensure the navbar-menu takes full width when expanded on mobile */
+  @media (max-width: 1023px) {
+    .navbar-menu.is-active {
+      display: flex;
+      width: 100%;
+    }
+  }
+
+  /* NAVIGATION CARDS */
+
+  .custom-card {
+    width: 200px; /* Set a fixed width for the card */
+    margin: 0 auto; /* Center the card if needed */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .custom-card .card-header {
+    padding: 0;
+    height: auto;
+    flex: 0 0 auto; /* Don't allow header to grow or shrink */
+  }
+  
+  .custom-card .card-header-title {
+    padding: 0;
+  }
+  
+  .custom-card .tag.is-full-width {
+    width: 100%;
+    border-radius: 0;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8rem; /* Starting font size */
+    padding: 0.3rem 0; /* Reduce vertical padding */
+  }
+  
+  .custom-card .card-image {
+    height: 100px; /* Reduce the height of the image container */
+    overflow: hidden;
+    flex: 1 1 auto; /* Allow image container to grow and shrink */
+  }
+  
+  .custom-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Responsive font sizing */
+  @media screen and (min-width: 769px) {
+    .custom-card .tag.is-full-width {
+      font-size: 0.7rem;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .custom-card .tag.is-full-width {
+      font-size: 0.6rem;
+    }
+  }
+  
+  /* Selected card styling */
+  .nav-selected .custom-card {
+    transform: scale(1.16);
+    transition: transform 0.3s ease;
+  }
