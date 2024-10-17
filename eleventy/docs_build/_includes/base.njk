@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="/css/bulma.min.css" />
-    <link rel="stylesheet" href="/css/highlight-default.min.css">    
+    <link rel="stylesheet" href="{{ '/css/bulma.min.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/css/highlight-default.min.css' | url }}">    
     <!-- https://pictogrammers.com/library/mdi/ -->
-     <link rel="stylesheet" href="/css/docs.css" />
-    <link rel="stylesheet" href="/css/tooltip-extensions.min.css" />
-<link rel="icon" type="image/png" sizes="32x32" href="/images/tooltip-text-outline.png">
+     <link rel="stylesheet" href="{{ '/css/docs.css' | url }}" />
+    <link rel="stylesheet" href="{{ '/css/tooltip-extensions.min.css' | url }}" />
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/images/tooltip-text-outline.png' | url }}">
 
     <style>
         .search-container {
@@ -79,7 +79,7 @@
 
         <a class="navbar-item is-square" href="{{ gitlink }}" alt="Github repository" target="_blank">
           <span class="icon">
-            <img src="/icons/github.svg" alt="GitHub Icon" width="24" height="24">
+            <img src="{{ '/icons/github.svg' | url }}" alt="GitHub Icon" width="24" height="24">
           </span>
         </a>
       </div>
@@ -91,7 +91,6 @@
   <div class="columns is-multiline is-centered is-hidden-touch">
     {% for page in collections.orderedPages %}
       {% set href = page.url %}
-      {% set src = "/images/placeholder-image-368x246.png" %}
       {% set pageTitle = page.data.title %}
       <div class="column is-full-mobile is-half-tablet is-2-desktop is-1-widescreen {% if pageTitle == title %}nav-selected{% endif %}">
       {% include "card.njk" %}
@@ -136,9 +135,9 @@
     }
   });
 </script>
-<script src="/js/highlight.min.js" type="text/javascript"></script>
-<script src="/js/clipboard.min.js" type="text/javascript"></script>
-<script src="/js/docs.js" type="text/javascript"></script>
-{# <script src="/js/search.js" type="text/javascript"></script> #}
+<script src="{{ '/js/highlight.min.js' | url }}" type="text/javascript"></script>
+<script src="{{ '/js/clipboard.min.js' | url }}" type="text/javascript"></script>
+<script src="{{ '/js/docs.js' | url }}" type="text/javascript"></script>
+{# <script src="{{ '/js/search.js' | url }}" type="text/javascript"></script> #}
 </body>
 </html>
