@@ -5,10 +5,10 @@ order: 1
 permalink: "/"
 ---
 
-<h2 class="subtitle is-2 my-4">👋 Welcome to Tooltip Extension Documentation 👋</h2>
+<h2 class="subtitle is-2 mt-4 mb-0">👋 Welcome to Tooltip Extension Documentation 👋</h2>
 <section class="section">
   <div class="container">
-    <div class="content">
+    <div class="content" style="margin-top: -20px;">
       <p>Tooltip Extensions is a lightweight, pure CSS library that makes it easy to add stylish, customizable tooltips to any HTML element. Whether you're a beginner or an experienced developer, this documentation will guide you in maximizing the potential of Tooltip Extensions.</p>
 
       <h2 class="subtitle">Why Tooltip Extensions?</h2>
