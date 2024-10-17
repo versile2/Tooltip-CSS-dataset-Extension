@@ -1,4 +1,3 @@
-const path = require('path');	
 
 module.exports = async function (eleventyConfig) {
     eleventyConfig.addGlobalData("gitlink", "https://github.com/versile2/Tooltip-CSS-dataset-Extension");
@@ -25,8 +24,7 @@ module.exports = async function (eleventyConfig) {
     return {
         dir: {
             input: "docs_build",
-            // allow output outside of the base directory this way
-            output: path.join(__dirname, '..', 'docs')
+            output: "site_depoloy"
         }
     };
 };
