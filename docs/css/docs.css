@@ -24,6 +24,18 @@
   }  
 
   /* NAVBAR + SEARCH */
+
+.search-container {
+    position: relative;
+}
+#search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
   /* Make sure container items are vertically centered on larger screens */
 .navbar .container {
     display: flex;
