@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customize</title>
     <link rel="stylesheet" href="/Tooltip-CSS-dataset-Extension/css/bulma.min.css">
-    <link rel="stylesheet" href="/Tooltip-CSS-dataset-Extension/css/highlight-default.min.css">    
+    <link rel="stylesheet" href="/Tooltip-CSS-dataset-Extension/css/highlight-default.min.css">
+    <link rel="stylesheet" href="/Tooltip-CSS-dataset-Extension/pagefind/pagefind-ui.css">
     <!-- https://pictogrammers.com/library/mdi/ -->
      <link rel="stylesheet" href="/Tooltip-CSS-dataset-Extension/css/docs.css">
     <link rel="stylesheet" href="/Tooltip-CSS-dataset-Extension/css/tooltip-extensions.min.css">
@@ -37,23 +38,14 @@
       </a>
     </div>
 
-    <!-- Centered Search Bar -->
-    <div class="navbar-center search-container">
-      <div id="hero-input-group" class="field has-addons">
-        <div class="control">
-          <input id="search-input" class="input" type="text" placeholder="Search documentation...">
-        </div>
-        <div class="control">
-          <a id="search-button" class="button is-primary">
-            <span class="icon">
-              <img src="/Tooltip-CSS-dataset-Extension/icons/selection-search.svg" alt="Search Icon">
-            </span>
-          </a>
-        </div>
-      </div>
-      <!-- Search Results Container -->
-      <div id="search-results" class="container mt-4"></div>
+<!-- Centered Search Bar -->
+<div class="navbar-center search-container">
+  <div class="field">
+    <div class="control has-icons-left">
+      <div id="search-input" class="search"></div>
     </div>
+  </div>
+</div>
 
     <!-- Navbar Links -->
     <div id="navbarBasicExample" class="navbar-menu">
@@ -292,6 +284,6 @@
 <script src="/Tooltip-CSS-dataset-Extension/js/highlight.min.js" type="text/javascript"></script>
 <script src="/Tooltip-CSS-dataset-Extension/js/clipboard.min.js" type="text/javascript"></script>
 <script src="/Tooltip-CSS-dataset-Extension/js/docs.js" type="text/javascript"></script>
-
+<script src="/Tooltip-CSS-dataset-Extension/pagefind/pagefind-ui.js" type="text/javascript" onload="new PagefindUI({ element: '#search-input', showImages: false, showSubResults: true });"></script>
 </body>
 </html>

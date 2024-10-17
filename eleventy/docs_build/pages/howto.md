@@ -81,14 +81,14 @@ order: 3
 <!-- Position Tab -->
 <div class="panel mt-4" data-pagefind-body>
   <div class="panel-heading">
-  <div class="columns is-mobile is-multiline is-centered">
-    <div class="column is-12-mobile is-flex is-justify-content-start custom-mobile-center">
-      <p>Position</p>
-    </div>
-    <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
-      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-[direction]'</code>
-    </div>
-  </div>  
+    <div class="columns is-mobile is-multiline is-centered">
+      <div class="column is-12-mobile is-flex is-justify-content-start custom-mobile-center">
+        <p>Position</p>
+      </div>
+      <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
+        <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-[direction]'</code>
+      </div>
+    </div>  
   </div>
     <div class="panel-tabs">
         <div class="tabs is-toggle is-boxed">
@@ -115,17 +115,17 @@ order: 3
 <!-- Responsive Tab -->
 <div class="panel mt-4" data-pagefind-body>
   <div class="panel-heading">
-  <div class="columns is-mobile is-multiline is-centered">
-    <div class="column is-12-mobile is-flex is-justify-content-start custom-mobile-center">
-      <p>Responsiveness</p>
-    </div>
+    <div class="columns is-mobile is-multiline is-centered">
+      <div class="column is-12-mobile is-flex is-justify-content-start custom-mobile-center">
+        <p>Responsiveness</p>
+      </div>
     <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
       <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-[direction]-[target]'</code>
     </div>
-  </div>  
   </div>
+</div>
   <div class="panel-block">
-    <div class="content">
+    <div class="panel-content">
       <p>Tooltip position can be based on responsiveness breakpoints by adding one of the following classes to the HTML element containing the tooltip:</p>
       <ul>
         <li class="has-tooltip-right-mobile" data-tooltip="has-tooltip-right-mobile"><code>has-tooltip-[direction]-mobile</code></li>
@@ -170,7 +170,6 @@ order: 3
                 <div class="column"><strong>FullHD</strong></div>
             </div>
         </div>
-
         <!-- Tooltip Rows -->
         <div class="column is-full">
             <div class="columns is-multiline">
@@ -188,7 +187,6 @@ order: 3
                 </div>
             </div>
         </div>
-
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-tablet-only" data-tooltip="has-tooltip-hidden-tablet-only">
@@ -205,7 +203,6 @@ order: 3
                 </div>
             </div>
         </div>
-
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-desktop-only" data-tooltip="has-tooltip-hidden-desktop-only">
@@ -222,7 +219,6 @@ order: 3
                 </div>
             </div>
         </div>
-
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-widescreen-only" data-tooltip="has-tooltip-hidden-widescreen-only">
@@ -239,7 +235,6 @@ order: 3
                 </div>
             </div>
         </div>
-
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-touch" data-tooltip="has-tooltip-hidden-touch">
@@ -256,7 +251,6 @@ order: 3
                 </div>
             </div>
         </div>
-
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-tablet" data-tooltip="has-tooltip-hidden-tablet">
@@ -273,7 +267,6 @@ order: 3
                 </div>
             </div>
         </div>
-
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-desktop" data-tooltip="has-tooltip-hidden-desktop">
@@ -290,7 +283,6 @@ order: 3
                 </div>
             </div>
         </div>
-
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-widescreen" data-tooltip="has-tooltip-hidden-widescreen">
@@ -307,7 +299,6 @@ order: 3
                 </div>
             </div>
         </div>
-
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-fullhd" data-tooltip="has-tooltip-hidden-fullhd">

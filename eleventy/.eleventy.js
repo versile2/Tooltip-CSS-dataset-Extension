@@ -1,5 +1,5 @@
 const path = require('path');	
-
+const { execSync } = require('child_process');
 module.exports = async function (eleventyConfig) {
     eleventyConfig.addGlobalData("gitlink", "https://github.com/versile2/Tooltip-CSS-dataset-Extension");
     eleventyConfig.addPassthroughCopy("docs_build/css");
@@ -18,6 +18,10 @@ module.exports = async function (eleventyConfig) {
         return collectionApi.getFilteredByGlob("docs_build/pages/*.md").sort((a, b) => {
             return (a.data.order || 99) - (b.data.order || 99);
         });
+    });
+
+    eleventyConfig.on('eleventy.after', () => {
+        execSync('npx pagefind --site ../docs --glob \"**/*.html\"', { encoding: 'utf-8' })
     });
 
     return {

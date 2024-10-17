@@ -1,5 +1,6 @@
 .panel-height {
-    height: 125px;
+    min-height: 125px;
+    max-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,6 +12,9 @@
 .panel-height pre {
     white-space: pre-wrap; /* Allows word wrapping in <pre> tags */
     word-break: break-word; /* Breaks long words in <pre> tags if necessary */
+}
+.tab-content {
+  margin-top: 10px;
 }
 .is-vertically-centered {
     display: flex;
@@ -156,3 +160,45 @@
       justify-content: center !important;
     }
   }
+
+  /* pageFind */
+/* Centered Search Container Styling */
+.search-container {
+  position: relative;
+  width: 100%; /* adjust as needed */
+}
+
+/* Search Input Styling */
+.pagefind-ui__form {
+  width: 100%;
+}
+
+/* Drawer Styling for Popdown Effect */
+.pagefind-ui__drawer {
+  position: absolute; /* Position relative to .search-container */
+  top: 100%; /* Position right below the input field */
+  left: 0;
+  padding-left: 12px;
+  width: 100%;
+  max-height: 300px; /* Set a max height and make it scrollable */
+  overflow-y: auto;
+  background-color: white; /* Match background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for effect */
+  border: 1px solid #ddd; /* Optional border */
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Hide drawer if no results */
+.pagefind-ui__drawer.pagefind-ui__hidden {
+  display: none;
+}
+
+/* Highlight Results when clicked */
+.highlight-flash {
+  animation: flash-highlight 3s ease-in-out;
+}
+
+@keyframes flash-highlight {
+  0% { background-color: yellow; }
+  100% { background-color: transparent; }
+}
