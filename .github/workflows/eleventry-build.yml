@@ -26,6 +26,7 @@ jobs:
 
       - name: Install dependencies & build
         run: |
+          ls -la
           cd eleventy
           npm ci
           npx eleventy
