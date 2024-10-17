@@ -10,9 +10,7 @@ module.exports = async function (eleventyConfig) {
 
     // add pathPrefix
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
-    eleventyConfig.addPlugin(EleventyHtmlBasePlugin, {
-        pathPrefix: "/Tooltip-CSS-dataset-Extension/"
-    });
+    eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 
     // Define a collection named "orderedPages" that includes all .md files
     eleventyConfig.addCollection("orderedPages", function(collectionApi) {
@@ -23,6 +21,7 @@ module.exports = async function (eleventyConfig) {
     });
 
     return {
+        pathPrefix: "/Tooltip-CSS-dataset-Extension/",
         dir: {
             input: "docs_build",
             // allow output outside of the base directory this way
