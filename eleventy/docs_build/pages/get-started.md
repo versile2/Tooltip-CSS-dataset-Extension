@@ -7,7 +7,7 @@ order: 2
 <h2 class="subtitle is-2 my-4">Installation</h2>
 
 <center><strong>You only need 1 CSS file to use Tooltip Extension</strong></center>
-
+<div data-pagefind-body>
 <div class="panel mt-4">
     <p class="panel-heading">The easiest way to get started with Tooltip Extension</p>
         <div class="panel-tabs">
@@ -46,5 +46,4 @@ order: 2
 <p>
     You can set a myriad of style options for the Tooltips themselves by using CSS classes on the html element you add a data-tooltip option to.
 </p>
-
-<br/><br/>
+</div>

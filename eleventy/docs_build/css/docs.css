@@ -148,3 +148,11 @@
     transform: scale(1.16);
     transition: transform 0.3s ease;
   }
+
+  /* Panel Headers for mobile compatibility */
+
+  @media screen and (max-width: 768px) {
+    .custom-mobile-center {
+      justify-content: center !important;
+    }
+  }

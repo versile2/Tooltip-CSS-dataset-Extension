@@ -6,7 +6,7 @@ order: 5
 
 <h2 class="subtitle is-2 my-4">About Tooltip Extension</h2>
 
-<div class="panel mt-4">
+<div class="panel mt-4" data-pagefind-body>
   <p class="panel-heading">Known Issues</p>
   <div class="panel-block">
     <ol class="ml-4">
@@ -17,19 +17,19 @@ order: 5
   </div>
 </div>
 
-<div class="panel mt-4">
+<div class="panel mt-4" data-pagefind-body>
   <p class="panel-heading">Changelog</p>
   <div class="panel-block">
     <div class="columns is-multiline">
         <div class="column is-full"><div class="columns">
-            <div class="column is-2"><strong>John Doe</strong></div>
-            <div class="column is-2"><strong>2024-10-15</strong></div>
-            <div class="column">Added new color schemes for tooltips</div>
+            <div class="column is-2"><strong>Jilael</strong></div>
+            <div class="column is-2"><strong>2024-10-18</strong></div>
+            <div class="column">Added Search Functionality</div>
         </div></div>
         <div class="column is-full"><div class="columns">
-            <div class="column is-2"><strong>Jane Smith</strong></div>
-            <div class="column is-2"><strong>2024-10-01</strong></div>
-            <div class="column">Improved responsiveness on mobile devices</div>      
+            <div class="column is-2"><strong>Jilael</strong></div>
+            <div class="column is-2"><strong>2024-10-17</strong></div>
+            <div class="column">Improved responsiveness on mobile devices and GitHub Deployment</div>      
         </div></div>
         <div class="column is-full"><div class="columns">
             <div class="column is-2"><strong>Jilael</strong></div>
@@ -40,7 +40,7 @@ order: 5
   </div>
 </div>
 
-<div class="panel mt-4">
+<div class="panel mt-4" data-pagefind-body>
   <p class="panel-heading">About</p>
   <div class="panel-block">
     <div class="content">

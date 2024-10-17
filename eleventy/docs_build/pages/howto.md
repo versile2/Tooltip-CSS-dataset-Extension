@@ -7,11 +7,17 @@ order: 3
 <h2 class="subtitle is-2 my-4">How To Use Your Tooltip</h2>
 
 <!-- Default Tab -->
-<div class="panel mt-2">
-  <div class="panel-heading is-flex is-justify-content-space-between is-align-items-center">
-    <p class="is-flex-grow-1">Default</p>
-    <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">data-tooltip='Tooltip content'</code>
+<div class="panel mt-2" data-pagefind-body>
+<div class="panel-heading">
+  <div class="columns is-mobile is-multiline is-centered">
+    <div class="column is-12-mobile is-flex is-justify-content-start custom-mobile-center">
+      <p>Default</p>
+    </div>
+    <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
+      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">data-tooltip='Tooltip content'</code>
+    </div>
   </div>
+</div>
   <div class="panel-tabs">
     <div class="tabs is-toggle is-boxed">
       <ul class="mt-2">
@@ -39,10 +45,16 @@ order: 3
 </div>
 
 <!-- With Arrow Tab -->
-<div class="panel mt-4">
-  <div class="panel-heading is-flex is-justify-content-space-between is-align-items-center">
-    <p class="is-flex-grow-1">With Arrow</p>
-    <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-arrow'</code>
+<div class="panel mt-4" data-pagefind-body>
+  <div class="panel-heading">
+  <div class="columns is-mobile is-multiline is-centered">
+    <div class="column is-12-mobile is-flex is-justify-content-start custom-mobile-center">
+      <p>With Arrow</p>
+    </div>
+    <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
+      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-arrow'</code>
+    </div>
+  </div>
   </div>
     <div class="panel-tabs">
         <div class="tabs is-toggle is-boxed">
@@ -67,10 +79,16 @@ order: 3
 </div>
 
 <!-- Position Tab -->
-<div class="panel mt-4">
-  <div class="panel-heading is-flex is-justify-content-space-between is-align-items-center">
-    <p class="is-flex-grow-1">Position</p>
-    <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-[direction]'</code>
+<div class="panel mt-4" data-pagefind-body>
+  <div class="panel-heading">
+  <div class="columns is-mobile is-multiline is-centered">
+    <div class="column is-12-mobile is-flex is-justify-content-start custom-mobile-center">
+      <p>Position</p>
+    </div>
+    <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
+      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-[direction]'</code>
+    </div>
+  </div>  
   </div>
     <div class="panel-tabs">
         <div class="tabs is-toggle is-boxed">
@@ -94,10 +112,17 @@ order: 3
     </div>
 </div>
 
-<div class="panel">
-  <div class="panel-heading is-flex is-justify-content-space-between is-align-items-center">
-    <p class="is-flex-grow-1">Responsiveness</p>
-    <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-[direction]-[target]'</code>
+<!-- Responsive Tab -->
+<div class="panel mt-4" data-pagefind-body>
+  <div class="panel-heading">
+  <div class="columns is-mobile is-multiline is-centered">
+    <div class="column is-12-mobile is-flex is-justify-content-start custom-mobile-center">
+      <p>Responsiveness</p>
+    </div>
+    <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
+      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-[direction]-[target]'</code>
+    </div>
+  </div>  
   </div>
   <div class="panel-block">
     <div class="content">
@@ -120,115 +145,185 @@ order: 3
   </div>
 </div>
 
-<div class="panel">
-  <div class="panel-heading is-flex is-justify-content-space-between is-align-items-center">
-    <p class="is-flex-grow-1">Hide Tooltip</p>
-    <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-hidden-[where]'</code>
-  </div>
-    <div class="panel-block">
-        <div class="columns is-multiline">
-            <!-- Header Row -->
-            <div class="column is-full">
-                <div class="columns">
-                    <div class="column is-4"><strong>Class</strong></div>
-                    <div class="column"><strong>Mobile</strong></div>
-                    <div class="column"><strong>Tablet</strong></div>
-                    <div class="column"><strong>Desktop</strong></div>
-                    <div class="column"><strong>Widescreen</strong></div>
-                    <div class="column"><strong>FullHD</strong></div>
+<!-- Hidden Tab -->
+<div class="panel" data-pagefind-body>
+  <div class="panel-heading">
+  <div class="columns is-mobile is-multiline is-centered">
+    <div class="column is-12-mobile is-flex is-justify-content-start custom-mobile-center">
+      <p>Hide Tooltip</p>
+    </div>
+    <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
+      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-hidden-[where]'</code>
+    </div>
+  </div>  
+  </div>  
+   <div class="panel-block">
+    <div class="columns is-multiline">
+        <!-- Header Row (hidden on mobile) -->
+        <div class="column is-full is-hidden-mobile">
+            <div class="columns">
+                <div class="column is-4"><strong>Class</strong></div>
+                <div class="column"><strong>Mobile</strong></div>
+                <div class="column"><strong>Tablet</strong></div>
+                <div class="column"><strong>Desktop</strong></div>
+                <div class="column"><strong>Widescreen</strong></div>
+                <div class="column"><strong>FullHD</strong></div>
+            </div>
+        </div>
+
+        <!-- Tooltip Rows -->
+        <div class="column is-full">
+            <div class="columns is-multiline">
+                <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-mobile" data-tooltip="has-tooltip-hidden-mobile">
+                    <code>has-tooltip-hidden-mobile</code>
+                </div>
+                <div class="column is-8-tablet is-full-mobile">
+                    <div class="columns is-mobile">
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                    </div>
                 </div>
             </div>
-            <!-- Tooltip Rows -->
-            <div class="column is-full">
-                <div class="columns">
-                    <div class="column is-4 has-tooltip-hidden-mobile" data-tooltip="has-tooltip-hidden-mobile"><code>has-tooltip-hidden-mobile</code></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
+        </div>
+
+        <div class="column is-full">
+            <div class="columns is-multiline">
+                <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-tablet-only" data-tooltip="has-tooltip-hidden-tablet-only">
+                    <code>has-tooltip-hidden-tablet-only</code>
+                </div>
+                <div class="column is-8-tablet is-full-mobile">
+                    <div class="columns is-mobile">
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="column is-full">
-                <div class="columns">
-                    <div class="column is-4 has-tooltip-hidden-tablet-only" data-tooltip="has-tooltip-hidden-tablet-only"><code>has-tooltip-hidden-tablet-only</code></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
+        </div>
+
+        <div class="column is-full">
+            <div class="columns is-multiline">
+                <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-desktop-only" data-tooltip="has-tooltip-hidden-desktop-only">
+                    <code>has-tooltip-hidden-desktop-only</code>
+                </div>
+                <div class="column is-8-tablet is-full-mobile">
+                    <div class="columns is-mobile">
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="column is-full">
-                <div class="columns">
-                    <div class="column is-4 has-tooltip-hidden-desktop-only" data-tooltip="has-tooltip-hidden-desktop-only"><code>has-tooltip-hidden-desktop-only</code></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
+        </div>
+
+        <div class="column is-full">
+            <div class="columns is-multiline">
+                <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-widescreen-only" data-tooltip="has-tooltip-hidden-widescreen-only">
+                    <code>has-tooltip-hidden-widescreen-only</code>
+                </div>
+                <div class="column is-8-tablet is-full-mobile">
+                    <div class="columns is-mobile">
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="column is-full">
-                <div class="columns">
-                    <div class="column is-4 has-tooltip-hidden-widescreen-only" data-tooltip="has-tooltip-hidden-widescreen-only"><code>has-tooltip-hidden-widescreen-only</code></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
+        </div>
+
+        <div class="column is-full">
+            <div class="columns is-multiline">
+                <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-touch" data-tooltip="has-tooltip-hidden-touch">
+                    <code>has-tooltip-hidden-touch</code>
+                </div>
+                <div class="column is-8-tablet is-full-mobile">
+                    <div class="columns is-mobile">
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="column is-full">
-                <div class="columns">
-                    <div class="column is-4 has-tooltip-hidden-touch" data-tooltip="has-tooltip-hidden-touch"><code>has-tooltip-hidden-touch</code></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
+        </div>
+
+        <div class="column is-full">
+            <div class="columns is-multiline">
+                <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-tablet" data-tooltip="has-tooltip-hidden-tablet">
+                    <code>has-tooltip-hidden-tablet</code>
+                </div>
+                <div class="column is-8-tablet is-full-mobile">
+                    <div class="columns is-mobile">
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="column is-full">
-                <div class="columns">
-                    <div class="column is-4 has-tooltip-hidden-tablet" data-tooltip="has-tooltip-hidden-tablet"><code>has-tooltip-hidden-tablet</code></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
+        </div>
+
+        <div class="column is-full">
+            <div class="columns is-multiline">
+                <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-desktop" data-tooltip="has-tooltip-hidden-desktop">
+                    <code>has-tooltip-hidden-desktop</code>
+                </div>
+                <div class="column is-8-tablet is-full-mobile">
+                    <div class="columns is-mobile">
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="column is-full">
-                <div class="columns">
-                    <div class="column is-4 has-tooltip-hidden-desktop" data-tooltip="has-tooltip-hidden-desktop"><code>has-tooltip-hidden-desktop</code></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
+        </div>
+
+        <div class="column is-full">
+            <div class="columns is-multiline">
+                <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-widescreen" data-tooltip="has-tooltip-hidden-widescreen">
+                    <code>has-tooltip-hidden-widescreen</code>
+                </div>
+                <div class="column is-8-tablet is-full-mobile">
+                    <div class="columns is-mobile">
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                    </div>
                 </div>
             </div>
-            <div class="column is-full">
-                <div class="columns">
-                    <div class="column is-4 has-tooltip-hidden-widescreen" data-tooltip="has-tooltip-hidden-widescreen"><code>has-tooltip-hidden-widescreen</code></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
+        </div>
+
+        <div class="column is-full">
+            <div class="columns is-multiline">
+                <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-fullhd" data-tooltip="has-tooltip-hidden-fullhd">
+                    <code>has-tooltip-hidden-fullhd</code>
                 </div>
-            </div>
-            <div class="column is-full">
-                <div class="columns">
-                    <div class="column is-4 has-tooltip-hidden-fullhd" data-tooltip="has-tooltip-hidden-fullhd"><code>has-tooltip-hidden-fullhd</code></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-success">visible</span></div>
-                    <div class="column"><span class="tag is-danger">hidden</span></div>
+                <div class="column is-8-tablet is-full-mobile">
+                    <div class="columns is-mobile">
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-success">visible</span></div>
+                        <div class="column"><span class="tag is-danger">hidden</span></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
