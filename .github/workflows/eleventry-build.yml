@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'docs/**'
+      - 'eleventy/**'
   workflow_dispatch:
 
 jobs:
@@ -25,6 +25,10 @@ jobs:
           npm install
           npm ci
 
+      - name: Temp Remove .gitignore
+        run: |
+          sed -i '/site_deploy/d' .gitignore
+
       - name: Build Eleventy
         run: |
           cd eleventy
@@ -36,3 +40,7 @@ jobs:
         with:
           publish_dir: ./eleventy/site_deploy
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Restore .gitignore
+        run: |
+          echo 'site_deploy' >> .gitignore
