@@ -16,6 +16,9 @@
 .tab-content {
   margin-top: 10px;
 }
+.tab-pane {
+  width: 100%;
+}
 .is-vertically-centered {
     display: flex;
     align-items: center;

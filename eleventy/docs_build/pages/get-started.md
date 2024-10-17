@@ -19,8 +19,8 @@ order: 2
 </ul>
             </div>
         </div>
-    <div class="tab-content mt-2">
-        <div id="github" class="tab-pane is-active" role="tabpanel" style="height: 100px;">
+    <div class="panel-block tab-content mt-2">
+        <div id="github" class="tab-pane is-active" role="tabpanel" style="height: 100px;">        
             <p>Download from the GitHub repository</p>
             <pre><code><a href="{{ gitlink }}/release/tooltip-extension.min.css" target="_blank" rel="noreferrer noopener">{{ gitlink }}/release/tooltip-extension.min.css</a></code></pre>
         </div>

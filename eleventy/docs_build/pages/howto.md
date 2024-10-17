@@ -18,7 +18,7 @@ order: 3
     </div>
   </div>
 </div>
-  <div class="panel-tabs">
+  <div class="panel-tabs is-toggle is-boxed">
     <div class="tabs is-toggle is-boxed">
       <ul class="mt-2">
         <li class="is-active" data-toggle="tab" data-target="#previewdefault" aria-selected="true"><a>Preview</a></li>
@@ -27,13 +27,13 @@ order: 3
     </div>
   </div>
   <div class="tab-content">
-    <div class="tab-pane is-active panel-height" id="previewdefault" role="tabpanel" aria-labelledby="preview-default">
+    <div class="panel-block tab-pane is-active panel-height" id="previewdefault" role="tabpanel" aria-labelledby="preview-default">
       <div class="content">
         <button class="button mb-2" data-tooltip="Tooltip content">tooltip default</button>
         <p>Lorem ipsum dolor sit amet, <span data-tooltip="Tooltip content">consectetur adipisicing elit</span>. Ipsa fugit dolores earum quod distinctio ducimus non dignissimos molestias amet corrupti voluptatum assumenda impedit beatae veritatis nemo veniam error, hic cumque.</p>
       </div>
     </div>
-    <div class="tab-pane is-hidden panel-height" id="previewCodedefault" role="tabpanel" aria-labelledby="preview-code-default">
+    <div class="panel-block tab-pane is-hidden panel-height" id="previewCodedefault" role="tabpanel" aria-labelledby="preview-code-default">
       <div class="highlight">
         <pre><code data-lang="html">
 &lt;button class="button" data-tooltip="Tooltip Text"&gt;tooltip default&lt;/button&gt;
@@ -65,10 +65,10 @@ order: 3
         </div>
     </div>
     <div class="tab-content">
-        <div class="tab-pane is-active panel-height" id="previewarrow" role="tabpanel" aria-labelledby="preview-arrow">
+        <div class="panel-block tab-pane is-active panel-height" id="previewarrow" role="tabpanel" aria-labelledby="preview-arrow">
             <p>Lorem ipsum dolor sit amet, <span class="has-tooltip-arrow" data-tooltip="Tooltip content">consectetur adipisicing elit</span>. Ipsa fugit dolores earum quod distinctio ducimus non dignissimos molestias amet corrupti voluptatum assumenda impedit beatae veritatis nemo veniam error, hic cumque.</p>
         </div>
-        <div class="tab-pane is-hidden panel-height" id="previewCodearrow" role="tabpanel" aria-labelledby="preview-code-arrow">
+        <div class="panel-block tab-pane is-hidden panel-height" id="previewCodearrow" role="tabpanel" aria-labelledby="preview-code-arrow">
             <div class="highlight">
                 <pre><code data-lang="html">
 &lt;<span style="color:#309;font-weight:bold">p</span>&gt;Lorem ipsum dolor sit amet, &lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;has-tooltip-arrow&#34;</span> <span style="color:#309">data-tooltip</span><span style="color:#555">=</span><span style="color:#c30">&#34;Tooltip content&#34;</span>&gt;consectetur adipisicing elit&lt;/<span style="color:#309;font-weight:bold">span</span>&gt;. Ipsa fugit dolores earum quod distinctio ducimus non dignissimos molestias amet corrupti voluptatum assumenda impedit beatae veritatis nemo veniam error, hic cumque.&lt;/<span style="color:#309;font-weight:bold">p</span>&gt;
@@ -99,10 +99,10 @@ order: 3
         </div>
     </div>
     <div class="tab-content">
-        <div class="tab-pane is-active panel-height" id="previewposition" role="tabpanel" aria-labelledby="preview-position">
+        <div class="panel-block tab-pane is-active panel-height" id="previewposition" role="tabpanel" aria-labelledby="preview-position">
             <p>Lorem ipsum dolor sit amet, <span class="has-tooltip-arrow has-tooltip-top" data-tooltip="Tooltip content on top">consectetur adipisicing elit</span>. Ipsa fugit <span class="has-tooltip-arrow has-tooltip-right" data-tooltip="Right tooltip content">dolores</span> earum quod distinctio ducimus non dignissimos <span class="has-tooltip-arrow has-tooltip-bottom" data-tooltip="Bottom tooltip content">molestias</span> amet corrupti voluptatum assumenda impedit beatae <span class="has-tooltip-arrow has-tooltip-left" data-tooltip="Left tooltip content">veritatis</span> nemo veniam error, hic cumque.</p>
         </div>
-        <div class="tab-pane is-hidden panel-height" id="previewCodeposition" role="tabpanel" aria-labelledby="preview-code-position">
+        <div class="panel-block tab-pane is-hidden panel-height" id="previewCodeposition" role="tabpanel" aria-labelledby="preview-code-position">
             <div class="highlight">
                 <pre><code data-lang="html">
 &lt;<span style="color:#309;font-weight:bold">p</span>&gt;Lorem ipsum dolor sit amet, &lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;has-tooltip-arrow has-tooltip-top&#34;</span> <span style="color:#309">data-tooltip</span><span style="color:#555">=</span><span style="color:#c30">&#34;Tooltip content on top&#34;</span>&gt;consectetur adipisicing elit&lt;/<span style="color:#309;font-weight:bold">span</span>&gt;. Ipsa fugit &lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;has-tooltip-arrow has-tooltip-right&#34;</span> <span style="color:#309">data-tooltip</span><span style="color:#555">=</span><span style="color:#c30">&#34;Right tooltip content&#34;</span>&gt;dolores&lt;/<span style="color:#309;font-weight:bold">span</span>&gt; earum quod distinctio ducimus non dignissimos &lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;has-tooltip-arrow has-tooltip-bottom&#34;</span> <span style="color:#309">data-tooltip</span><span style="color:#555">=</span><span style="color:#c30">&#34;Bottom tooltip content&#34;</span>&gt;molestias&lt;/<span style="color:#309;font-weight:bold">span</span>&gt; amet corrupti voluptatum assumenda impedit beatae &lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;has-tooltip-arrow has-tooltip-left&#34;</span> <span style="color:#309">data-tooltip</span><span style="color:#555">=</span><span style="color:#c30">&#34;Left tooltip content&#34;</span>&gt;veritatis&lt;/<span style="color:#309;font-weight:bold">span</span>&gt; nemo veniam error, hic cumque.&lt;/<span style="color:#309;font-weight:bold">p</span>&gt;
