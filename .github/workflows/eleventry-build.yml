@@ -35,11 +35,13 @@ jobs:
           npx eleventy
       
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./eleventy/site_deploy
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          allow_empty_commit: true
+          force_orphan: true
 
       - name: Restore .gitignore
         run: |
