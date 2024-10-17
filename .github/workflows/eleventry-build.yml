@@ -27,8 +27,10 @@ jobs:
           cd eleventy
           npm install
 
-      - name: Build
-        uses: TartanLlama/actions-eleventy@master
+      - name: Build Eleventy
+        run: |
+          cd eleventy
+          npx eleventy
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
