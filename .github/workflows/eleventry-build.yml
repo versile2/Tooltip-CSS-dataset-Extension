@@ -27,6 +27,9 @@ jobs:
           cd eleventy
           npm install
 
+      - name: Ensure Eleventy executable permissions
+        run: chmod +x ./node_modules/.bin/eleventy
+
       - name: Build Eleventy
         run: |
           cd eleventy
