@@ -4,11 +4,11 @@ layout: "base"
 order: 2
 ---
 
+<h2 class="subtitle is-2 my-4">Installation</h2>
+
 <center><strong>You only need 1 CSS file to use Tooltip Extension</strong></center>
 
-<h2 class="subtitle is-2 mt-2">Installation</h2>
-
-<div class="panel">
+<div class="panel mt-4">
     <p class="panel-heading">The easiest way to get started with Tooltip Extension</p>
         <div class="panel-tabs">
             <div class="tabs is-toggle is-boxed">
@@ -22,7 +22,7 @@ order: 2
     <div class="tab-content">
         <div id="github" class="tab-pane is-active" role="tabpanel" style="height: 100px;">
             <p>Download from the GitHub repository</p>
-            <pre><code><a href={{ gitlink }} + "/release/tooltip-extension.min.css" target="_blank" rel="noreferrer noopener">https://github.com/versile2/tooltip-css-dataset-extension/release/tooltip-extension.min.css</a></code></pre>
+            <pre><code><a href="{{ gitlink }}/release/tooltip-extension.min.css" target="_blank" rel="noreferrer noopener">{{ gitlink }}/release/tooltip-extension.min.css</a></code></pre>
         </div>
         <div id="npm" class="tab-pane is-hidden" role="tabpanel" style="height: 100px;">
             <p>Use npm to install the <code>tooltip-extension</code> package <strong>(recommended)</strong></p>

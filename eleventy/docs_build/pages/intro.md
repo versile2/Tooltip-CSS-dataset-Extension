@@ -5,10 +5,9 @@ order: 1
 permalink: "/"
 ---
 
+<h2 class="subtitle is-2 my-4">👋 Welcome to Tooltip Extension Documentation 👋</h2>
 <section class="section">
-  <div class="container" style="margin-top: -50px;">
-    <h1 class="title has-text-centered">👋 Welcome to Tooltip Extension Documentation 👋</h1>
-    
+  <div class="container">
     <div class="content">
       <p>Tooltip Extensions is a lightweight, pure CSS library that makes it easy to add stylish, customizable tooltips to any HTML element. Whether you're a beginner or an experienced developer, this documentation will guide you in maximizing the potential of Tooltip Extensions.</p>
 

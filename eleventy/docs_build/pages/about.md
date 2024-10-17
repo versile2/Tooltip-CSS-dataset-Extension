@@ -4,7 +4,7 @@ layout: "base"
 order: 5
 ---
 
-# About Tooltip Extension
+<h2 class="subtitle is-2 my-4">About Tooltip Extension</h2>
 
 <div class="panel mt-4">
   <p class="panel-heading">Known Issues</p>
