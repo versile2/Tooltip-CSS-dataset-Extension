@@ -205,3 +205,40 @@
   0% { background-color: yellow; }
   100% { background-color: transparent; }
 }
+
+/* Clipboard Copy */
+.copy-to-clipboard {
+  position: relative;
+}
+
+.copy-icon {
+  content: '';
+  background-image: url('../icons/clippy.svg');
+  background-position: 50% 50%;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  width: 27px;
+  height: 1.45rem;
+  /* display: inline-block;
+  vertical-align: middle; */
+  position: absolute;
+  top: 0px;
+  right: -22px;
+  /* color: #586e75; */
+  background-color: #FFF7DD;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 3000;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Specific positioning for copy-to-clipboard inside pre elements */
+pre.copy-to-clipboard .copy-icon {
+  top: 23px;
+  right: 27px;
+}
+
+.copy-to-clipboard:hover .copy-icon {
+  opacity: 1;
+}

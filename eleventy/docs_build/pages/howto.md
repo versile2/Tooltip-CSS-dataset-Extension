@@ -14,7 +14,7 @@ order: 3
       <p>Default</p>
     </div>
     <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
-      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">data-tooltip='Tooltip content'</code>
+      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7 copy-to-clipboard">data-tooltip='Tooltip content'</code>
     </div>
   </div>
 </div>
@@ -34,12 +34,9 @@ order: 3
       </div>
     </div>
     <div class="panel-block tab-pane is-hidden panel-height" id="previewCodedefault" role="tabpanel" aria-labelledby="preview-code-default">
-      <div class="highlight">
-        <pre><code data-lang="html">
-&lt;button class="button" data-tooltip="Tooltip Text"&gt;tooltip default&lt;/button&gt;
+<pre class="language-html copy-to-clipboard"><code>&lt;button class="button" data-tooltip="Tooltip Text"&gt;tooltip default&lt;/button&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, &lt;span data-tooltip="Tooltip content"&gt;consectetur adipisicing elit&lt;/span&gt;. Ipsa fugit dolores earum quod distinctio ducimus non dignissimos molestias amet corrupti voluptatum assumenda impedit beatae veritatis nemo veniam error, hic cumque.&lt;/p&gt;
-        </code></pre>
-      </div>
+</code></pre>
     </div>
   </div>
 </div>
@@ -52,7 +49,7 @@ order: 3
       <p>With Arrow</p>
     </div>
     <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
-      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-arrow'</code>
+      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7 copy-to-clipboard">class='has-tooltip-arrow'</code>
     </div>
   </div>
   </div>
@@ -69,11 +66,11 @@ order: 3
             <p>Lorem ipsum dolor sit amet, <span class="has-tooltip-arrow" data-tooltip="Tooltip content">consectetur adipisicing elit</span>. Ipsa fugit dolores earum quod distinctio ducimus non dignissimos molestias amet corrupti voluptatum assumenda impedit beatae veritatis nemo veniam error, hic cumque.</p>
         </div>
         <div class="panel-block tab-pane is-hidden panel-height" id="previewCodearrow" role="tabpanel" aria-labelledby="preview-code-arrow">
-            <div class="highlight">
-                <pre><code data-lang="html">
-&lt;<span style="color:#309;font-weight:bold">p</span>&gt;Lorem ipsum dolor sit amet, &lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;has-tooltip-arrow&#34;</span> <span style="color:#309">data-tooltip</span><span style="color:#555">=</span><span style="color:#c30">&#34;Tooltip content&#34;</span>&gt;consectetur adipisicing elit&lt;/<span style="color:#309;font-weight:bold">span</span>&gt;. Ipsa fugit dolores earum quod distinctio ducimus non dignissimos molestias amet corrupti voluptatum assumenda impedit beatae veritatis nemo veniam error, hic cumque.&lt;/<span style="color:#309;font-weight:bold">p</span>&gt;
-                </code></pre>
-            </div>
+<pre class="language-html copy-to-clipboard"><code>&lt;p&gt;Lorem ipsum dolor sit amet, &lt;span class=&quot;has-tooltip-arrow&quot; data-tooltip=&quot;Tooltip content&quot;&gt;
+consectetur adipisicing elit&lt;/span&gt;. Ipsa fugit dolores earum quod distinctio ducimus non
+dignissimos molestias amet corrupti voluptatum assumenda impedit beatae veritatis nemo 
+veniam error, hic cumque.&lt;/p&gt;
+</code></pre>
         </div>
     </div>
 </div>
@@ -86,7 +83,7 @@ order: 3
         <p>Position</p>
       </div>
       <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
-        <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-[direction]'</code>
+        <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7 copy-to-clipboard">class='has-tooltip-[direction]'</code>
       </div>
     </div>  
   </div>
@@ -103,11 +100,14 @@ order: 3
             <p>Lorem ipsum dolor sit amet, <span class="has-tooltip-arrow has-tooltip-top" data-tooltip="Tooltip content on top">consectetur adipisicing elit</span>. Ipsa fugit <span class="has-tooltip-arrow has-tooltip-right" data-tooltip="Right tooltip content">dolores</span> earum quod distinctio ducimus non dignissimos <span class="has-tooltip-arrow has-tooltip-bottom" data-tooltip="Bottom tooltip content">molestias</span> amet corrupti voluptatum assumenda impedit beatae <span class="has-tooltip-arrow has-tooltip-left" data-tooltip="Left tooltip content">veritatis</span> nemo veniam error, hic cumque.</p>
         </div>
         <div class="panel-block tab-pane is-hidden panel-height" id="previewCodeposition" role="tabpanel" aria-labelledby="preview-code-position">
-            <div class="highlight">
-                <pre><code data-lang="html">
-&lt;<span style="color:#309;font-weight:bold">p</span>&gt;Lorem ipsum dolor sit amet, &lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;has-tooltip-arrow has-tooltip-top&#34;</span> <span style="color:#309">data-tooltip</span><span style="color:#555">=</span><span style="color:#c30">&#34;Tooltip content on top&#34;</span>&gt;consectetur adipisicing elit&lt;/<span style="color:#309;font-weight:bold">span</span>&gt;. Ipsa fugit &lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;has-tooltip-arrow has-tooltip-right&#34;</span> <span style="color:#309">data-tooltip</span><span style="color:#555">=</span><span style="color:#c30">&#34;Right tooltip content&#34;</span>&gt;dolores&lt;/<span style="color:#309;font-weight:bold">span</span>&gt; earum quod distinctio ducimus non dignissimos &lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;has-tooltip-arrow has-tooltip-bottom&#34;</span> <span style="color:#309">data-tooltip</span><span style="color:#555">=</span><span style="color:#c30">&#34;Bottom tooltip content&#34;</span>&gt;molestias&lt;/<span style="color:#309;font-weight:bold">span</span>&gt; amet corrupti voluptatum assumenda impedit beatae &lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;has-tooltip-arrow has-tooltip-left&#34;</span> <span style="color:#309">data-tooltip</span><span style="color:#555">=</span><span style="color:#c30">&#34;Left tooltip content&#34;</span>&gt;veritatis&lt;/<span style="color:#309;font-weight:bold">span</span>&gt; nemo veniam error, hic cumque.&lt;/<span style="color:#309;font-weight:bold">p</span>&gt;
-                </code></pre>
-            </div>
+<pre class="lang-html copy-to-clipboard"><code>&lt;p&gt;Lorem ipsum dolor sit amet, &lt;span class=&quot;has-tooltip-arrow has-tooltip-top&quot; 
+data-tooltip=&quot;Tooltip content on top&quot;&gt; consectetur adipisicing elit&lt;/span&gt;. 
+Ipsa fugit &lt;span class=&quot;has-tooltip-arrow has-tooltip-right&quot; data-tooltip=&quot;Right tooltip content&quot;&gt;
+dolores&lt;/span&gt; earum quod distinctio ducimus non dignissimos &lt;span class=&quot;has-tooltip-arrow 
+has-tooltip-bottom&quot; data-tooltip=&quot;Bottom tooltip content&quot;&gt;molestias&lt;/span&gt; amet 
+corrupti voluptatum assumenda impedit beatae &lt;span class=&quot;has-tooltip-arrow has-tooltip-left&quot; 
+data-tooltip=&quot;Left tooltip content&quot;&gt;veritatis&lt;/span&gt; nemo veniam error, hic cumque.&lt;/p&gt;
+</code></pre>
         </div>
     </div>
 </div>
@@ -120,7 +120,7 @@ order: 3
         <p>Responsiveness</p>
       </div>
     <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
-      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-[direction]-[target]'</code>
+      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7 copy-to-clipboard">class='has-tooltip-[direction]-[target]'</code>
     </div>
   </div>
 </div>
@@ -128,17 +128,17 @@ order: 3
     <div class="panel-content">
       <p>Tooltip position can be based on responsiveness breakpoints by adding one of the following classes to the HTML element containing the tooltip:</p>
       <ul>
-        <li class="has-tooltip-right-mobile" data-tooltip="has-tooltip-right-mobile"><code>has-tooltip-[direction]-mobile</code></li>
-        <li class="has-tooltip-top-tablet" data-tooltip="has-tooltip-top-tablet"><code>has-tooltip-[direction]-tablet</code></li>
-        <li class="has-tooltip-left-tablet-only" data-tooltip="has-tooltip-left-tablet-only"><code>has-tooltip-[direction]-tablet-only</code></li>
-        <li class="has-tooltip-right-touch" data-tooltip="has-tooltip-right-touch"><code>has-tooltip-[direction]-touch</code></li>
-        <li class="has-tooltip-top-desktop" data-tooltip="has-tooltip-top-desktop"><code>has-tooltip-[direction]-desktop</code></li>
-        <li class="has-tooltip-left-desktop-only" data-tooltip="has-tooltip-left-desktop-only"><code>has-tooltip-[direction]-desktop-only</code></li>
-        <li class="has-tooltip-right-until-widescreen" data-tooltip="has-tooltip-right-until-widescreen"><code>has-tooltip-[direction]-until-widescreen</code></li>
-        <li class="has-tooltip-top-widescreen" data-tooltip="has-tooltip-top-widescreen"><code>has-tooltip-[direction]-widescreen</code></li>
-        <li class="has-tooltip-left-widescreen-only" data-tooltip="has-tooltip-left-widescreen-only"><code>has-tooltip-[direction]-widescreen-only</code></li>
-        <li class="has-tooltip-right-until-fullhd" data-tooltip="has-tooltip-right-until-fullhd"><code>has-tooltip-[direction]-until-fullhd</code></li>
-        <li class="has-tooltip-top-fullhd" data-tooltip="has-tooltip-top-fullhd"><code>has-tooltip-[direction]-fullhd</code></li>
+        <li class="has-tooltip-right-mobile" data-tooltip="has-tooltip-right-mobile"><code class="copy-to-clipboard">has-tooltip-[direction]-mobile</code></li>
+        <li class="has-tooltip-top-tablet" data-tooltip="has-tooltip-top-tablet"><code class="copy-to-clipboard">has-tooltip-[direction]-tablet</code></li>
+        <li class="has-tooltip-left-tablet-only" data-tooltip="has-tooltip-left-tablet-only"><code class="copy-to-clipboard">has-tooltip-[direction]-tablet-only</code></li>
+        <li class="has-tooltip-right-touch" data-tooltip="has-tooltip-right-touch"><code class="copy-to-clipboard">has-tooltip-[direction]-touch</code></li>
+        <li class="has-tooltip-top-desktop" data-tooltip="has-tooltip-top-desktop"><code class="copy-to-clipboard">has-tooltip-[direction]-desktop</code></li>
+        <li class="has-tooltip-left-desktop-only" data-tooltip="has-tooltip-left-desktop-only"><code class="copy-to-clipboard">has-tooltip-[direction]-desktop-only</code></li>
+        <li class="has-tooltip-right-until-widescreen" data-tooltip="has-tooltip-right-until-widescreen"><code class="copy-to-clipboard">has-tooltip-[direction]-until-widescreen</code></li>
+        <li class="has-tooltip-top-widescreen" data-tooltip="has-tooltip-top-widescreen"><code class="copy-to-clipboard">has-tooltip-[direction]-widescreen</code></li>
+        <li class="has-tooltip-left-widescreen-only" data-tooltip="has-tooltip-left-widescreen-only"><code class="copy-to-clipboard">has-tooltip-[direction]-widescreen-only</code></li>
+        <li class="has-tooltip-right-until-fullhd" data-tooltip="has-tooltip-right-until-fullhd"><code class="copy-to-clipboard">has-tooltip-[direction]-until-fullhd</code></li>
+        <li class="has-tooltip-top-fullhd" data-tooltip="has-tooltip-top-fullhd"><code class="copy-to-clipboard">has-tooltip-[direction]-fullhd</code></li>
       </ul>
 <p>Don't forget to replace <code>[direction]</code>&nbsp;by one of the avaiblable directions: <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code></p>
     </div>
@@ -153,7 +153,7 @@ order: 3
       <p>Hide Tooltip</p>
     </div>
     <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
-      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">class='has-tooltip-hidden-[where]'</code>
+      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7 copy-to-clipboard">class='has-tooltip-hidden-[where]'</code>
     </div>
   </div>  
   </div>  
@@ -174,7 +174,7 @@ order: 3
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-mobile" data-tooltip="has-tooltip-hidden-mobile">
-                    <code>has-tooltip-hidden-mobile</code>
+                    <code class="copy-to-clipboard">has-tooltip-hidden-mobile</code>
                 </div>
                 <div class="column is-8-tablet is-full-mobile">
                     <div class="columns is-mobile">
@@ -190,7 +190,7 @@ order: 3
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-tablet-only" data-tooltip="has-tooltip-hidden-tablet-only">
-                    <code>has-tooltip-hidden-tablet-only</code>
+                    <code class="copy-to-clipboard">has-tooltip-hidden-tablet-only</code>
                 </div>
                 <div class="column is-8-tablet is-full-mobile">
                     <div class="columns is-mobile">
@@ -206,7 +206,7 @@ order: 3
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-desktop-only" data-tooltip="has-tooltip-hidden-desktop-only">
-                    <code>has-tooltip-hidden-desktop-only</code>
+                    <code class="copy-to-clipboard">has-tooltip-hidden-desktop-only</code>
                 </div>
                 <div class="column is-8-tablet is-full-mobile">
                     <div class="columns is-mobile">
@@ -222,7 +222,7 @@ order: 3
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-widescreen-only" data-tooltip="has-tooltip-hidden-widescreen-only">
-                    <code>has-tooltip-hidden-widescreen-only</code>
+                    <code class="copy-to-clipboard">has-tooltip-hidden-widescreen-only</code>
                 </div>
                 <div class="column is-8-tablet is-full-mobile">
                     <div class="columns is-mobile">
@@ -238,7 +238,7 @@ order: 3
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-touch" data-tooltip="has-tooltip-hidden-touch">
-                    <code>has-tooltip-hidden-touch</code>
+                    <code class="copy-to-clipboard">has-tooltip-hidden-touch</code>
                 </div>
                 <div class="column is-8-tablet is-full-mobile">
                     <div class="columns is-mobile">
@@ -254,7 +254,7 @@ order: 3
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-tablet" data-tooltip="has-tooltip-hidden-tablet">
-                    <code>has-tooltip-hidden-tablet</code>
+                    <code class="copy-to-clipboard">has-tooltip-hidden-tablet</code>
                 </div>
                 <div class="column is-8-tablet is-full-mobile">
                     <div class="columns is-mobile">
@@ -270,7 +270,7 @@ order: 3
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-desktop" data-tooltip="has-tooltip-hidden-desktop">
-                    <code>has-tooltip-hidden-desktop</code>
+                    <code class="copy-to-clipboard">has-tooltip-hidden-desktop</code>
                 </div>
                 <div class="column is-8-tablet is-full-mobile">
                     <div class="columns is-mobile">
@@ -286,7 +286,7 @@ order: 3
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-widescreen" data-tooltip="has-tooltip-hidden-widescreen">
-                    <code>has-tooltip-hidden-widescreen</code>
+                    <code class="copy-to-clipboard">has-tooltip-hidden-widescreen</code>
                 </div>
                 <div class="column is-8-tablet is-full-mobile">
                     <div class="columns is-mobile">
@@ -302,7 +302,7 @@ order: 3
         <div class="column is-full">
             <div class="columns is-multiline">
                 <div class="column is-4-tablet is-full-mobile has-tooltip-hidden-fullhd" data-tooltip="has-tooltip-hidden-fullhd">
-                    <code>has-tooltip-hidden-fullhd</code>
+                    <code class="copy-to-clipboard">has-tooltip-hidden-fullhd</code>
                 </div>
                 <div class="column is-8-tablet is-full-mobile">
                     <div class="columns is-mobile">

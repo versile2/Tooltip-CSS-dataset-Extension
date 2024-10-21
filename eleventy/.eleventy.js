@@ -1,5 +1,6 @@
-const path = require('path');	
-const { execSync } = require('child_process');
+const path = require('path');	// allows me to use path outside of ./
+const { execSync } = require('child_process'); // pageFind
+
 module.exports = async function (eleventyConfig) {
     eleventyConfig.addGlobalData("gitlink", "https://github.com/versile2/Tooltip-CSS-dataset-Extension");
     eleventyConfig.addPassthroughCopy("docs_build/css");
@@ -7,7 +8,6 @@ module.exports = async function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("docs_build/images");
     eleventyConfig.addPassthroughCopy("docs_build/js");
     eleventyConfig.addPassthroughCopy("docs_build/search-index.json");
-
     // add pathPrefix
     const { EleventyHtmlBasePlugin } = await import("@11ty/eleventy");
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);

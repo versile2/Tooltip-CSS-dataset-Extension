@@ -1,84 +1,132 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // clipboard
-    var clipInit = false;
-    var codes = document.querySelectorAll('code') || [];
-    codes.forEach(function(code) {
-        var text = code.innerHTML;
 
-        if (text.length > 5) {
-            if (!clipInit) {
-                var text, clip = new ClipboardJS('.copy-to-clipboard', {
-                    text: function(trigger) {
-                        text = trigger.previousSibling.innerHTML;
-                        return text.replace(/^\$\s/gm, '');
-                    }
-                });
-
-                var inPre;
-                clip.on('success', function(e) {
-                    e.clearSelection();
-                    inPre = e.trigger.parentNode.tagName == 'PRE';
-                    e.trigger.setAttribute('aria-label', 'Copied to clipboard!');
-                    e.trigger.classList.add('tooltipped');
-                    e.trigger.classList.add('tooltipped-' + (inPre ? 'w' : 's'));
-                });
-
-                clip.on('error', function(e) {
-                    inPre = e.trigger.parentNode.tagName == 'PRE';
-                    e.trigger.setAttribute('aria-label', fallbackMessage(e.action));
-                    e.trigger.classList.add('tooltipped');
-                    e.trigger.classList.add('tooltipped-' + (inPre ? 'w' : 's'));
-                    document.addEventListener('copy', function(){
-                        e.trigger.setAttribute('aria-label', 'Copied to clipboard!');
-                        e.trigger.classList.add('tooltipped');
-                        e.trigger.classList.add('tooltipped-' + (inPre ? 'w' : 's'));
-                    });
-                });
-
-                clipInit = true;
-            }
-
-            var copyNode = document.createElement('div');
-            copyNode.classList.add('copy-to-clipboard');
-            copyNode.setAttribute('title', 'Copy to clipboard');
-
-            code.after(copyNode);
-            code.nextSibling.addEventListener('mouseleave', function() {
-                this.setAttribute('aria-label', null);
-                this.classList.remove('tooltipped');
-                this.classList.remove('tooltipped-s');
-                this.classList.remove('tooltipped-w');
-            });
-        }
-    });
-
-    const tabs = document.querySelectorAll('[data-toggle="tab"]') || [];
-    tabs.forEach(function(tab) {
-        tab.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const tabPane = document.querySelector(e.currentTarget.dataset.target);
-
-            const activeTab = e.currentTarget.closest('.tabs ul').querySelector('li.is-active');
-            const activeTabPane = document.querySelector(activeTab.dataset.target);
-            if (activeTab && !activeTab.isSameNode(e.currentTarget)) {
-                activeTab.classList.remove('is-active');
-                if (activeTabPane) {
-                    activeTabPane.classList.remove('is-active');
-                    activeTabPane.classList.add("is-hidden");
-                }
-
-            }
-            e.currentTarget.classList.remove("is-hidden");
-            e.currentTarget.classList.add('is-active');
-            if (tabPane) {
-                tabPane.classList.remove('is-hidden');
-                tabPane.classList.add('is-active');
-            }
+  // Hamburger menu functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    if ($navbarBurgers.length > 0) {
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
         });
+      });
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {      
+      goInitHighlight();
+  });
+
+  window.goInitHighlight = function() {
+    // Initialize Highlight.js
+    hljs.highlightAll();
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var clipInit = false;
+    var codes = document.querySelectorAll('pre.copy-to-clipboard, code.copy-to-clipboard') || [];
+  
+    codes.forEach(function(codeElement) {
+      // Create the copy icon element
+      var copyIcon = document.createElement('div');
+      copyIcon.classList.add('copy-icon');
+      codeElement.appendChild(copyIcon);
+  
+      // Initialize clipboard functionality if not already initialized
+      if (!clipInit) {
+        var clip = new ClipboardJS('.copy-icon', {
+          text: function(trigger) {
+            var codeElement = trigger.parentNode;
+            var codeText = codeElement.tagName === 'PRE' 
+              ? codeElement.querySelector('code').innerText 
+              : codeElement.innerText;
+            return codeText.replace(/^\$\s/gm, '');
+          }
+        });
+  
+        clip.on('success', function(e) {
+          e.clearSelection();
+          var inPre = e.trigger.parentNode.tagName === 'PRE';
+  
+          // Set data-tooltip attribute and add custom tooltip classes
+          e.trigger.dataset.tooltip = 'Copied to clipboard!';
+          e.trigger.classList.add('has-tooltip-arrow');
+          e.trigger.classList.add(inPre ? 'has-tooltip-left' : 'has-tooltip-bottom');
+  
+          // Remove tooltip after 2 seconds
+          setTimeout(function() {
+            delete e.trigger.dataset.tooltip;
+            e.trigger.classList.remove('has-tooltip-arrow', 'has-tooltip-left', 'has-tooltip-bottom');
+          }, 2000);
+        });
+  
+        clip.on('error', function(e) {
+          var inPre = e.trigger.parentNode.tagName === 'PRE';
+  
+          // Set data-tooltip attribute and add custom tooltip classes
+          e.trigger.dataset.tooltip = fallbackMessage(e.action);
+          e.trigger.classList.add('has-tooltip-arrow');
+          e.trigger.classList.add(inPre ? 'has-tooltip-left' : 'has-tooltip-bottom');
+  
+          // Remove tooltip after 2 seconds
+          setTimeout(function() {
+            delete e.trigger.dataset.tooltip;
+            e.trigger.classList.remove('has-tooltip-arrow', 'has-tooltip-left', 'has-tooltip-bottom');
+          }, 2000);
+        });
+  
+        clipInit = true;
+      }
     });
-}, false);
+  });
+  
+  // Fallback message function (assuming it's defined elsewhere)
+  function fallbackMessage(action) {
+    var actionMsg = '';
+    var actionKey = (action === 'cut' ? 'X' : 'C');
+  
+    if (/iPhone|iPad/i.test(navigator.userAgent)) {
+      actionMsg = 'No support :(';
+    } else if (/Mac/i.test(navigator.userAgent)) {
+      actionMsg = 'Press ⌘-' + actionKey + ' to ' + action;
+    } else {
+      actionMsg = 'Press Ctrl-' + actionKey + ' to ' + action;
+    }
+  
+    return actionMsg;
+  }
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle tab switching
+  const tabs = document.querySelectorAll('[data-toggle="tab"]') || [];
+  
+  tabs.forEach(function(tab) {
+      tab.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const tabPane = document.querySelector(e.currentTarget.dataset.target);
+          const activeTab = e.currentTarget.closest('.tabs ul').querySelector('li.is-active');
+          const activeTabPane = document.querySelector(activeTab.dataset.target);
+
+          // Handle switching active tabs and hiding/showing corresponding content
+          if (activeTab && !activeTab.isSameNode(e.currentTarget)) {
+              activeTab.classList.remove('is-active');
+              if (activeTabPane) {
+                  activeTabPane.classList.remove('is-active');
+                  activeTabPane.classList.add("is-hidden");
+              }
+          }
+
+          e.currentTarget.classList.add('is-active');
+          if (tabPane) {
+              tabPane.classList.remove('is-hidden');
+              tabPane.classList.add('is-active');
+          }
+      });
+  });
+});
   
   document.addEventListener("DOMContentLoaded", function () {
     // Handle search result clicks
@@ -91,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
         if (closestMark) {
           const searchTerm = closestMark.textContent.trim();
-          console.log(searchTerm);
+
           // Navigate to the target URL, appending the search term as a query parameter
           const targetURL = new URL(e.target.getAttribute("href"), window.location.origin);
           targetURL.searchParams.set("highlight", searchTerm);
@@ -126,7 +174,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (element.childNodes.length > 0 && Array.from(element.childNodes).some(node => 
         node.nodeType === Node.TEXT_NODE && node.textContent.trim().includes(searchTerm)
       )) {
-        console.log("Found match:", element);
         foundElement = element;
         return true;
       }
@@ -151,7 +198,6 @@ document.addEventListener('DOMContentLoaded', function() {
         foundElement.classList.remove("highlight-flash");
       }, 2000);
     } else {
-      console.log("No exact match found for:", searchTerm);
     }
   }
   

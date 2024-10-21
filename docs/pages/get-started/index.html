@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Started</title>
     <link rel="stylesheet" href="/Tooltip-CSS-dataset-Extension/css/bulma.min.css">
-    <link rel="stylesheet" href="/Tooltip-CSS-dataset-Extension/css/highlight-default.min.css">
+    <link rel="stylesheet" href="/Tooltip-CSS-dataset-Extension/css/highlight-atom-one-dark.min.css">
     <link rel="stylesheet" href="/Tooltip-CSS-dataset-Extension/pagefind/pagefind-ui.css">
     <!-- https://pictogrammers.com/library/mdi/ -->
      <link rel="stylesheet" href="/Tooltip-CSS-dataset-Extension/css/docs.css">
@@ -193,18 +193,19 @@
         </div>
     <div class="panel-block tab-content mt-2">
         <div id="github" class="tab-pane is-active" role="tabpanel" style="height: 100px;">        
-            <p>Download from the GitHub repository</p>
-            <pre><code><a href="https://github.com/versile2/Tooltip-CSS-dataset-Extension/release/tooltip-extension.min.css" target="_blank" rel="noreferrer noopener">https://github.com/versile2/Tooltip-CSS-dataset-Extension/release/tooltip-extension.min.css</a></code></pre>
+            <p>
+            <a href="https://github.com/versile2/Tooltip-CSS-dataset-Extension/release/tooltip-extension.min.css" target="_blank" rel="noreferrer noopener">Download</a> from the GitHub repository</p>            
+<pre class="language-html copy-to-clipboard "><code>https://github.com/versile2/Tooltip-CSS-dataset-Extensionrelease/tooltip-extension.min.css</code></pre>
         </div>
         <div id="npm" class="tab-pane is-hidden" role="tabpanel" style="height: 100px;">
-            <p>Use npm to install the <code>tooltip-extension</code> package <strong>(recommended)</strong></p>
-            <pre><code class="language-shell">npm install tooltip-extension</code></pre>
-        </div>
-        <div id="cdn" class="tab-pane is-hidden" role="tabpanel" style="height: 100px;">
-            <p>Use a CDN to link to the Tooltip Extension stylesheet and script</p>
-            <pre><code class="language-html">&lt;link rel="stylesheet" href="https://cdn.example.com/tooltip-extension/tooltip.css"&gt;</code></pre>
-        </div>
-    </div>    
+<p></p><p>Use npm to install the <code>tooltip-extension</code> package (<strong>recommended</strong>)</p>
+<pre class="language-bash copy-to-clipboard"><code>npm install tooltip-extension</code></pre>
+<p></p></div>
+<div id="cdn" class="tab-pane is-hidden" role="tabpanel" style="height: 100px;">
+<p>Use a CDN to link to the Tooltip Extension stylesheet and script</p><p></p>
+<pre class="language-html copy-to-clipboard"><code>&lt;link rel="stylesheet" href="https://cdn.example.com/tooltip-extension/tooltip.css"&gt;</code></pre>
+<p></p></div>
+</div><p></p>
 </div>
 <h2 class="subtitle is-3 mt-2 mb-4">Usage</h2>
 <p>
@@ -229,23 +230,7 @@
       <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//">CC BY NC SA 4.0</a>.
     </p>
   </div>
-</footer>  
-<script>
-  // Hamburger menu functionality
-  document.addEventListener('DOMContentLoaded', () => {
-    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    if ($navbarBurgers.length > 0) {
-      $navbarBurgers.forEach(el => {
-        el.addEventListener('click', () => {
-          const target = el.dataset.target;
-          const $target = document.getElementById(target);
-          el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
-        });
-      });
-    }
-  });
-</script>
+</footer>
 <script src="/Tooltip-CSS-dataset-Extension/js/highlight.min.js" type="text/javascript"></script>
 <script src="/Tooltip-CSS-dataset-Extension/js/clipboard.min.js" type="text/javascript"></script>
 <script src="/Tooltip-CSS-dataset-Extension/js/docs.js" type="text/javascript"></script>

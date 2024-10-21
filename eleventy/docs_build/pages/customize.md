@@ -30,14 +30,13 @@ Navigate to the `src` directory and open the `_variables.scss` file. This file c
         <p>_variables.scss</p>
       </div>
       <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
-        <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7">src/_variables.scss</code>
+        <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7 copy-to-clipboard">src/_variables.scss</code>
       </div>
     </div>  
     </div>   
   <div class="panel-block">
     <div class="panel-content" style="max-height: 300px; overflow-y: auto;margin-top: -5px;">
-      <pre><code class="language-scss">
-        $tooltip-animation-duration: 0.3s !default;
+      <pre class="language-scss copy-to-clipboard"><code>        $tooltip-animation-duration: 0.3s !default;
         $tooltip-animation-transition-timing-function: linear !default;
         $tooltip-arrow-size: 6px !default;
         $tooltip-background-color: var(--mud-palette-gray-darker, #616161) !default;
@@ -59,8 +58,7 @@ Navigate to the `src` directory and open the `_variables.scss` file. This file c
             "info": (background-color: var(--mud-palette-info, #2196f3), color: var(--mud-palette-info-text, #ffffff)),
             "success": (background-color: var(--mud-palette-success, #4caf50), color: var(--mud-palette-success-text, #ffffff)),
             "error": (background-color: var(--mud-palette-error, #f44336), color: var(--mud-palette-error-text, #ffffff))    
-        )
-            </code></pre>
+        )</code></pre>
     </div>
   </div>
 </div>
@@ -71,9 +69,9 @@ Navigate to the `src` directory and open the `_variables.scss` file. This file c
 
 <p>After making your changes, compile the SCSS to generate the updated CSS file. Run the following command from bash in the `src` directory:</p>
 
-<div class="notification">
+<pre class="language-bash copy-to-clipboard">
   <code>node src/compile-scss.js</code>
-</div>
+</pre>
 
 <p>This command will process your SCSS files and output the compiled CSS to the css folder inside the src folder.</p>
 
