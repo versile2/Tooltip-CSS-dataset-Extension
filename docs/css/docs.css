@@ -219,15 +219,12 @@
   background-repeat: no-repeat;
   width: 27px;
   height: 1.45rem;
-  /* display: inline-block;
-  vertical-align: middle; */
   position: absolute;
   top: 0px;
-  right: -22px;
-  /* color: #586e75; */
-  background-color: #FFF7DD;
+  right: -21px;
   cursor: pointer;
   border-radius: 4px;
+  background-color: #FFF7DD;  
   z-index: 3000;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -237,6 +234,8 @@
 pre.copy-to-clipboard .copy-icon {
   top: 23px;
   right: 27px;
+  background-color: #FFF7DD;
+  opacity: .7;
 }
 
 .copy-to-clipboard:hover .copy-icon {
