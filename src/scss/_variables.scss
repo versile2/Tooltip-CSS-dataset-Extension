@@ -1,24 +1,58 @@
+// Defaults to MudBlazor, then Bootstrap, then Tailwind, then a default value
 
-$tooltip-animation-duration: 0.3s !default;
-$tooltip-animation-transition-timing-function: linear !default;
-$tooltip-arrow-size: 6px !default;
-$tooltip-background-color: var(--mud-palette-gray-darker, #616161) !default;
-$tooltip-border-color: var(--mud-palette-gray-darker, #616161) !default;
-$tooltip-color: var(--mud-palette-dark-text, #fff) !default;
-$tooltip-font-family: var(--mud-typography-caption-family, Arial, Helvetica, sans-serif) !default;
-$tooltip-font-size: var(--mud-typography-caption-size, 12px) !default;
-$tooltip-font-weight: var(--mud-typography-caption-weight, 500) !default;
-$tooltip-font-lineheight: var(--mud-typography-caption-lineheight, 1.4em) !default;
-$tooltip-max-width: 15rem !default;
-$tooltip-padding: 4px 8px !default;
-$tooltip-borderradius: var(--mud-default-borderradius, 4) !default;
-$tooltip-z-index: var(--mud-zindex-tooltip, 1400) !default;
+// Animation
+$tooltip-animation-duration: var(--mud-tooltip-animation-duration, var(--bs-tooltip-duration, var(--tw-tooltip-duration, 0.15s))) !default;
+$tooltip-animation-transition-timing-function: var(--mud-tooltip-transition, var(--bs-tooltip-transition, var(--tw-tooltip-transition, ease-in-out))) !default;
+
+// Sizing
+$tooltip-arrow-size: var(--mud-tooltip-arrow-size, var(--bs-tooltip-arrow-size, var(--tw-tooltip-arrow-size, 6px))) !default;
+$tooltip-max-width: var(--mud-tooltip-max-width, var(--bs-tooltip-max-width, var(--tw-tooltip-max-width, 200px))) !default;
+$tooltip-padding: var(--mud-tooltip-padding, var(--bs-tooltip-padding, var(--tw-tooltip-padding, 4px 8px))) !default;
+$tooltip-radius: var(--mud-default-borderradius, var(--bs-tooltip-border-radius, var(--tw-tooltip-border-radius, 4px))) !default;
+$tooltip-z-index: var(--mud-zindex-tooltip, var(--bs-tooltip-zindex, var(--tw-tooltip-z-index, 1070))) !default;
+
+// Typography
+$tooltip-font-family: var(--mud-typography-caption-family, var(--bs-font-sans-serif, var(--tw-font-sans, "Helvetica Neue", Arial, sans-serif))) !default;
+$tooltip-font-size: var(--mud-typography-caption-size, var(--bs-tooltip-font-size, var(--tw-tooltip-font-size, 0.875rem))) !default;
+$tooltip-font-weight: var(--mud-typography-caption-weight, var(--bs-tooltip-font-weight, var(--tw-font-normal, 400))) !default;
+$tooltip-font-lineheight: var(--mud-typography-caption-lineheight, var(--bs-tooltip-line-height, var(--tw-leading-normal, 1.4))) !default;
+
+// Colors
+$tooltip-background-color: var(--mud-palette-gray-darker, var(--bs-tooltip-bg, var(--tw-gray-600, #616161))) !default;
+$tooltip-border-color: var(--mud-palette-gray-darker, var(--bs-tooltip-border-color, var(--tw-gray-600, #616161))) !default;
+$tooltip-color: var(--mud-palette-dark-text, var(--bs-tooltip-color, var(--tw-white, #fff))) !default;
+
+// Color system with four-level fallbacks
 $tooltip-colors: (
-    "primary": (background-color: var(--mud-palette-primary, #1976d2), color: var(--mud-palette-primary-text, #fff)),
-    "secondary": (background-color: var(--mud-palette-secondary, #9c27b0), color: var(--mud-palette-secondary-text, #fff)),
-    "tertiary": (background-color: var(--mud-palette-tertiary, #1ec8a5ff), color: var(--mud-palette-tertiary-text, #fff)),
-    "warning": (background-color: var(--mud-palette-warning, #ff9800), color: var(--mud-palette-warning-text, #000000)),
-    "info": (background-color: var(--mud-palette-info, #2196f3), color: var(--mud-palette-info-text, #ffffff)),
-    "success": (background-color: var(--mud-palette-success, #4caf50), color: var(--mud-palette-success-text, #ffffff)),
-    "error": (background-color: var(--mud-palette-error, #f44336), color: var(--mud-palette-error-text, #ffffff))    
-)
+  "primary": (
+    background: var(--mud-palette-primary, var(--bs-primary, var(--tw-blue-600, #1976d2))),
+    text: var(--mud-palette-primary-text, var(--bs-primary-text, var(--tw-white, #fff)))
+  ),
+  "secondary": (
+    background: var(--mud-palette-secondary, var(--bs-secondary, var(--tw-purple-600, #9c27b0))),
+    text: var(--mud-palette-secondary-text, var(--bs-secondary-text, var(--tw-white, #fff)))
+  ),
+  "tertiary": (
+    background: var(--mud-palette-tertiary, var(--bs-tertiary, var(--tw-teal-500, #1ec8a5))),
+    text: var(--mud-palette-tertiary-text, var(--bs-tertiary-text, var(--tw-white, #fff)))
+  ),
+  "warning": (
+    background: var(--mud-palette-warning, var(--bs-warning, var(--tw-yellow-500, #ff9800))),
+    text: var(--mud-palette-warning-text, var(--bs-warning-text, var(--tw-black, #000)))
+  ),
+  "info": (
+    background: var(--mud-palette-info, var(--bs-info, var(--tw-blue-500, #2196f3))),
+    text: var(--mud-palette-info-text, var(--bs-info-text, var(--tw-white, #fff)))
+  ),
+  "success": (
+    background: var(--mud-palette-success, var(--bs-success, var(--tw-green-500, #4caf50))),
+    text: var(--mud-palette-success-text, var(--bs-success-text, var(--tw-white, #fff)))
+  ),
+  "error": (
+    background: var(--mud-palette-error, var(--bs-danger, var(--tw-red-500, #f44336))),
+    text: var(--mud-palette-error-text, var(--bs-danger-text, var(--tw-white, #fff)))
+  )
+) !default;
+
+// Opacity
+$tooltip-background-opacity: var(--mud-tooltip-opacity, var(--bs-tooltip-opacity, var(--tw-tooltip-opacity, 0.9))) !default;

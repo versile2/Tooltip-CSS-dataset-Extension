@@ -1,77 +1,177 @@
-@use "./_variables" as vars;
-@use "./mixins" as mx;
+@use 'sass:map';
+@use 'variables' as v;
+@use 'position' as p;
+@use 'animation' as a;
+@use 'responsiveness' as r;
 
-[data-tooltip] {
-	&:not(.is-loading),
-	&:not(.is-disabled),
-	&:not([disabled]) {
-		cursor: pointer;
-		overflow: visible;
-		position: relative;
-
-		@include mx.tooltip-box;
-
-		&.has-tooltip-arrow {
-			@include mx.tooltip-arrow;
-		}
-
-		&.has-tooltip-top {
-			@include mx.tooltip-direction("top");
-		}
-
-		&.has-tooltip-bottom {
-			@include mx.tooltip-direction("bottom");
-		}
-
-		&.has-tooltip-left {
-			@include mx.tooltip-direction("left");
-		}
-
-		&.has-tooltip-right {
-			@include mx.tooltip-direction("right");
-		}
-
-		&.has-tooltip-multiline {
-			@include mx.tooltip-multiline;
-		}
-
-		&.has-tooltip-text-left {
-			&::before {
-				text-align: left;
-			}
-		}
-
-		&.has-tooltip-text-centered {
-			&::before {
-				text-align: center;
-			}
-		}
-
-		&.has-tooltip-text-right {
-			&::before {
-				text-align: right;
-			}
-		}
-
-		@each $name, $pair in vars.$tooltip-colors {
-			&.has-tooltip-#{$name} {
-				--tooltip-background-color: #{map-get($pair, "background-color")};
-				--tooltip-color: #{map-get($pair, "color")};
-			}
-		}
-
-		@include mx.tooltip-fade;
-	}
+@mixin tooltip-arrow {
+  &::after {
+    box-sizing: border-box;
+    color: v.$tooltip-color;
+    display: inline-block;
+    font-family: v.$tooltip-font-family;
+    font-size: v.$tooltip-font-size;
+    font-weight: v.$tooltip-font-weight;
+    line-height: v.$tooltip-font-lineheight;
+    hyphens: auto;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
+    z-index: v.$tooltip-z-index;
+    content: '';
+    border-style: solid;
+    border-width: v.$tooltip-arrow-size;
+    border-color: transparent transparent rgba(v.$tooltip-background-color, v.$tooltip-background-opacity) transparent;
+    margin-bottom: calc(v.$tooltip-arrow-size * -1 + 1px);
+  }
+  @include p.tooltip-arrow-bottom;
 }
 
-span[data-tooltip] {
-	border-bottom-width: 1px;
-	border-bottom-style: dashed;
-	border-bottom-color: vars.$tooltip-border-color;
+@mixin tooltip-box {
+  &::before {
+    box-sizing: border-box;
+    color: v.$tooltip-color;
+    display: inline-block;
+    font-family: v.$tooltip-font-family;
+    font-size: v.$tooltip-font-size;
+    font-weight: v.$tooltip-font-weight;
+    line-height: v.$tooltip-font-lineheight;
+    hyphens: auto;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
+    z-index: v.$tooltip-z-index;
+    background: rgba(v.$tooltip-background-color, v.$tooltip-background-opacity);
+    border-radius: v.$tooltip-radius;
+    border: 1px solid v.$tooltip-border-color;
+    content: attr(data-tooltip);
+    padding: v.$tooltip-padding;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+  }
+  @include p.tooltip-box-bottom;
+}
+
+@mixin tooltip-multiline {
+  &::before {
+    height: auto;
+    width: v.$tooltip-max-width;
+    max-width: v.$tooltip-max-width;
+    text-overflow: clip;
+    white-space: normal;
+    word-break: keep-all;
+  }
+}
+
+[data-tooltip] {
+  &:not(.is-loading),
+  &:not(.is-disabled),
+  &:not([disabled]) {
+    cursor: pointer;
+    overflow: visible;
+    position: relative;
+
+    @include tooltip-box;
+    &.has-tooltip-arrow {
+      @include tooltip-arrow;
+    }
+
+    &.has-tooltip-top {
+      @include p.tooltip-direction('top');
+    }
+
+    &.has-tooltip-left {
+      @include p.tooltip-direction('left');
+    }
+
+    &.has-tooltip-right {
+      @include p.tooltip-direction('right');
+    }
+
+    &.has-tooltip-multiline {
+      @include tooltip-multiline;
+    }
+
+    &.has-tooltip-text-left {
+      &::before {
+        text-align: left;
+      }
+    }
+    &.has-tooltip-text-centered {
+      &::before {
+        text-align: center;
+      }
+    }
+    &.has-tooltip-text-right {
+      &::before {
+        text-align: right;
+      }
+    }
+
+    @each $name, $values in v.$tooltip-colors {
+      $background-color: map.get($values, "background");
+      $text-color: map.get($values, "text");
+      
+      &.has-tooltip-#{$name} {
+        &::after {
+          border-color: transparent transparent rgba($background-color, v.$tooltip-background-opacity) transparent !important;
+        }
+        &.has-tooltip-top {
+          &::after {
+            border-color: rgba($background-color, v.$tooltip-background-opacity) transparent transparent transparent !important;
+          }
+        }
+        &.has-tooltip-left {
+          &::after {
+            border-color: transparent transparent transparent rgba($background-color, v.$tooltip-background-opacity) !important;
+          }
+        }
+        &.has-tooltip-right {
+          &::after {
+            border-color: transparent rgba($background-color, v.$tooltip-background-opacity) transparent transparent !important;
+          }
+        }
+        &:before {
+          background-color: rgba($background-color, v.$tooltip-background-opacity);
+          border-color: $background-color;
+          color: $text-color;
+        }
+      }
+    }
+
+    @include a.tooltip-hover {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.has-tooltip-fade {
+      @include a.tooltip-fade;
+    }
+
+    @include r.responsive-tooltips;
+  }
+}
+
+span {
+  &[data-tooltip] {
+    border-bottom: 1px dashed v.$tooltip-border-color;
+    @each $name, $values in v.$tooltip-colors {
+      $background-color: map.get($values, "background");
+      &.has-tooltip-#{$name} {
+        border-bottom-color: lighten($background-color, 5%);
+      }
+    }
+  }
 }
 
 .control {
-	span[data-tooltip] {
-		border-bottom: none;
-	}
+  span {
+    &[data-tooltip] {
+      border-bottom: none;
+    }
+  }
 }

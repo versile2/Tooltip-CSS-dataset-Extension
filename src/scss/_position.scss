@@ -1,0 +1,151 @@
+@use 'variables' as v;
+
+@mixin tooltip-hover {
+  &:hover::before,
+  &:hover::after,
+  &.has-tooltip-active::before,
+  &.has-tooltip-active::after {
+    @content;
+  }
+}
+
+@mixin tooltip-arrow-bottom {
+  &.has-tooltip-arrow {
+    &::after {
+      top: auto;
+      right: auto;
+      bottom: -1px;
+      left: 50%;
+      margin-top: auto;
+      margin-right: auto;
+      margin-bottom: calc(v.$tooltip-arrow-size * -1 + 1px);
+      margin-left: calc(v.$tooltip-arrow-size * -1 + 1px);
+      border-color: transparent transparent rgba(v.$tooltip-background-color, v.$tooltip-background-opacity) transparent;
+    }
+  }
+}
+
+@mixin tooltip-box-bottom {
+  &::before {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    margin-top: auto;
+    margin-bottom: calc(v.$tooltip-arrow-size * -1 + 1px);
+    transform: translate(-50%, 100%);
+  }
+}
+
+@mixin tooltip-bottom {
+  @include tooltip-arrow-bottom;
+  @include tooltip-box-bottom;
+}
+
+@mixin tooltip-arrow-top {
+  &.has-tooltip-arrow {
+    &::after {
+      top: 0;
+      right: auto;
+      bottom: auto;
+      left: 50%;
+      margin-top: calc(v.$tooltip-arrow-size * -1 + 1px);
+      margin-right: auto;
+      margin-bottom: auto;
+      margin-left: calc(v.$tooltip-arrow-size * -1 + 1px);
+      border-color: rgba(v.$tooltip-background-color, v.$tooltip-background-opacity) transparent transparent transparent;
+    }
+  }
+}
+
+@mixin tooltip-box-top {
+  &::before {
+    top: 0;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    margin-top: calc(v.$tooltip-arrow-size * -1 + 1px);
+    margin-bottom: auto;
+    transform: translate(-50%, -100%);
+  }
+}
+
+@mixin tooltip-top {
+  @include tooltip-arrow-top;
+  @include tooltip-box-top;
+}
+
+@mixin tooltip-arrow-left {
+  &.has-tooltip-arrow {
+    &::after {
+      top: auto;
+      right: auto;
+      bottom: 50%;
+      left: 0;
+      margin-top: auto;
+      margin-right: auto;
+      margin-bottom: calc(v.$tooltip-arrow-size * -1);
+      margin-left: calc(v.$tooltip-arrow-size * -1 + 1px);
+      border-color: transparent transparent transparent rgba(v.$tooltip-background-color, v.$tooltip-background-opacity);
+    }
+  }
+}
+
+@mixin tooltip-box-left {
+  &::before {
+    top: auto;
+    right: auto;
+    bottom: 50%;
+    left: calc(v.$tooltip-arrow-size * -1 + 1px);
+    transform: translate(-100%, 50%);
+  }
+}
+
+@mixin tooltip-left {
+  @include tooltip-arrow-left;
+  @include tooltip-box-left;
+}
+
+@mixin tooltip-arrow-right {
+  &.has-tooltip-arrow {
+    &::after {
+      top: auto;
+      right: 0;
+      bottom: 50%;
+      left: auto;
+      margin-top: auto;
+      margin-right: calc(v.$tooltip-arrow-size * -1);
+      margin-bottom: calc(v.$tooltip-arrow-size * -1);
+      margin-left: auto;
+      border-color: transparent rgba(v.$tooltip-background-color, v.$tooltip-background-opacity) transparent transparent;
+    }
+  }
+}
+
+@mixin tooltip-box-right {
+  &::before {
+    top: auto;
+    right: calc(v.$tooltip-arrow-size * -1 + 1px);
+    bottom: 50%;
+    left: auto;
+    margin-top: auto;
+    transform: translate(100%, 50%);
+  }
+}
+
+@mixin tooltip-right {
+  @include tooltip-arrow-right;
+  @include tooltip-box-right;
+}
+
+@mixin tooltip-direction($direction) {
+  @if $direction == 'top' {
+    @include tooltip-top;
+  } @else if $direction == 'right' {
+    @include tooltip-right;
+  } @else if $direction == 'bottom' {
+    @include tooltip-bottom;
+  } @else if $direction == 'left' {
+    @include tooltip-left;
+  }
+}
