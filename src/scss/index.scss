@@ -33,7 +33,7 @@
 @mixin tooltip-box {
   &::before {
     box-sizing: border-box;
-    color: #ffffff;
+    color: v.$tooltip-color;
     display: block;
     font-family: v.$tooltip-font-family;
     font-size: v.$tooltip-font-size;

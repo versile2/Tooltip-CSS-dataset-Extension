@@ -18,45 +18,45 @@ $tooltip-font-weight: var(--mud-typography-caption-weight, 400) !default;
 $tooltip-font-lineheight: var(--mud-typography-caption-lineheight, 1.4) !default;
 
 // Colors
-$tooltip-background-color: var(--mud-palette-gray-darker, #333333) !default;
-$tooltip-border-color: var(--mud-palette-gray-darker, #333333) !default;
-$tooltip-color: var(--mud-palette-dark-text, #ffffff) !default;
+$tooltip-background-color: var(--mud-palette-gray-darker, #616161) !default;
+$tooltip-border-color: var(--mud-palette-gray-darker, #616161) !default;
+$tooltip-color: var(--mud-palette-dark-text, rgb(255,255,255)) !default;
 
 // Color system 
 $tooltip-colors: (
   "primary": (
-    background: var(--mud-palette-primary, #1976d2),
-    background-light: var(--mud-palette-primary-lighten, #2196f3),
-    text: var(--mud-palette-primary-text, #fff)
+    background: var(--mud-palette-primary, rgb(89,74,226)),
+    background-light: var(--mud-palette-primary-lighten, rgb(118,106,231)),
+    text: var(--mud-palette-primary-text, rgb(255,255,255))
   ),
   "secondary": (
-    background: var(--mud-palette-secondary, #9c27b0),
-    background-light: var(--mud-palette-secondary-lighten, #ba68c8),
-    text: var(--mud-palette-secondary-text, #fff)
+    background: var(--mud-palette-secondary, rgb(255,64,129)),
+    background-light: var(--mud-palette-secondary-lighten, rgb(255,102,153)),
+    text: var(--mud-palette-secondary-text, rgb(255,255,255))
   ),
   "tertiary": (
-    background: var(--mud-palette-tertiary, #1ec8a5),
-    background-light: var(--mud-palette-tertiary-lighten, #2ee6bf),
-    text: var(--mud-palette-tertiary-text, #fff)
+    background: var(--mud-palette-tertiary, rgb(30,200,165)),
+    background-light: var(--mud-palette-tertiary-lighten, rgb(42,23,187)),
+    text: var(--mud-palette-tertiary-text, rgb(255,255,255))
   ),
   "warning": (
-    background: var(--mud-palette-warning, #ff9800),
-    background-light: var(--mud-palette-warning-lighten, #ffb74d),
-    text: var(--mud-palette-warning-text, #000)
+    background: var(--mud-palette-warning, rgb(255,152,0)),
+    background-light: var(--mud-palette-warning-lighten, rgb(255,167,36)),
+    text: var(--mud-palette-warning-text, rgb(255,255,255))
   ),
   "info": (
-    background: var(--mud-palette-info, #2196f3),
-    background-light: var(--mud-palette-info-lighten, #64b5f6),
-    text: var(--mud-palette-info-text, #fff)
+    background: var(--mud-palette-info, rgb(33,150,243)),
+    background-light: var(--mud-palette-info-lighten, rgb(71,167,245)),
+    text: var(--mud-palette-info-text, rgb(255,255,255))
   ),
   "success": (
-    background: var(--mud-palette-success, #4caf50),
-    background-light: var(--mud-palette-success-lighten, #81c784),
-    text: var(--mud-palette-success-text, #fff)
+    background: var(--mud-palette-success, rgb(0,200,83)),
+    background-light: var(--mud-palette-success-lighten, rgb(0,235,98)),
+    text: var(--mud-palette-success-text, rgb(255,255,255))
   ),
   "error": (
-    background: var(--mud-palette-error, #f44336),
-    background-light: var(--mud-palette-error-lighten, #e57373),
-    text: var(--mud-palette-error-text, #fff)
+    background: var(--mud-palette-error, rgb(244,67,54)),
+    background-light: var(--mud-palette-error-lighten, rgb(246,96,85)),
+    text: var(--mud-palette-error-text, rgb(255,255,255))
   )
 ) !default;

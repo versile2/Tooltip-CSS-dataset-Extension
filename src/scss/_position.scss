@@ -21,7 +21,7 @@
       margin-right: auto;
       margin-bottom: calc(v.$tooltip-arrow-size * -1 + 1px);
       margin-left: calc(v.$tooltip-arrow-size * -1 + 1px);
-      border-color: transparent transparent v.$tooltip-background-color transparent;
+      border-color: transparent transparent v.$tooltip-border-color transparent;
     }
   }
 }
@@ -56,7 +56,7 @@
       margin-right: auto;
       margin-bottom: auto;
       margin-left: calc(v.$tooltip-arrow-size * -1 + 1px);
-      border-color: v.$tooltip-background-color transparent transparent transparent;
+      border-color: v.$tooltip-border-color transparent transparent transparent;
     }
   }
 }
@@ -91,7 +91,7 @@
       margin-right: auto;
       margin-bottom: calc(v.$tooltip-arrow-size * -1);
       margin-left: calc(v.$tooltip-arrow-size * -1 + 1px);
-      border-color: transparent transparent transparent v.$tooltip-background-color;
+      border-color: transparent transparent transparent v.$tooltip-border-color;
     }
   }
 }
@@ -124,7 +124,7 @@
       margin-right: calc(v.$tooltip-arrow-size * -1);
       margin-bottom: calc(v.$tooltip-arrow-size * -1);
       margin-left: auto;
-      border-color: transparent v.$tooltip-background-color transparent transparent;
+      border-color: transparent v.$tooltip-border-color transparent transparent;
     }
   }
 }
