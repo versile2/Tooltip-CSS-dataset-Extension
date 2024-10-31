@@ -32,6 +32,13 @@
 
 @mixin tooltip-box {
   &::before {
+    left: 50%;
+    right: auto;
+    transform-origin: center;
+    min-width: max-content;
+    width: auto;
+    max-width: v.$tooltip-max-width;
+    word-wrap: break-word;
     box-sizing: border-box;
     color: v.$tooltip-color;
     display: block;
