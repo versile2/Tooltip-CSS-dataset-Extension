@@ -12,7 +12,16 @@
 @mixin tooltip-fade {
   &::before,
   &::after {
-    transition: opacity v.$tooltip-animation-duration v.$tooltip-animation-transition-timing-function, 
-                visibility v.$tooltip-animation-duration v.$tooltip-animation-transition-timing-function;
+    transition: opacity v.$tooltip-animation-duration v.$tooltip-animation-transition-timing-function,
+                visibility v.$tooltip-animation-duration v.$tooltip-animation-transition-timing-function,
+                transform v.$tooltip-animation-duration v.$tooltip-animation-transition-timing-function;
+    will-change: opacity, visibility, transform;
+  }
+  
+  &:hover::before,
+  &:hover::after,
+  &.has-tooltip-active::before,
+  &.has-tooltip-active::after {
+    transition-delay: 100ms;
   }
 }

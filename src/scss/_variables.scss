@@ -9,7 +9,7 @@ $tooltip-arrow-size: var(--mud-tooltip-arrow-size, 6px) !default;
 $tooltip-max-width: var(--mud-tooltip-max-width, 200px) !default;
 $tooltip-padding: var(--mud-tooltip-padding, 4px 8px) !default;
 $tooltip-radius: var(--mud-default-borderradius, 4px) !default;
-$tooltip-z-index: var(--mud-zindex-tooltip, 1070) !default;
+$tooltip-z-index: var(--mud-zindex-tooltip, 9999) !default;
 
 // Typography
 $tooltip-font-family: var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif) !default;
@@ -18,9 +18,9 @@ $tooltip-font-weight: var(--mud-typography-caption-weight, 400) !default;
 $tooltip-font-lineheight: var(--mud-typography-caption-lineheight, 1.4) !default;
 
 // Colors
-$tooltip-background-color: var(--mud-palette-gray-darker, #616161) !default;
-$tooltip-border-color: var(--mud-palette-gray-darker, #616161) !default;
-$tooltip-color: var(--mud-palette-dark-text, #fff) !default;
+$tooltip-background-color: var(--mud-palette-gray-darker, #333333) !default;
+$tooltip-border-color: var(--mud-palette-gray-darker, #333333) !default;
+$tooltip-color: var(--mud-palette-dark-text, #ffffff) !default;
 
 // Color system 
 $tooltip-colors: (
@@ -60,6 +60,3 @@ $tooltip-colors: (
     text: var(--mud-palette-error-text, #fff)
   )
 ) !default;
-
-// Opacity
-$tooltip-background-opacity: var(--mud-tooltip-opacity, 0.9) !default;

@@ -16,7 +16,7 @@
     line-height: v.$tooltip-font-lineheight;
     hyphens: auto;
     opacity: 0;
-    overflow: hidden;
+    overflow: visible;
     pointer-events: none;
     position: absolute;
     visibility: hidden;
@@ -33,15 +33,15 @@
 @mixin tooltip-box {
   &::before {
     box-sizing: border-box;
-    color: v.$tooltip-color;
-    display: inline-block;
+    color: #ffffff;
+    display: block;
     font-family: v.$tooltip-font-family;
     font-size: v.$tooltip-font-size;
     font-weight: v.$tooltip-font-weight;
     line-height: v.$tooltip-font-lineheight;
     hyphens: auto;
     opacity: 0;
-    overflow: hidden;
+    overflow: visible;
     pointer-events: none;
     position: absolute;
     visibility: hidden;
@@ -53,6 +53,7 @@
     padding: v.$tooltip-padding;
     text-overflow: ellipsis;
     white-space: pre-line;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
   @include p.tooltip-box-bottom;
 }
@@ -69,6 +70,8 @@
 }
 
 [data-tooltip] {
+  position: relative;
+  
   @include s.base-state {
     @include tooltip-box;
     &.has-tooltip-arrow {

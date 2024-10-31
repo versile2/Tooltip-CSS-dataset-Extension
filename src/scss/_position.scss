@@ -12,6 +12,7 @@
 @mixin tooltip-arrow-bottom {
   &.has-tooltip-arrow {
     &::after {
+      position: absolute;
       top: auto;
       right: auto;
       bottom: -1px;
@@ -20,13 +21,14 @@
       margin-right: auto;
       margin-bottom: calc(v.$tooltip-arrow-size * -1 + 1px);
       margin-left: calc(v.$tooltip-arrow-size * -1 + 1px);
-      border-color: transparent transparent rgba(v.$tooltip-background-color, v.$tooltip-background-opacity) transparent;
+      border-color: transparent transparent v.$tooltip-background-color transparent;
     }
   }
 }
 
 @mixin tooltip-box-bottom {
   &::before {
+    position: absolute;
     top: auto;
     right: auto;
     bottom: 0;
@@ -45,6 +47,7 @@
 @mixin tooltip-arrow-top {
   &.has-tooltip-arrow {
     &::after {
+      position: absolute;
       top: 0;
       right: auto;
       bottom: auto;
@@ -53,13 +56,14 @@
       margin-right: auto;
       margin-bottom: auto;
       margin-left: calc(v.$tooltip-arrow-size * -1 + 1px);
-      border-color: rgba(v.$tooltip-background-color, v.$tooltip-background-opacity) transparent transparent transparent;
+      border-color: v.$tooltip-background-color transparent transparent transparent;
     }
   }
 }
 
 @mixin tooltip-box-top {
   &::before {
+    position: absolute;
     top: 0;
     right: auto;
     bottom: auto;
@@ -78,6 +82,7 @@
 @mixin tooltip-arrow-left {
   &.has-tooltip-arrow {
     &::after {
+      position: absolute;
       top: auto;
       right: auto;
       bottom: 50%;
@@ -86,13 +91,14 @@
       margin-right: auto;
       margin-bottom: calc(v.$tooltip-arrow-size * -1);
       margin-left: calc(v.$tooltip-arrow-size * -1 + 1px);
-      border-color: transparent transparent transparent rgba(v.$tooltip-background-color, v.$tooltip-background-opacity);
+      border-color: transparent transparent transparent v.$tooltip-background-color;
     }
   }
 }
 
 @mixin tooltip-box-left {
   &::before {
+    position: absolute;
     top: auto;
     right: auto;
     bottom: 50%;
@@ -109,6 +115,7 @@
 @mixin tooltip-arrow-right {
   &.has-tooltip-arrow {
     &::after {
+      position: absolute;
       top: auto;
       right: 0;
       bottom: 50%;
@@ -117,13 +124,14 @@
       margin-right: calc(v.$tooltip-arrow-size * -1);
       margin-bottom: calc(v.$tooltip-arrow-size * -1);
       margin-left: auto;
-      border-color: transparent rgba(v.$tooltip-background-color, v.$tooltip-background-opacity) transparent transparent;
+      border-color: transparent v.$tooltip-background-color transparent transparent;
     }
   }
 }
 
 @mixin tooltip-box-right {
   &::before {
+    position: absolute;
     top: auto;
     right: calc(v.$tooltip-arrow-size * -1 + 1px);
     bottom: 50%;
