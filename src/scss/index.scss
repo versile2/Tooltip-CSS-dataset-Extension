@@ -3,6 +3,7 @@
 @use 'position' as p;
 @use 'animation' as a;
 @use 'responsiveness' as r;
+@use 'state' as s;
 
 @mixin tooltip-arrow {
   &::after {
@@ -68,13 +69,7 @@
 }
 
 [data-tooltip] {
-  &:not(.is-loading),
-  &:not(.is-disabled),
-  &:not([disabled]) {
-    cursor: pointer;
-    overflow: visible;
-    position: relative;
-
+  @include s.base-state {
     @include tooltip-box;
     &.has-tooltip-arrow {
       @include tooltip-arrow;
@@ -151,8 +146,6 @@
     &.has-tooltip-fade {
       @include a.tooltip-fade;
     }
-
-    @include r.responsive-tooltips;
   }
 }
 
@@ -161,8 +154,9 @@ span {
     border-bottom: 1px dashed v.$tooltip-border-color;
     @each $name, $values in v.$tooltip-colors {
       $background-color: map.get($values, "background");
+      $background-light: map.get($values, "background-light");
       &.has-tooltip-#{$name} {
-        border-bottom-color: lighten($background-color, 5%);
+        border-bottom-color: $background-light;
       }
     }
   }

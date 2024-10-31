@@ -1,155 +1,6 @@
-@mixin responsive-tooltips {
-  @each $direction in top, right, bottom, left {
-    &.has-tooltip-#{$direction}-mobile {
-      @include mobile {
-        @include tooltip-direction(#{$direction});
-      }
-    }
-    &.has-tooltip-#{$direction}-tablet {
-      @include tablet {
-        @include tooltip-direction(#{$direction});
-      }
-    }
-    &.has-tooltip-#{$direction}-tablet-only {
-      @include tablet-only {
-        @include tooltip-direction(#{$direction});
-      }
-    }
-    &.has-tooltip-#{$direction}-touch {
-      @include touch {
-        @include tooltip-direction(#{$direction});
-      }
-    }
-    &.has-tooltip-#{$direction}-desktop {
-      @include desktop {
-        @include tooltip-direction(#{$direction});
-      }
-    }
-    &.has-tooltip-#{$direction}-desktop-only {
-      @include desktop-only {
-        @include tooltip-direction(#{$direction});
-      }
-    }
-    &.has-tooltip-#{$direction}-until-widescreen {
-      @include until-widescreen {
-        @include tooltip-direction(#{$direction});
-      }
-    }
-    &.has-tooltip-#{$direction}-widescreen {
-      @include widescreen {
-        @include tooltip-direction(#{$direction});
-      }
-    }
-    &.has-tooltip-#{$direction}-widescreen-only {
-      @include widescreen-only {
-        @include tooltip-direction(#{$direction});
-      }
-    }
-    &.has-tooltip-#{$direction}-until-fullhd {
-      @include until-fullhd {
-        @include tooltip-direction(#{$direction});
-      }
-    }
-    &.has-tooltip-#{$direction}-fullhd {
-      @include fullhd {
-        @include tooltip-direction(#{$direction});
-      }
-    }
-  }
-
-  // Hidden breakpoints
+[data-tooltip] {
   &.has-tooltip-hidden-mobile {
-    @include mobile {
-      &::after,
-      &::before {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    }
-  }
-  &.has-tooltip-hidden-tablet {
-    @include tablet {
-      &::after,
-      &::before {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    }
-  }
-  &.has-tooltip-hidden-tablet-only {
-    @include tablet-only {
-      &::after,
-      &::before {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    }
-  }
-  &.has-tooltip-hidden-touch {
-    @include touch {
-      &::after,
-      &::before {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    }
-  }
-  &.has-tooltip-hidden-desktop {
-    @include desktop {
-      &::after,
-      &::before {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    }
-  }
-  &.has-tooltip-hidden-desktop-only {
-    @include desktop-only {
-      &::after,
-      &::before {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    }
-  }
-  &.has-tooltip-hidden-until-widescreen {
-    @include until-widescreen {
-      &::after,
-      &::before {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    }
-  }
-  &.has-tooltip-hidden-widescreen {
-    @include widescreen {
-      &::after,
-      &::before {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    }
-  }
-  &.has-tooltip-hidden-widescreen-only {
-    @include widescreen-only {
-      &::after,
-      &::before {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    }
-  }
-  &.has-tooltip-hidden-until-fullhd {
-    @include until-fullhd {
-      &::after,
-      &::before {
-        opacity: 0 !important;
-        display: none !important;
-      }
-    }
-  }
-  &.has-tooltip-hidden-fullhd {
-    @include fullhd {
+    @media screen and (max-width: 768px) {
       &::after,
       &::before {
         opacity: 0 !important;
@@ -158,85 +9,22 @@
     }
   }
 
-  // Text alignment breakpoints
-  @each $direction in (left, left), (centered, center), (right, right) {
-    $dir: nth($direction, 1);
-    $text: nth($direction, 2);
-    &.has-tooltip-text-#{$dir}-mobile {
-      @include mobile {
-        &::before {
-          text-align: #{$text};
-        }
+  &.has-tooltip-hidden-tablet {
+    @media screen and (min-width: 769px) and (max-width: 1023px) {
+      &::after,
+      &::before {
+        opacity: 0 !important;
+        display: none !important;
       }
     }
-    &.has-tooltip-text-#{$dir}-tablet {
-      @include tablet {
-        &::before {
-          text-align: #{$text};
-        }
-      }
-    }
-    &.has-tooltip-text-#{$dir}-tablet-only {
-      @include tablet-only {
-        &::before {
-          text-align: #{$text};
-        }
-      }
-    }
-    &.has-tooltip-text-#{$dir}-touch {
-      @include touch {
-        &::before {
-          text-align: #{$text};
-        }
-      }
-    }
-    &.has-tooltip-text-#{$dir}-desktop {
-      @include desktop {
-        &::before {
-          text-align: #{$text};
-        }
-      }
-    }
-    &.has-tooltip-text-#{$dir}-desktop-only {
-      @include desktop-only {
-        &::before {
-          text-align: #{$text};
-        }
-      }
-    }
-    &.has-tooltip-text-#{$dir}-until-widescreen {
-      @include until-widescreen {
-        &::before {
-          text-align: #{$text};
-        }
-      }
-    }
-    &.has-tooltip-text-#{$dir}-widescreen {
-      @include widescreen {
-        &::before {
-          text-align: #{$text};
-        }
-      }
-    }
-    &.has-tooltip-text-#{$dir}-widescreen-only {
-      @include widescreen-only {
-        &::before {
-          text-align: #{$text};
-        }
-      }
-    }
-    &.has-tooltip-text-#{$dir}-until-fullhd {
-      @include until-fullhd {
-        &::before {
-          text-align: #{$text};
-        }
-      }
-    }
-    &.has-tooltip-text-#{$dir}-fullhd {
-      @include fullhd {
-        &::before {
-          text-align: #{$text};
-        }
+  }
+
+  &.has-tooltip-hidden-desktop {
+    @media screen and (min-width: 1024px) {
+      &::after,
+      &::before {
+        opacity: 0 !important;
+        display: none !important;
       }
     }
   }
