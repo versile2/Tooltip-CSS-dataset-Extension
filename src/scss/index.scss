@@ -32,13 +32,9 @@
 
 @mixin tooltip-box {
   &::before {
-    left: 50%;
-    right: auto;
-    transform-origin: center;
     min-width: max-content;
     width: auto;
     max-width: v.$tooltip-max-width;
-    word-wrap: break-word;
     box-sizing: border-box;
     color: v.$tooltip-color;
     display: block;
@@ -78,8 +74,6 @@
 
 [data-tooltip] {
   position: relative;
-  display: inline-block;
-  white-space: normal;
   
   @include s.base-state {
     @include tooltip-box;
@@ -154,8 +148,6 @@
       &::before, &::after {
         opacity: 1;
         visibility: visible;
-        width: fit-content;
-        min-width: min-content;
       }
     }
 
