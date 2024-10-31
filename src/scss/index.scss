@@ -20,11 +20,11 @@
     pointer-events: none;
     position: absolute;
     visibility: hidden;
-    z-index: v.$tooltip-z-index;
+    z-index: calc(v.$tooltip-z-index + 1);
     content: '';
     border-style: solid;
     border-width: v.$tooltip-arrow-size;
-    border-color: transparent transparent rgba(v.$tooltip-background-color, v.$tooltip-background-opacity) transparent;
+    border-color: transparent transparent v.$tooltip-background-color transparent;
     margin-bottom: calc(v.$tooltip-arrow-size * -1 + 1px);
   }
   @include p.tooltip-arrow-bottom;
@@ -46,7 +46,7 @@
     position: absolute;
     visibility: hidden;
     z-index: v.$tooltip-z-index;
-    background: rgba(v.$tooltip-background-color, v.$tooltip-background-opacity);
+    background: v.$tooltip-background-color;
     border-radius: v.$tooltip-radius;
     border: 1px solid v.$tooltip-border-color;
     content: attr(data-tooltip);
@@ -113,34 +113,36 @@
       
       &.has-tooltip-#{$name} {
         &::after {
-          border-color: transparent transparent rgba($background-color, v.$tooltip-background-opacity) transparent !important;
+          border-color: transparent transparent $background-color transparent !important;
         }
         &.has-tooltip-top {
           &::after {
-            border-color: rgba($background-color, v.$tooltip-background-opacity) transparent transparent transparent !important;
+            border-color: $background-color transparent transparent transparent !important;
           }
         }
         &.has-tooltip-left {
           &::after {
-            border-color: transparent transparent transparent rgba($background-color, v.$tooltip-background-opacity) !important;
+            border-color: transparent transparent transparent $background-color !important;
           }
         }
         &.has-tooltip-right {
           &::after {
-            border-color: transparent rgba($background-color, v.$tooltip-background-opacity) transparent transparent !important;
+            border-color: transparent $background-color transparent transparent !important;
           }
         }
         &:before {
-          background-color: rgba($background-color, v.$tooltip-background-opacity);
+          background-color: $background-color;
           border-color: $background-color;
           color: $text-color;
         }
       }
     }
 
-    @include a.tooltip-hover {
-      opacity: 1;
-      visibility: visible;
+    &:hover, &.has-tooltip-active {
+      &::before, &::after {
+        opacity: 1;
+        visibility: visible;
+      }
     }
 
     &.has-tooltip-fade {
