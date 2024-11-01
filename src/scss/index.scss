@@ -57,6 +57,10 @@
     width: auto;
     max-width: v.$tooltip-max-width;    
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+    // better centering
+    left: 50%;
+    transform: translateX(-50%);
   }
   @include p.tooltip-box-bottom;
 }
