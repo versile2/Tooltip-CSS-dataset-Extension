@@ -46,19 +46,16 @@
   position: relative;
 }
 [data-tooltip]:not(.is-loading)::before, [data-tooltip]:not(.is-disabled)::before, [data-tooltip]:not([disabled])::before {
-  min-width: max-content;
-  width: auto;
-  max-width: var(--mud-tooltip-max-width, 200px);
   box-sizing: border-box;
   color: var(--mud-palette-dark-text, rgb(255, 255, 255));
-  display: block;
+  display: inline-block;
   font-family: var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif);
   font-size: var(--mud-typography-caption-size, 0.875rem);
   font-weight: var(--mud-typography-caption-weight, 400);
   line-height: var(--mud-typography-caption-lineheight, 1.4);
   hyphens: auto;
   opacity: 0;
-  overflow: visible;
+  overflow: hidden;
   pointer-events: none;
   position: absolute;
   visibility: hidden;
@@ -69,7 +66,10 @@
   content: attr(data-tooltip);
   padding: var(--mud-tooltip-padding, 4px 8px);
   text-overflow: ellipsis;
-  white-space: pre-line;
+  white-space: pre;
+  min-width: max-content;
+  width: auto;
+  max-width: var(--mud-tooltip-max-width, 200px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 [data-tooltip]:not(.is-loading)::before, [data-tooltip]:not(.is-disabled)::before, [data-tooltip]:not([disabled])::before {
