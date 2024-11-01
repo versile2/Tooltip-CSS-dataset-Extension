@@ -93,6 +93,10 @@
       @include p.tooltip-direction('right');
     }
 
+    &.has-tooltip-bottom {
+      @include p.tooltip-direction('bottom');
+    }
+
     &.has-tooltip-multiline {
       @include tooltip-multiline;
     }

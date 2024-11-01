@@ -12,7 +12,6 @@
 @mixin tooltip-arrow-bottom {
   &.has-tooltip-arrow {
     &::after {
-      position: absolute;
       top: auto;
       right: auto;
       bottom: -1px;
@@ -28,14 +27,13 @@
 
 @mixin tooltip-box-bottom {
   &::before {
-    position: absolute;
     top: auto;
     right: auto;
     bottom: 0;
     left: 50%;
     margin-top: auto;
     margin-bottom: calc(v.$tooltip-arrow-size * -1 + 1px);
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, 100%);
   }
 }
 
@@ -47,7 +45,6 @@
 @mixin tooltip-arrow-top {
   &.has-tooltip-arrow {
     &::after {
-      position: absolute;
       top: 0;
       right: auto;
       bottom: auto;
@@ -63,7 +60,6 @@
 
 @mixin tooltip-box-top {
   &::before {
-    position: absolute;
     top: 0;
     right: auto;
     bottom: auto;
@@ -82,7 +78,6 @@
 @mixin tooltip-arrow-left {
   &.has-tooltip-arrow {
     &::after {
-      position: absolute;
       top: auto;
       right: auto;
       bottom: 50%;
@@ -98,7 +93,6 @@
 
 @mixin tooltip-box-left {
   &::before {
-    position: absolute;
     top: auto;
     right: auto;
     bottom: 50%;
@@ -115,7 +109,6 @@
 @mixin tooltip-arrow-right {
   &.has-tooltip-arrow {
     &::after {
-      position: absolute;
       top: auto;
       right: 0;
       bottom: 50%;
@@ -131,13 +124,12 @@
 
 @mixin tooltip-box-right {
   &::before {
-    position: absolute;
     top: auto;
     right: calc(v.$tooltip-arrow-size * -1 + 1px);
     bottom: 50%;
     left: auto;
     margin-top: auto;
-    transform: translate(-100%, 50%);
+    transform: translate(100%, 50%);
   }
 }
 

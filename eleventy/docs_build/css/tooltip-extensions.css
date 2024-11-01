@@ -73,14 +73,13 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 [data-tooltip]:not(.is-loading)::before, [data-tooltip]:not(.is-disabled)::before, [data-tooltip]:not([disabled])::before {
-  position: absolute;
   top: auto;
   right: auto;
   bottom: 0;
   left: 50%;
   margin-top: auto;
   margin-bottom: calc(var(--mud-tooltip-arrow-size, 6px) * -1 + 1px);
-  transform: translate(-50%, -100%);
+  transform: translate(-50%, 100%);
 }
 [data-tooltip]:not(.is-loading).has-tooltip-arrow::after, [data-tooltip]:not(.is-disabled).has-tooltip-arrow::after, [data-tooltip]:not([disabled]).has-tooltip-arrow::after {
   box-sizing: border-box;
@@ -104,7 +103,6 @@
   margin-bottom: calc(var(--mud-tooltip-arrow-size, 6px) * -1 + 1px);
 }
 [data-tooltip]:not(.is-loading).has-tooltip-arrow.has-tooltip-arrow::after, [data-tooltip]:not(.is-disabled).has-tooltip-arrow.has-tooltip-arrow::after, [data-tooltip]:not([disabled]).has-tooltip-arrow.has-tooltip-arrow::after {
-  position: absolute;
   top: auto;
   right: auto;
   bottom: -1px;
@@ -116,7 +114,6 @@
   border-color: transparent transparent var(--mud-palette-gray-darker, #616161) transparent;
 }
 [data-tooltip]:not(.is-loading).has-tooltip-top.has-tooltip-arrow::after, [data-tooltip]:not(.is-disabled).has-tooltip-top.has-tooltip-arrow::after, [data-tooltip]:not([disabled]).has-tooltip-top.has-tooltip-arrow::after {
-  position: absolute;
   top: 0;
   right: auto;
   bottom: auto;
@@ -128,7 +125,6 @@
   border-color: var(--mud-palette-gray-darker, #616161) transparent transparent transparent;
 }
 [data-tooltip]:not(.is-loading).has-tooltip-top::before, [data-tooltip]:not(.is-disabled).has-tooltip-top::before, [data-tooltip]:not([disabled]).has-tooltip-top::before {
-  position: absolute;
   top: 0;
   right: auto;
   bottom: auto;
@@ -138,7 +134,6 @@
   transform: translate(-50%, -100%);
 }
 [data-tooltip]:not(.is-loading).has-tooltip-left.has-tooltip-arrow::after, [data-tooltip]:not(.is-disabled).has-tooltip-left.has-tooltip-arrow::after, [data-tooltip]:not([disabled]).has-tooltip-left.has-tooltip-arrow::after {
-  position: absolute;
   top: auto;
   right: auto;
   bottom: 50%;
@@ -150,7 +145,6 @@
   border-color: transparent transparent transparent var(--mud-palette-gray-darker, #616161);
 }
 [data-tooltip]:not(.is-loading).has-tooltip-left::before, [data-tooltip]:not(.is-disabled).has-tooltip-left::before, [data-tooltip]:not([disabled]).has-tooltip-left::before {
-  position: absolute;
   top: auto;
   right: auto;
   bottom: 50%;
@@ -158,7 +152,6 @@
   transform: translate(-100%, 50%);
 }
 [data-tooltip]:not(.is-loading).has-tooltip-right.has-tooltip-arrow::after, [data-tooltip]:not(.is-disabled).has-tooltip-right.has-tooltip-arrow::after, [data-tooltip]:not([disabled]).has-tooltip-right.has-tooltip-arrow::after {
-  position: absolute;
   top: auto;
   right: 0;
   bottom: 50%;
@@ -170,13 +163,32 @@
   border-color: transparent var(--mud-palette-gray-darker, #616161) transparent transparent;
 }
 [data-tooltip]:not(.is-loading).has-tooltip-right::before, [data-tooltip]:not(.is-disabled).has-tooltip-right::before, [data-tooltip]:not([disabled]).has-tooltip-right::before {
-  position: absolute;
   top: auto;
   right: calc(var(--mud-tooltip-arrow-size, 6px) * -1 + 1px);
   bottom: 50%;
   left: auto;
   margin-top: auto;
-  transform: translate(-100%, 50%);
+  transform: translate(100%, 50%);
+}
+[data-tooltip]:not(.is-loading).has-tooltip-bottom.has-tooltip-arrow::after, [data-tooltip]:not(.is-disabled).has-tooltip-bottom.has-tooltip-arrow::after, [data-tooltip]:not([disabled]).has-tooltip-bottom.has-tooltip-arrow::after {
+  top: auto;
+  right: auto;
+  bottom: -1px;
+  left: 50%;
+  margin-top: auto;
+  margin-right: auto;
+  margin-bottom: calc(var(--mud-tooltip-arrow-size, 6px) * -1 + 1px);
+  margin-left: calc(var(--mud-tooltip-arrow-size, 6px) * -1 + 1px);
+  border-color: transparent transparent var(--mud-palette-gray-darker, #616161) transparent;
+}
+[data-tooltip]:not(.is-loading).has-tooltip-bottom::before, [data-tooltip]:not(.is-disabled).has-tooltip-bottom::before, [data-tooltip]:not([disabled]).has-tooltip-bottom::before {
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 50%;
+  margin-top: auto;
+  margin-bottom: calc(var(--mud-tooltip-arrow-size, 6px) * -1 + 1px);
+  transform: translate(-50%, 100%);
 }
 [data-tooltip]:not(.is-loading).has-tooltip-multiline::before, [data-tooltip]:not(.is-disabled).has-tooltip-multiline::before, [data-tooltip]:not([disabled]).has-tooltip-multiline::before {
   height: auto;
