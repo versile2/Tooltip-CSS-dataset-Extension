@@ -48,7 +48,7 @@
 [data-tooltip]:not(.is-loading)::before, [data-tooltip]:not(.is-disabled)::before, [data-tooltip]:not([disabled])::before {
   box-sizing: border-box;
   color: var(--mud-palette-dark-text, rgb(255, 255, 255));
-  display: inline-block;
+  display: block;
   font-family: var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif);
   font-size: var(--mud-typography-caption-size, 0.875rem);
   font-weight: var(--mud-typography-caption-weight, 400);
@@ -67,12 +67,8 @@
   padding: var(--mud-tooltip-padding, 4px 8px);
   text-overflow: ellipsis;
   white-space: pre;
-  min-width: max-content;
-  width: auto;
   max-width: var(--mud-tooltip-max-width, 200px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  left: 50%;
-  transform: translateX(-50%);
 }
 [data-tooltip]:not(.is-loading)::before, [data-tooltip]:not(.is-disabled)::before, [data-tooltip]:not([disabled])::before {
   top: auto;
