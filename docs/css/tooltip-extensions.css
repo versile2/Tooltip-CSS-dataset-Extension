@@ -46,16 +46,18 @@
   position: relative;
 }
 [data-tooltip]:not(.is-loading)::before, [data-tooltip]:not(.is-disabled)::before, [data-tooltip]:not([disabled])::before {
+  min-width: max-content;
+  max-width: var(--mud-tooltip-max-width, 200px);
   box-sizing: border-box;
   color: var(--mud-palette-dark-text, rgb(255, 255, 255));
-  display: block;
+  display: flex;
   font-family: var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif);
   font-size: var(--mud-typography-caption-size, 0.875rem);
   font-weight: var(--mud-typography-caption-weight, 400);
   line-height: var(--mud-typography-caption-lineheight, 1.4);
   hyphens: auto;
   opacity: 0;
-  overflow: hidden;
+  overflow: auto;
   pointer-events: none;
   position: absolute;
   visibility: hidden;
@@ -66,9 +68,7 @@
   content: attr(data-tooltip);
   padding: var(--mud-tooltip-padding, 4px 8px);
   text-overflow: ellipsis;
-  white-space: pre;
-  max-width: var(--mud-tooltip-max-width, 200px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  white-space: pre-line;
 }
 [data-tooltip]:not(.is-loading)::before, [data-tooltip]:not(.is-disabled)::before, [data-tooltip]:not([disabled])::before {
   top: auto;
@@ -167,26 +167,6 @@
   left: auto;
   margin-top: auto;
   transform: translate(100%, 50%);
-}
-[data-tooltip]:not(.is-loading).has-tooltip-bottom.has-tooltip-arrow::after, [data-tooltip]:not(.is-disabled).has-tooltip-bottom.has-tooltip-arrow::after, [data-tooltip]:not([disabled]).has-tooltip-bottom.has-tooltip-arrow::after {
-  top: auto;
-  right: auto;
-  bottom: -1px;
-  left: 50%;
-  margin-top: auto;
-  margin-right: auto;
-  margin-bottom: calc(var(--mud-tooltip-arrow-size, 6px) * -1 + 1px);
-  margin-left: calc(var(--mud-tooltip-arrow-size, 6px) * -1 + 1px);
-  border-color: transparent transparent var(--mud-palette-gray-darker, #616161) transparent;
-}
-[data-tooltip]:not(.is-loading).has-tooltip-bottom::before, [data-tooltip]:not(.is-disabled).has-tooltip-bottom::before, [data-tooltip]:not([disabled]).has-tooltip-bottom::before {
-  top: auto;
-  right: auto;
-  bottom: 0;
-  left: 50%;
-  margin-top: auto;
-  margin-bottom: calc(var(--mud-tooltip-arrow-size, 6px) * -1 + 1px);
-  transform: translate(-50%, 100%);
 }
 [data-tooltip]:not(.is-loading).has-tooltip-multiline::before, [data-tooltip]:not(.is-disabled).has-tooltip-multiline::before, [data-tooltip]:not([disabled]).has-tooltip-multiline::before {
   height: auto;
