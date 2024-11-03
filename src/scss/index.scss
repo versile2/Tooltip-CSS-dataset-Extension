@@ -32,9 +32,6 @@
 
 @mixin tooltip-box {
   &::before {
-    min-width: max-content;
-    width: auto;
-    max-width: v.$tooltip-max-width;
     box-sizing: border-box;
     color: v.$tooltip-color;
     display: block;
@@ -44,7 +41,7 @@
     line-height: v.$tooltip-font-lineheight;
     hyphens: auto;
     opacity: 0;
-    overflow: visible;
+    overflow: hidden;
     pointer-events: none;
     position: absolute;
     visibility: hidden;
@@ -55,7 +52,8 @@
     content: attr(data-tooltip);
     padding: v.$tooltip-padding;
     text-overflow: ellipsis;
-    white-space: pre-line;
+    white-space: pre;
+    max-width: v.$tooltip-max-width;    
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
   @include p.tooltip-box-bottom;
@@ -91,6 +89,10 @@
 
     &.has-tooltip-right {
       @include p.tooltip-direction('right');
+    }
+
+    &.has-tooltip-bottom {
+      @include p.tooltip-direction('bottom');
     }
 
     &.has-tooltip-multiline {
