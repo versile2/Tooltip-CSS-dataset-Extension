@@ -1,4 +1,4 @@
-﻿@use 'tooltip/_variables.scss' as vars;
+﻿﻿@use 'tooltip/_variables.scss' as vars;
 
 .mud-tooltip-root {
   width: fit-content;
@@ -19,6 +19,10 @@
   line-height: vars.$tooltip-font-lineheight;
   border-radius: vars.$tooltip-borderradius;
   z-index: vars.$tooltip-z-index;
+
+  &.mud-tooltip-arrow {
+    padding: vars.$tooltip-arrow-padding;
+  }
 
   &.mud-tooltip-default {
     color: vars.$tooltip-color;
