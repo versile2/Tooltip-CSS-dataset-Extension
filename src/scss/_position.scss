@@ -31,7 +31,7 @@
     right: auto;
     bottom: 0;
     left: 50%;
-    margin-top: auto;
+    margin-top: v.$tooltip-margin;
     margin-bottom: calc(v.$tooltip-arrow-size * -1 + 1px);
     transform: translate(-50%, 100%);
   }
@@ -65,7 +65,7 @@
     bottom: auto;
     left: 50%;
     margin-top: calc(v.$tooltip-arrow-size * -1 + 1px);
-    margin-bottom: auto;
+    margin-bottom: v.$tooltip-margin;;
     transform: translate(-50%, -100%);
   }
 }
@@ -96,6 +96,7 @@
     top: auto;
     right: auto;
     bottom: 50%;
+    margin-right: v.$tooltip-margin;
     left: calc(v.$tooltip-arrow-size * -1 + 1px);
     transform: translate(-100%, 50%);
   }
@@ -128,7 +129,7 @@
     right: calc(v.$tooltip-arrow-size * -1 + 1px);
     bottom: 50%;
     left: auto;
-    margin-top: auto;
+    margin-left: v.$tooltip-margin;
     transform: translate(100%, 50%);
   }
 }

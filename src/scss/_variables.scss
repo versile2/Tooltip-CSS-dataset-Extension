@@ -7,8 +7,8 @@ $tooltip-animation-transition-timing-function: var(--mud-tooltip-transition,  ea
 // Sizing
 $tooltip-arrow-size: var(--mud-tooltip-arrow-size, 6px) !default;
 $tooltip-max-width: var(--mud-tooltip-max-width, 200px) !default;
-$tooltip-padding: var(--mud-tooltip-padding, 6px 8px) !default;
-$tooltip-arrow-padding: var(--mud-tooltip-arrow-padding, 8px 12px) !default;
+$tooltip-padding: var(--mud-tooltip-padding, 4px 8px) !default;
+$tooltip-margin: var(--mud-tooltip-margin, 4px) !default;
 $tooltip-radius: var(--mud-default-borderradius, 4px) !default;
 $tooltip-z-index: var(--mud-zindex-tooltip, 9999) !default;
 
