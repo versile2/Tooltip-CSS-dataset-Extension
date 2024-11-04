@@ -1,9 +1,10 @@
 // Defaults to MudBlazor, then a default value
 
 // Animation
-$tooltip-animation-duration: var(--mud-tooltip-animation-duration, 0.15s) !default;
-$tooltip-animation-transition-timing-function: var(--mud-tooltip-transition,  ease-in-out) !default;
+$tooltip-animation-duration: var(--mud-tooltip-animation-duration, 0.35s) !default;
+$tooltip-animation-transition: var(--mud-tooltip-transition,  slide) !default;
 $tooltip-animation-distance: 8px !default;
+$tooltip-hide-delay: var(--mud-tooltip-hide-delay, 200ms) !default;
 
 // Typography
 $tooltip-font-family: var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif) !default;

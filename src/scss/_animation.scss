@@ -3,17 +3,26 @@
 @mixin tooltip-fade {
   &::before,
   &::after {
-    transition: opacity v.$tooltip-animation-transition-timing-function,
-                visibility v.$tooltip-animation-transition-timing-function,
-                transform v.$tooltip-animation-transition-timing-function;
-    transition-duration: v.$tooltip-animation-duration;
-    will-change: opacity, visibility, transform;
+    transition: 
+      opacity v.$tooltip-animation-duration v.$tooltip-animation-transition, 
+      visibility v.$tooltip-animation-duration v.$tooltip-animation-transition;
+    opacity: 0;
+    visibility: hidden;
   }
-  
+
+  // On hover or active state, fade in the tooltip immediately
   &:hover::before,
   &:hover::after,
   &.has-tooltip-active::before,
   &.has-tooltip-active::after {
-    transition-delay: 100ms;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s; // Start immediately on hover
+  }
+
+  // When leaving hover, delay the fade-out effect by tooltip-hide-delay
+  &:not(:hover)::before,
+  &:not(:hover)::after {
+    transition-delay: var(--tooltip-delay, v.$tooltip-hide-delay); // Delay fade-out on hover leave
   }
 }

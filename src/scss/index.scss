@@ -6,22 +6,22 @@
 @use 'state' as s;
 @use 'sizes';
 
-@mixin tooltip-arrow {
+@mixin tooltip-arrow($back-color) {
   &::before {
     content: "";
     position: absolute;
     background: transparent;    
     border: v.$tooltip-arrow-size solid transparent;
-    background-color: v.$tooltip-background-color;
+    background-color: $back-color;
     clip-path: polygon(0%0%, 100%0%, 100%100%);
-    z-index: v.$tooltip-z-index + 1;
+    z-index: calc(v.$tooltip-z-index + 1);    
   }
 }
 
-@mixin tooltip-box {
+@mixin tooltip-box($back-color, $fore-color) {
   &::after {
-    background: v.$tooltip-background-color;
-    color: v.$tooltip-color;
+    background: $back-color;
+    color: $fore-color;
     padding: v.$tooltip-padding;
     font-family: v.$tooltip-font-family;
     font-size: v.$tooltip-font-size;
@@ -30,7 +30,7 @@
     white-space: nowrap;
     
     border-radius: v.$tooltip-radius;
-    border: 1px solid v.$tooltip-background-color;
+    border: 1px solid $back-color;
     content: attr(data-tooltip);    
   }
 }
@@ -56,68 +56,75 @@
     visibility: hidden;
     opacity: 0;
     z-index: v.$tooltip-z-index;
-    pointer-events: none;
-    @include a.tooltip-fade;
+    pointer-events: none;      
   }
   
   @include s.base-state {
-    @include tooltip-box;
+    @include tooltip-box(v.$tooltip-background-color, v.$tooltip-color);
     &.has-tooltip-arrow {
-      @include tooltip-arrow;
-    }
+      @include tooltip-arrow(v.$tooltip-background-color);
+    }    
+
     // Set bottom as the default only if no other direction class is applied
     &:not(.has-tooltip-top):not(.has-tooltip-top-left):not(.has-tooltip-top-right):not(.has-tooltip-left):not(.has-tooltip-right):not(.has-tooltip-bottom-left):not(.has-tooltip-bottom-right) {
       @include p.tooltip-direction('bottom');
-      &.has-tooltip-arrow::before {
-        border-color: transparent transparent v.$tooltip-background-color transparent;
-      }
     }
   }
     &.has-tooltip-top {
       @include p.tooltip-direction('top');
-      &.has-tooltip-arrow::before {
-        border-color: v.$tooltip-background-color transparent transparent transparent;
-      }
     }
     &.has-tooltip-top-left {
       @include p.tooltip-direction('top-left');
-      &.has-tooltip-arrow::before {
-        border-color: v.$tooltip-background-color transparent transparent transparent;
-      }
     }
     &.has-tooltip-top-right {
       @include p.tooltip-direction('top-right');
-      &.has-tooltip-arrow::before {
-        border-color: v.$tooltip-background-color transparent transparent transparent;
-      }
     }
     
     &.has-tooltip-left {
       @include p.tooltip-direction('left');
-      &.has-tooltip-arrow::before {
-        border-color: transparent transparent transparent v.$tooltip-background-color;
-      }
     }
     &.has-tooltip-right {
       @include p.tooltip-direction('right');
-      &.has-tooltip-arrow::before {
-        border-color: transparent v.$tooltip-background-color transparent transparent;
-      }
     }
     
     &.has-tooltip-bottom-left {
       @include p.tooltip-direction('bottom-left');
-      &.has-tooltip-arrow::before {
-        border-color: transparent transparent v.$tooltip-background-color transparent;
-      }
     }
     &.has-tooltip-bottom-right {
       @include p.tooltip-direction('bottom-right');
-      &.has-tooltip-arrow::before {
-        border-color: transparent transparent v.$tooltip-background-color transparent;
-      }
     }
     
+  // Loop through tooltip colors and apply to both arrow and tooltip box
+  @each $name, $values in v.$tooltip-colors {
+    $background-color: map.get($values, "background");
+    $text-color: map.get($values, "text");
+    
+    &.has-tooltip-#{$name} {
+      @include tooltip-box($background-color, $text-color);
+
+      &.has-tooltip-arrow {
+        @include tooltip-arrow($background-color);
+
+        // Override arrow direction for each color
+        &.has-tooltip-top::before,
+        &.has-tooltip-top-left::before,
+        &.has-tooltip-top-right::before {
+          border-color: $background-color transparent transparent transparent;
+        }
+        &.has-tooltip-bottom::before,
+        &.has-tooltip-bottom-left::before,
+        &.has-tooltip-bottom-right::before {
+          border-color: transparent transparent $background-color transparent;
+        }
+        &.has-tooltip-left::before {
+          border-color: transparent transparent transparent $background-color;
+        }
+        &.has-tooltip-right::before {            
+          border-color: transparent $background-color transparent transparent;
+        }
+      }
+    }
+
     &.has-tooltip-text-left {
       &::after {
         text-align: left;
@@ -133,46 +140,7 @@
         text-align: right;
       }
     }
+  }
 
-    @each $name, $values in v.$tooltip-colors {
-      $background-color: map.get($values, "background");
-      $text-color: map.get($values, "text");
-      
-      &.has-tooltip-#{$name} {
-        &::after {
-          background-color: $background-color;
-          border-color: $background-color;
-          color: $text-color;
-        }
-        
-        &.has-tooltip-arrow {
-          &.has-tooltip-top::before,
-          &.has-tooltip-top-left::before,
-          &.has-tooltip-top-right::before {
-            border-color: $background-color transparent transparent transparent;
-          }
-          &.has-tooltip-bottom::before,
-          &.has-tooltip-bottom-left::before,
-          &.has-tooltip-bottom-right::before {
-            border-color: transparent transparent $background-color transparent;
-          }
-          &.has-tooltip-left::before {
-            border-color: transparent transparent transparent $background-color;
-          }
-          &.has-tooltip-right::before {            
-            border-color: transparent $background-color transparent transparent;
-          }
-        }
-      }
-    }
-
-    &:hover,
-    &.has-tooltip-active {
-      &::before,
-      &::after {
-        opacity: 1;
-        visibility: visible;
-        @include a.tooltip-fade;
-      }
-    }
+@include a.tooltip-fade;
   }

@@ -9,34 +9,10 @@
   }
 }
 
-.has-tooltip-click-only {
-  &:hover::before,
-  &:hover::after {
-    opacity: 0 !important;
-    display: none !important;
-  }
-}
-
-.has-tooltip-hover-only {
-  &.has-tooltip-active::before,
-  &.has-tooltip-active::after {
-    opacity: 0 !important;
-    display: none !important;
-  }
-}
-
 .has-tooltip-hidden {
   &::before,
   &::after {
     opacity: 0 !important;
     display: none !important;
-  }
-}
-
-.has-tooltip-sticky {
-  &::before,
-  &::after {
-    opacity: 1 !important;
-    display: inline-block !important;
   }
 }

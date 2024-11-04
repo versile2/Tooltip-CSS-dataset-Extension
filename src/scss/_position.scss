@@ -13,7 +13,7 @@
 
 @mixin vertical-positioned-tooltip($propertyY, $transitionDirection, $xDirection: 0) {
   &:before {
-    margin-#{$propertyY}: -1 * v.$tooltip-arrow-size + 0.5px;
+    margin-#{$propertyY}: -1 * v.$tooltip-arrow-size + 1px;
     transform: rotate(var(--rotation));
   }
 
@@ -25,7 +25,7 @@
 	}
 
   &:before {
-    left: calc(50% - v.$tooltip-arrow-size);
+    left: calc(50% - #{v.$tooltip-arrow-size});
   }
 
   $translateX: -50%;
@@ -52,7 +52,7 @@
 
 @mixin horizontal-positioned-tooltip($propertyX, $transitionDirection) {
   &:before {
-    margin-#{$propertyX}: -1 * v.$tooltip-arrow-size + 0.5px;
+    margin-#{$propertyX}: -1 * v.$tooltip-arrow-size + 1px;
     margin-bottom: -1 * v.$tooltip-arrow-size;
     transform: rotate(var(--rotation));
   }
@@ -100,16 +100,25 @@
   }
 }
 
+// Vendor prefixer mixin.
+@mixin vendor($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	#{$property}: $value;
+}
+
 @mixin set-margin($property, $transitionDirection, $translateX: 0) {
-  $value: #{$property}(#{v.$tooltip-animation-distance * $transitionDirection});
+  $tooltip-distance: v.$tooltip-animation-distance;
+  $value: #{$property}(#{$tooltip-distance * $transitionDirection});
 
   &:before {
-    transform: rotate(var(--rotation)) #{$value};
+    transform: #{$value} rotate(var(--rotation));
   }
 
   &:after {
     @if $translateX != 0 {
-      transform: translateX($translateX) #{$value};
+      // For vertical tooltips, retain the x-transform.
+      transform: translateX(#{$translateX}) #{$value};
     } @else {
       transform: #{$value};
     }

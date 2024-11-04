@@ -14,19 +14,19 @@
 
 .has-tooltip-small {
   &:before {
-    width: 50%;
+    width: v.$tooltip-size-small;
   }
 }
 
 .has-tooltip-medium {
   &:before {
-    width: 100%;
+    width: v.$tooltip-size-medium;
   }
 }
 
 .has-tooltip-large {
   &:before {
-    width: 150%;
+    width: v.$tooltip-size-large;
   }
 }
 
