@@ -5,24 +5,28 @@ $tooltip-animation-duration: var(--mud-tooltip-animation-duration, 0.15s) !defau
 $tooltip-animation-transition-timing-function: var(--mud-tooltip-transition,  ease-in-out) !default;
 $tooltip-animation-distance: 8px !default;
 
-// Sizing
-$tooltip-arrow-size: var(--mud-tooltip-arrow-size, 6px) !default;
-$tooltip-max-width: var(--mud-tooltip-max-width, 200px) !default;
-$tooltip-padding: var(--mud-tooltip-padding, 4px 8px) !default;
-$tooltip-offset-x: 4px; 
-$tooltip-offset-y: 4px;
-$tooltip-radius: var(--mud-default-borderradius, 4px) !default;
-$tooltip-z-index: var(--mud-zindex-tooltip, 9999) !default;
-
 // Typography
 $tooltip-font-family: var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif) !default;
 $tooltip-font-size: var(--mud-typography-caption-size, 0.875rem) !default;
 $tooltip-font-weight: var(--mud-typography-caption-weight, 400) !default;
 $tooltip-font-lineheight: var(--mud-typography-caption-lineheight, 1.4) !default;
 
+// Sizing
+$tooltip-arrow-size: 6px !default;
+$tooltip-vertical-padding: var(--mud-tooltip-vertical-padding, 8px) !default;
+$tooltip-horizontal-padding: var(--mud-tooltip-horizontal-padding, 4px) !default;
+$tooltip-padding: $tooltip-horizontal-padding $tooltip-vertical-padding !default; 
+$tooltip-height: calc($tooltip-font-size + 2 * $tooltip-vertical-padding) !default;
+$tooltip-offset-x: 2 * $tooltip-arrow-size !default; 
+$tooltip-radius: var(--mud-default-borderradius, 4px) !default;
+$tooltip-z-index: var(--mud-zindex-tooltip, 9999) !default;
+$tooltip-size-small: 80px !default;
+$tooltip-size-medium: 150px !default;
+$tooltip-size-large: 300px !default;
+$tooltip-size-fit: 100% !default;
+
 // Colors
 $tooltip-background-color: var(--mud-palette-gray-darker, #616161) !default;
-$tooltip-border-color: var(--mud-palette-gray-darker, #616161) !default;
 $tooltip-color: var(--mud-palette-dark-text, rgb(255,255,255)) !default;
 
 // Color system 

@@ -3,9 +3,10 @@
 @mixin tooltip-fade {
   &::before,
   &::after {
-    transition: opacity v.$tooltip-animation-duration v.$tooltip-animation-transition-timing-function,
-                visibility v.$tooltip-animation-duration v.$tooltip-animation-transition-timing-function,
-                transform v.$tooltip-animation-duration v.$tooltip-animation-transition-timing-function;
+    transition: opacity v.$tooltip-animation-transition-timing-function,
+                visibility v.$tooltip-animation-transition-timing-function,
+                transform v.$tooltip-animation-transition-timing-function;
+    transition-duration: v.$tooltip-animation-duration;
     will-change: opacity, visibility, transform;
   }
   
