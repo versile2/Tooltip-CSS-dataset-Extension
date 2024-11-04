@@ -4,7 +4,7 @@
 @use 'animation' as a;
 @use 'responsiveness' as r;
 @use 'state' as s;
-@use 'sizes';
+@use 'sizes' as sz;
 
 @mixin tooltip-arrow($back-color) {
   &::before {
@@ -27,21 +27,16 @@
     font-size: v.$tooltip-font-size;
     font-weight: v.$tooltip-font-weight;
     line-height: v.$tooltip-font-lineheight;
-    white-space: nowrap;
     
     border-radius: v.$tooltip-radius;
     border: 1px solid $back-color;
     content: attr(data-tooltip);    
-  }
-}
 
-@mixin tooltip-multiline {
-  &::after {
-    height: auto;
-    max-width: v.$tooltip-size-large;
-    text-overflow: clip;
+    box-sizing: border-box;
+    width: max-content;
     white-space: normal;
-    word-break: keep-all;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
@@ -69,6 +64,8 @@
     &:not(.has-tooltip-top):not(.has-tooltip-top-left):not(.has-tooltip-top-right):not(.has-tooltip-left):not(.has-tooltip-right):not(.has-tooltip-bottom-left):not(.has-tooltip-bottom-right) {
       @include p.tooltip-direction('bottom');
     }
+
+    @include sz.tooltip-sized;
   }
     &.has-tooltip-top {
       @include p.tooltip-direction('top');
@@ -141,6 +138,5 @@
       }
     }
   }
-
 @include a.tooltip-fade;
   }

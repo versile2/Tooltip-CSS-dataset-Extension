@@ -1,37 +1,35 @@
 @use 'variables' as v;
 
-.has-tooltip-small,
-.has-tooltip-medium,
-.has-tooltip-large,
-.has-tooltip-fit {
-  &:before {
-    box-sizing: border-box;
-    white-space: normal;
-    line-height: v.$tooltip-font-lineheight;
-    word-wrap: break-word;
-  }
-}
+@mixin tooltip-sized {  
+  
+    // set max-width if a size class isn't used
+    &:not(.has-tooltip-small):not(.has-tooltip-medium):not(.has-tooltip-large):not(.has-tooltip-fit) {
+      &::after {
+        max-width: v.$tooltip-size-large;
+      }
+    }
 
-.has-tooltip-small {
-  &:before {
-    width: v.$tooltip-size-small;
+  &.has-tooltip-small {
+    &::after {
+      max-width: v.$tooltip-size-small;
+    }
   }
-}
-
-.has-tooltip-medium {
-  &:before {
-    width: v.$tooltip-size-medium;
+  
+  &.has-tooltip-medium {
+    &::after {
+      max-width: v.$tooltip-size-medium;
+    }
   }
-}
-
-.has-tooltip-large {
-  &:before {
-    width: v.$tooltip-size-large;
+  
+  &.has-tooltip-large {
+    &::after {
+      max-width: v.$tooltip-size-large;
+    }
   }
-}
-
-.has-tooltip-fit {
-  &:before {
-    width: auto;
+  
+  &.has-tooltip-fit {
+    &::after {
+      max-width: 100%;
+    }
   }
 }
