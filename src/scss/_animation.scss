@@ -1,14 +1,5 @@
 @use 'variables' as v;
 
-@mixin tooltip-hover {
-  &:hover::before,
-  &:hover::after,
-  &.has-tooltip-active::before,
-  &.has-tooltip-active::after {
-    @content;
-  }
-}
-
 @mixin tooltip-fade {
   &::before,
   &::after {

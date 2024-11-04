@@ -1,0 +1,18 @@
+/**
+ * source: hint-rounded.scss
+ *
+ * Defines rounded corner tooltips.
+ *
+ * Classes added:
+ * 	1) hint--rounded
+ *
+ */
+
+.#{$hintPrefix}rounded {
+	&:before {
+		border-radius: 0 $hintBorderRadius 0 0;
+	}
+	&:after {
+		border-radius: $hintBorderRadius;
+	}
+}

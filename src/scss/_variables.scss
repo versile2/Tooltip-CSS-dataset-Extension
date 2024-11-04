@@ -3,11 +3,14 @@
 // Animation
 $tooltip-animation-duration: var(--mud-tooltip-animation-duration, 0.15s) !default;
 $tooltip-animation-transition-timing-function: var(--mud-tooltip-transition,  ease-in-out) !default;
+$tooltip-animation-distance: 8px !default;
 
 // Sizing
 $tooltip-arrow-size: var(--mud-tooltip-arrow-size, 6px) !default;
 $tooltip-max-width: var(--mud-tooltip-max-width, 200px) !default;
 $tooltip-padding: var(--mud-tooltip-padding, 4px 8px) !default;
+$tooltip-offset-x: 4px; 
+$tooltip-offset-y: 4px;
 $tooltip-radius: var(--mud-default-borderradius, 4px) !default;
 $tooltip-z-index: var(--mud-zindex-tooltip, 9999) !default;
 

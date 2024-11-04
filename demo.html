@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Tooltip Extensions.css - A tooltip library in CSS</title>
+		<meta name="description" content="A CSS only tooltip library" />
+		<meta name="viewport" content="width=device-width" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Lobster&display=swap"
+			rel="stylesheet"
+			type="text/css"
+		/>
+
+		<link rel="image_src" href="" />
+
+		<style type="text/css">
+			body {
+				text-align: center;
+				font-family: Arial,serif;
+				background: #d9623f;
+				min-height: 100vh;
+				font-size: 18px;
+				padding: 0;
+				margin: 0;
+				color: white;
+			}
+
+			h1 {
+				font-size: 6em;
+				text-shadow: 0 6px 1px rgba(0, 0, 0, 0.2);
+				font-family: "Lobster", cursive;
+			}
+			h2 {
+				font-size: 4em;
+				margin: 0.5em 0;
+				text-shadow: 0 6px 1px rgba(0, 0, 0, 0.2);
+				font-family: "Lobster", cursive;
+			}
+			.version {
+				font-size: 0.3em;
+				border-radius: 50%;
+				padding: 1px 11px;
+				text-shadow: none;
+				top: 0;
+				position: absolute;
+				right: -65px;
+			}
+			.section {
+				padding: 3em 0;
+				position: relative;
+			}
+			.section:after {
+				content: "";
+				position: absolute;
+				bottom: -25px;
+				background: inherit;
+				left: -4px;
+				height: 50px;
+				right: -2px;
+				z-index: 1;
+				transform: rotate(2deg);
+			}
+			.section:last-of-type {
+				padding-bottom: 2em;
+			}
+			.section:last-of-type:after {
+				display: none;
+			}
+			.section--inverted:after {
+				left: -4px;
+				height: 50px;
+				right: -2px;
+				z-index: 1;
+				transform: rotate(-2deg);
+			}
+			.hero {
+				background: #5cc2f1;
+				background: #81c439;
+				background: #7d6ec6;
+				/*text-shadow: 0 3px 7px rgba(0,0,0,0.25);*/
+			}
+			.section:nth-child(2) {
+				background: #9993c1;
+				background: #8bba66;
+				background: #5bc0eb;
+				/* background: ; */
+			}
+			.section:nth-child(3) {
+				background: #d9623f;
+				background: #e4cc37;
+				/* #BD3769 */
+				/* #E18335 */
+			}
+			.section:nth-child(4) {
+				background: #7d6ec6;
+			}
+			.section:nth-child(5) {
+				background: #d9623f;
+				/*background: ##E18335;*/
+				/* #BD3769 */
+				/* #E18335 */
+			}
+			.section-inner {
+				max-width: 600px;
+				margin: 0 auto;
+			}
+			h1,
+			h3 {
+				margin: 5px 0;
+			}
+			a {
+				color: #1a5a7a;
+				color: #fff;
+				outline: none;
+				text-decoration: none;
+			}
+			.btn {
+				/*background: rgba(0,0,0,0.2);*/
+				background: white;
+				padding: 20px;
+				display: inline-block;
+				border-radius: 8px;
+				text-transform: uppercase;
+				transition: 0.3s ease;
+			}
+			.btn:hover {
+				transform: scale(1.2);
+			}
+			.download-btn {
+				color: #7d6ec6;
+				margin-top: 1em;
+			}
+			.position-grid {
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.position-grid__cell {
+				flex: 1 33.33%;
+				font-size: 0.8em;
+			}
+			.position-grid__cell a {
+				display: inline-block;
+				width: 90%;
+				background: rgba(91, 192, 235, 0.37);
+				color: white;
+				margin: 2px 0;
+				padding: 16px 5px;
+			}
+			.status-icon {
+				background: indianred;
+				fill: white;
+				border-radius: 3px;
+				padding: 5px 6px 2px;
+				margin: 0 4px;
+				border: 1px solid rgba(0, 0, 0, 0.2);
+			}
+			.features ul {
+				padding: 0;
+				list-style: none;
+			}
+			.footer {
+				color: rgba(255, 255, 255, 0.7);
+			}
+			.window {
+				background: #fff;
+				width: 50vw;
+				min-width: 450px;
+				margin: auto;
+				border: 1px solid #acacac;
+				border-radius: 6px;
+				box-shadow: 0px 6px 17px rgba(0, 0, 0, 0.2);
+				cursor: default;
+			}
+
+			.titlebar {
+				background: linear-gradient(to bottom, #ebebeb, #d5d5d5);
+				color: #4d494d;
+				font-size: 11pt;
+				line-height: 20px;
+				text-align: center;
+				width: 100%;
+				height: 20px;
+				border-top: 1px solid #f3f1f3;
+				border-bottom: 1px solid #b1aeb1;
+				border-top-left-radius: 6px;
+				border-top-right-radius: 6px;
+			}
+
+			.buttons {
+				padding-left: 8px;
+				padding-top: 3px;
+				float: left;
+				line-height: 0px;
+			}
+
+			.titlebar__btn {
+				font-size: 9pt;
+				line-height: 11px;
+				width: 11px;
+				height: 11px;
+				border: 1px solid rgba(0, 0, 0, 0.15);
+				border-radius: 50%;
+				display: inline-block;
+				margin-right: 5px;
+				cursor: pointer;
+			}
+			.close {
+				background: #ff5c5c;
+			}
+			.minimize {
+				background: #ffbd4c;
+			}
+			.zoom {
+				background: #00ca56;
+			}
+			.titlebar__btn:hover {
+				border-color: rgba(0, 0, 0, 0.3);
+			}
+			.content {
+				padding: 50px 10px;
+				color: #777;
+			}
+			.content a {
+				color: #444;
+			}
+			.content h3 {
+				text-transform: uppercase;
+				font-size: 0.8em;
+				margin: 22px 0 0;
+				padding: 4px 0;
+				background: rgba(00, 0, 0, 0.02);
+				color: rgba(0, 0, 0, 0.9);
+				border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+			}
+			pre {
+				color: #555;
+				font-size: 1.5em;
+			}
+			a svg {
+				fill: rgba(255, 255, 255, 0.6);
+			}
+			a:hover svg {
+				fill: white;
+			}
+		</style>
+		<link rel="stylesheet" href="src/css/tooltip-extensions.min.css" />
+	</head>
+	<body>
+		<div class="section hero">
+			<h1 style="display: inline-block; position: relative">
+				Tooltip-Extensions.css <small class="version">0.3</small>
+			</h1>
+			<h3>A pure CSS tooltip library for your lovely websites</h3>
+			<br />
+		</div>
+
+		<div class="section section--inverted">
+			<h2>Tryout</h2>
+
+			<div class="window">
+				<div class="titlebar">
+					<div class="buttons">
+						<a
+							class="titlebar__btn close has-tooltip-bottom"
+							data-tooltip="Close"
+						></a>
+						<a
+							class="titlebar__btn minimize has-tooltip-bottom"
+							data-tooltip="Minimize"
+						></a>
+						<a
+							class="titlebar__btn zoom has-tooltip-bottom"
+							data-tooltip="Zoom"
+						></a>
+					</div>
+					Try hovering over different things
+				</div>
+				<div class="content">
+					<div style="margin-bottom: 8px; margin-top: -40px;">
+						<label for="checkbox">With Arrow</label><input type="checkbox" id="checkbox" />
+					</div>
+					<div class="position-grid">
+						<div class="position-grid__cell">
+							<a href="#" data-tooltip="bottom-right" class="has-tooltip-bottom-right"
+								>bottom-right</a
+							>
+						</div>
+						<div class="position-grid__cell">
+							<a href="#" data-tooltip="bottom" class="has-tooltip-bottom">bottom</a>
+						</div>
+						<div class="position-grid__cell">
+							<a href="#" data-tooltip="bottom-left" class="has-tooltip-bottom-left"
+								>bottom-left</a
+							>
+						</div>
+						<div class="position-grid__cell">
+							<a href="#" data-tooltip="right" class="has-tooltip-right">right</a>
+						</div>
+						<div class="position-grid__cell"><a data-tooltip="default">.</a></div>
+						<div class="position-grid__cell">
+							<a href="#" data-tooltip="left" class="has-tooltip-left">left</a>
+						</div>
+						<div class="position-grid__cell">
+							<a href="#" data-tooltip="top-right" class="has-tooltip-top-right"
+								>top-right</a
+							>
+						</div>
+						<div class="position-grid__cell">
+							<a href="#" data-tooltip="top" class="has-tooltip-top">top</a>
+						</div>
+						<div class="position-grid__cell">
+							<a href="#" data-tooltip="top-left" class="has-tooltip-top-left"
+								>top-left</a
+							>
+						</div>
+					</div>
+
+					<h3>Color Modifiers</h3>
+					<h4>By Status Error, Warning, Info, Success</h4>
+					<p>
+						<a
+							class="status-icon has-tooltip-error"
+							style="background: rgb(244,67,54)"
+							data-tooltip="This is an error tooltip"
+						>
+							<svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+								<path
+									fill="#ffffff"
+									d="M8.27,3L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3M8.41,7L12,10.59L15.59,7L17,8.41L13.41,12L17,15.59L15.59,17L12,13.41L8.41,17L7,15.59L10.59,12L7,8.41"
+								/>
+							</svg>
+						</a>
+						<a
+							class="status-icon has-tooltip-warning"
+							style="background: rgb(255,152,0)"
+							data-tooltip="This is a warning tooltip"
+						>
+							<svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+								<path
+									fill="#ffffff"
+									d="M11,4.5H13V15.5H11V4.5M13,17.5V19.5H11V17.5H13Z"
+								/>
+							</svg>
+						</a>
+						<a
+							class="status-icon has-tooltip-info"
+							style="background: rgb(33,150,243)"
+							data-tooltip="This is an info tooltip"
+						>
+							<svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+								<path
+									fill="#ffffff"
+									d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11.05 8.23,12.81 10,13.58V16H14V13.58C15.77,12.81 17,11.05 17,9A5,5 0 0,0 12,4Z"
+								/>
+							</svg>
+						</a>
+						<a
+							class="status-icon has-tooltip-success"
+							style="background: rgb(0,200,83)"
+							data-tooltip="This is success tooltip"
+						>
+							<svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+								<path
+									fill="#ffffff"
+									d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"
+								/>
+							</svg>
+						</a>
+					</p>
+
+					<h4>By Primary, Secondary, or Tertiary Colors</h4>
+					<p>
+						<a
+							class="status-icon has-tooltip-primary"
+							style="background: rgb(89,74,226)"
+							data-tooltip="This is a Primary tooltip"
+						>
+						<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 4C1.29 4 0 5.3 0 7.5v12.5C0 21.7 1.29 23 3 23h18c1.71 0 3-1.3 3-3.5V7.5C24 5.3 22.71 4 21 4H3z" fill="#ffffff"/>
+							<path d="M5 7.2v11.6h14V7.2H5zm3 1.1c.5 0 .9 0 1.2.1.3.1.6.2.8.4.1.1.3.3.3.5 0 .2.1.4.1.7v2c0 .2 0 .4 0 .5 0 .1.1.3.2.5h-1.6c-.1-.1-.1-.2-.1-.3 0-.1 0-.2-.1-.3-.2.2-.4.4-.7.5-.3.1-.6.2-1 .2-.5 0-.9-.1-1.2-.4-.3-.2-.4-.5-.4-.9 0-.3.1-.6.3-.8.2-.2.6-.4 1.1-.5.6-.1 1-.2 1.2-.3.2 0 .4-.1.6-.2 0-.2 0-.4-.1-.4-.1-.1-.2-.1-.5-.1-.3 0-.5 0-.6.1-.1.1-.2.2-.3.4l-1.6-.2c.1-.3.1-.5.3-.7.1-.2.3-.3.5-.4.2-.1.4-.2.6-.2.3 0 .6-.1.9-.1zm11.6 0c.7 0 1.3.1 1.6.4.4.3.6.6.8 1.1l-1.6.2c0-.2-.1-.3-.3-.4-.1-.1-.3-.1-.5-.1-.3 0-.5.1-.7.3-.2.2-.3.5-.3.9 0 .4.1.6.3.8.2.2.4.3.7.3.2 0 .4-.1.6-.2.1-.1.3-.3.3-.5l1.6.2c-.1.3-.2.6-.4.9-.2.2-.5.4-.8.6-.3.1-.7.2-1.2.2-.5 0-.9 0-1.2-.1-.3-.1-.6-.2-.8-.4-.2-.2-.4-.4-.5-.7-.1-.3-.2-.6-.2-1s.1-.8.2-1.1c.1-.2.3-.4.5-.6.2-.2.4-.3.6-.4.3-.1.8-.2 1.3-.2zm-10.8 2.4c-.2.1-.5.2-.7.2-.3.1-.6.2-.7.3-.1.1-.1.2-.1.3 0 .1 0 .2.1.3.1.1.2.1.4.1.2 0 .4 0 .5-.1.2-.1.3-.2.3-.3.1-.1.1-.3.1-.5v-.3zm3.2.9h1.7v2.1c.2-.2.4-.3.6-.4.2-.1.5-.1.7-.1.5 0 1 .2 1.3.6.4.4.5.9.5 1.7 0 .5-.1.9-.2 1.3-.2.4-.4.6-.7.8-.3.2-.6.3-.9.3-.3 0-.6-.1-.8-.2-.2-.1-.4-.3-.6-.6v.7h-1.6v-5.6zm2.5 2.9c-.2 0-.4.1-.6.3-.1.2-.2.4-.2.8 0 .4.1.7.2.8.1.2.3.3.5.3.2 0 .4-.1.5-.3.1-.2.2-.5.2-.9 0-.4-.1-.6-.2-.8-.1-.2-.3-.2-.5-.2z" fill="#ffffff"/>
+						</svg>
+						</a>
+						<a
+							class="status-icon has-tooltip-secondary"
+							style="background: rgb(255,64,129)"
+							data-tooltip="This is a Secondary tooltip"
+						>
+						<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 4C1.29 4 0 5.3 0 7.5v12.5C0 21.7 1.29 23 3 23h18c1.71 0 3-1.3 3-3.5V7.5C24 5.3 22.71 4 21 4H3z" fill="#ffffff"/>
+							<path d="M5 7.2v11.6h14V7.2H5zm3 1.1c.5 0 .9 0 1.2.1.3.1.6.2.8.4.1.1.3.3.3.5 0 .2.1.4.1.7v2c0 .2 0 .4 0 .5 0 .1.1.3.2.5h-1.6c-.1-.1-.1-.2-.1-.3 0-.1 0-.2-.1-.3-.2.2-.4.4-.7.5-.3.1-.6.2-1 .2-.5 0-.9-.1-1.2-.4-.3-.2-.4-.5-.4-.9 0-.3.1-.6.3-.8.2-.2.6-.4 1.1-.5.6-.1 1-.2 1.2-.3.2 0 .4-.1.6-.2 0-.2 0-.4-.1-.4-.1-.1-.2-.1-.5-.1-.3 0-.5 0-.6.1-.1.1-.2.2-.3.4l-1.6-.2c.1-.3.1-.5.3-.7.1-.2.3-.3.5-.4.2-.1.4-.2.6-.2.3 0 .6-.1.9-.1zm11.6 0c.7 0 1.3.1 1.6.4.4.3.6.6.8 1.1l-1.6.2c0-.2-.1-.3-.3-.4-.1-.1-.3-.1-.5-.1-.3 0-.5.1-.7.3-.2.2-.3.5-.3.9 0 .4.1.6.3.8.2.2.4.3.7.3.2 0 .4-.1.6-.2.1-.1.3-.3.3-.5l1.6.2c-.1.3-.2.6-.4.9-.2.2-.5.4-.8.6-.3.1-.7.2-1.2.2-.5 0-.9 0-1.2-.1-.3-.1-.6-.2-.8-.4-.2-.2-.4-.4-.5-.7-.1-.3-.2-.6-.2-1s.1-.8.2-1.1c.1-.2.3-.4.5-.6.2-.2.4-.3.6-.4.3-.1.8-.2 1.3-.2zm-10.8 2.4c-.2.1-.5.2-.7.2-.3.1-.6.2-.7.3-.1.1-.1.2-.1.3 0 .1 0 .2.1.3.1.1.2.1.4.1.2 0 .4 0 .5-.1.2-.1.3-.2.3-.3.1-.1.1-.3.1-.5v-.3zm3.2.9h1.7v2.1c.2-.2.4-.3.6-.4.2-.1.5-.1.7-.1.5 0 1 .2 1.3.6.4.4.5.9.5 1.7 0 .5-.1.9-.2 1.3-.2.4-.4.6-.7.8-.3.2-.6.3-.9.3-.3 0-.6-.1-.8-.2-.2-.1-.4-.3-.6-.6v.7h-1.6v-5.6zm2.5 2.9c-.2 0-.4.1-.6.3-.1.2-.2.4-.2.8 0 .4.1.7.2.8.1.2.3.3.5.3.2 0 .4-.1.5-.3.1-.2.2-.5.2-.9 0-.4-.1-.6-.2-.8-.1-.2-.3-.2-.5-.2z" fill="#ffffff"/>
+						</svg>
+						</a>
+						<a
+							class="status-icon has-tooltip-tertiary"
+							style="background: rgb(30,200,165)"
+							data-tooltip="This is a Tertiary tooltip"
+						>
+						<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 4C1.29 4 0 5.3 0 7.5v12.5C0 21.7 1.29 23 3 23h18c1.71 0 3-1.3 3-3.5V7.5C24 5.3 22.71 4 21 4H3z" fill="#ffffff"/>
+							<path d="M5 7.2v11.6h14V7.2H5zm3 1.1c.5 0 .9 0 1.2.1.3.1.6.2.8.4.1.1.3.3.3.5 0 .2.1.4.1.7v2c0 .2 0 .4 0 .5 0 .1.1.3.2.5h-1.6c-.1-.1-.1-.2-.1-.3 0-.1 0-.2-.1-.3-.2.2-.4.4-.7.5-.3.1-.6.2-1 .2-.5 0-.9-.1-1.2-.4-.3-.2-.4-.5-.4-.9 0-.3.1-.6.3-.8.2-.2.6-.4 1.1-.5.6-.1 1-.2 1.2-.3.2 0 .4-.1.6-.2 0-.2 0-.4-.1-.4-.1-.1-.2-.1-.5-.1-.3 0-.5 0-.6.1-.1.1-.2.2-.3.4l-1.6-.2c.1-.3.1-.5.3-.7.1-.2.3-.3.5-.4.2-.1.4-.2.6-.2.3 0 .6-.1.9-.1zm11.6 0c.7 0 1.3.1 1.6.4.4.3.6.6.8 1.1l-1.6.2c0-.2-.1-.3-.3-.4-.1-.1-.3-.1-.5-.1-.3 0-.5.1-.7.3-.2.2-.3.5-.3.9 0 .4.1.6.3.8.2.2.4.3.7.3.2 0 .4-.1.6-.2.1-.1.3-.3.3-.5l1.6.2c-.1.3-.2.6-.4.9-.2.2-.5.4-.8.6-.3.1-.7.2-1.2.2-.5 0-.9 0-1.2-.1-.3-.1-.6-.2-.8-.4-.2-.2-.4-.4-.5-.7-.1-.3-.2-.6-.2-1s.1-.8.2-1.1c.1-.2.3-.4.5-.6.2-.2.4-.3.6-.4.3-.1.8-.2 1.3-.2zm-10.8 2.4c-.2.1-.5.2-.7.2-.3.1-.6.2-.7.3-.1.1-.1.2-.1.3 0 .1 0 .2.1.3.1.1.2.1.4.1.2 0 .4 0 .5-.1.2-.1.3-.2.3-.3.1-.1.1-.3.1-.5v-.3zm3.2.9h1.7v2.1c.2-.2.4-.3.6-.4.2-.1.5-.1.7-.1.5 0 1 .2 1.3.6.4.4.5.9.5 1.7 0 .5-.1.9-.2 1.3-.2.4-.4.6-.7.8-.3.2-.6.3-.9.3-.3 0-.6-.1-.8-.2-.2-.1-.4-.3-.6-.6v.7h-1.6v-5.6zm2.5 2.9c-.2 0-.4.1-.6.3-.1.2-.2.4-.2.8 0 .4.1.7.2.8.1.2.3.3.5.3.2 0 .4-.1.5-.3.1-.2.2-.5.2-.9 0-.4-.1-.6-.2-.8-.1-.2-.3-.2-.5-.2z" fill="#ffffff"/>
+						</svg>
+						</a>
+					</p>					
+
+					<h3>Size variations</h3>
+
+					<p>
+						<a
+							class="has-tooltip-small"
+							style="
+								border: 1px solid #eee;
+								padding: 3px 6px;
+								border-radius: 4px;
+							"
+							data-tooltip="You can show very very long sentences inside tooltips by using various available size variation classes."
+						>
+							Small
+						</a>
+
+						<a
+							class="has-tooltip-medium"
+							style="
+								border: 1px solid #eee;
+								padding: 3px 6px;
+								border-radius: 4px;
+							"
+							data-tooltip="You can show very very long sentences inside tooltips by using various available size variation classes."
+						>
+							Medium
+						</a>
+
+						<a
+							class="has-tooltip-large"
+							style="
+								border: 1px solid #eee;
+								padding: 3px 6px;
+								border-radius: 4px;
+							"
+							data-tooltip="You can show very very long sentences inside tooltips by using various available size variation classes."
+						>
+							Large
+						</a>
+
+						<a
+							class="has-tooltip-fit"
+							style="
+								border: 1px solid #eee;
+								padding: 3px 56px;
+								border-radius: 4px;
+							"
+							data-tooltip="You can show very very long sentences inside tooltips by using various available size variation classes."
+						>
+							Fit
+						</a>
+					</p>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="section footer">
+			Modeled from
+			<a
+				data-tooltip="@chinchang457"
+				class="has-tooltip-top"
+				href="https://twitter.com/chinchang457"
+				>Kushagra Gour</a
+			>
+			in India
+		</div>
+	</body>
+</html>
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const checkbox = document.getElementById('checkbox');
+
+		checkbox.addEventListener('change', function() {
+			//console.log('changed');
+			const tooltipElements = document.querySelectorAll('[data-tooltip]');
+			//console.log(tooltipElements);
+			tooltipElements.forEach(function(element) {
+				if (checkbox.checked) {
+					element.classList.add('has-tooltip-arrow');
+				} else {
+					element.classList.remove('has-tooltip-arrow');
+				}
+			});
+		});
+	});
+</script>

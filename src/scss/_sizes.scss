@@ -1,0 +1,37 @@
+@use 'variables' as v;
+
+.has-tooltip-small,
+.has-tooltip-medium,
+.has-tooltip-large,
+.has-tooltip-fit {
+  &:before {
+    box-sizing: border-box;
+    white-space: normal;
+    line-height: v.$tooltip-font-lineheight;
+    word-wrap: break-word;
+  }
+}
+
+.has-tooltip-small {
+  &:before {
+    width: 50%;
+  }
+}
+
+.has-tooltip-medium {
+  &:before {
+    width: 100%;
+  }
+}
+
+.has-tooltip-large {
+  &:before {
+    width: 150%;
+  }
+}
+
+.has-tooltip-fit {
+  &:before {
+    width: auto;
+  }
+}
