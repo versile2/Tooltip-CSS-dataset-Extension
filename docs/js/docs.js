@@ -200,4 +200,33 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
     }
   }
-  
+  document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById('checkbox');
+    const hiddenCbox = document.getElementById('hiddenCbox');
+    const tooltipToHide = document.getElementById('hiddenA');
+
+    // Existing checkbox handler
+    if (checkbox) {
+    checkbox.addEventListener('change', function() {
+        const tooltipElements = document.querySelectorAll('[data-tooltip]');
+        tooltipElements.forEach(function(element) {
+            if (checkbox.checked) {
+                element.classList.add('has-tooltip-arrow');
+            } else {
+                element.classList.remove('has-tooltip-arrow');
+            }
+        });
+    });
+  }
+
+    // New hidden checkbox handler
+    if (hiddenCbox) {
+    hiddenCbox.addEventListener('change', function() {
+        if (hiddenCbox.checked) {
+            tooltipToHide.classList.add('has-tooltip-hidden');
+        } else {
+            tooltipToHide.classList.remove('has-tooltip-hidden');
+        }
+    });
+  }
+});

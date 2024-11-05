@@ -241,3 +241,11 @@ pre.copy-to-clipboard .copy-icon {
 .copy-to-clipboard:hover .copy-icon {
   opacity: 1;
 }
+
+.panel-block {
+  overflow: visible !important;
+}
+
+.content {
+  overflow: visible !important;
+}

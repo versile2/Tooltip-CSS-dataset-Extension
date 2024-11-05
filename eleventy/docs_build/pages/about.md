@@ -1,7 +1,7 @@
 ---
 title: "About"
 layout: "base"
-order: 5
+order: 6
 ---
 
 <h2 class="subtitle is-2 my-4">About Tooltip Extension</h2>

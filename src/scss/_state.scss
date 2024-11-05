@@ -16,3 +16,9 @@
     display: none !important;
   }
 }
+
+.has-tooltip-active {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s; // Start immediately on hover
+}

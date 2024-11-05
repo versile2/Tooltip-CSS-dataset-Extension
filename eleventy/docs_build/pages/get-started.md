@@ -41,7 +41,7 @@ order: 2
 
 <h2 class="subtitle is-3 mt-2 mb-4">Usage</h2>
 <p>
-    Tooltips are displayed into a small box on bottom of the element by default, offset by 5px. 
+    Tooltips are displayed into a small box on bottom of the element by default, offset by 8px by default. 
     All you have to do is to add <code data-tooltip="Test Tooltip">data-tooltip='Test Tooltip'</code>&nbsp;and you have your very first tooltip!
 </p>
 

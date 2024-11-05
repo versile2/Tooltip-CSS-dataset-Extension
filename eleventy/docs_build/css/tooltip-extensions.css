@@ -22,6 +22,12 @@
   display: none !important;
 }
 
+.has-tooltip-active {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
 [data-tooltip] {
   position: relative;
   display: inline-block;
