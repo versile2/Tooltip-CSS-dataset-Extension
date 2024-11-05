@@ -22,7 +22,7 @@
   display: none !important;
 }
 
-.has-tooltip-fixed::before, .has-tooltip-fixed::after {
+.has-tooltip-fixed::after {
   width: 100% !important;
 }
 
