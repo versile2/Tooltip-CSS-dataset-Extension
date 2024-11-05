@@ -27,9 +27,11 @@ order: 6
   <p class="panel-heading">Upcoming Features</p>
   <div class="panel-block">
     <ol class="ml-4">
+    <li>Separate delay into --tooltip-pre-delay and --tooltip-post-delay</li>
       <li>Allow dynamic coloring of tooltips by adding style like delay, <code>style="--tooltip-color: #fff;"</code></li>
       <li>Add support for mdi-font library if there is one? <code>class="has-tooltip-mdi" data=tooltip="[icon1unicode] is an icon! [icon2unicode"] is another icon!</li>
-      <li>Add support for full html using an element style approach <code><div class="tooltip-content" data-tooltip><strong>HTML content</strong></div></code>
+      <!-- https://github.com/Templarian/MaterialDesign-Webfont -->
+      <li>Add support for full html using an element style approach <code><div class="tooltip-content" data-tooltip><strong>HTML content</strong></div></code></li>
       <li>Add support for <code>class="has-tooltip-click"</code> to only show tooltip when it is clicked<li>
     </ol>
   </div>

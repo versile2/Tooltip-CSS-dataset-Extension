@@ -22,17 +22,17 @@ order: 2
     <div class="panel-block tab-content mt-2">
         <div id="github" class="tab-pane is-active" role="tabpanel" style="height: 100px;">        
             <p>
-            <a href="{{ gitlink }}/release/tooltip-extension.min.css" target="_blank" rel="noreferrer noopener">Download</a> from the GitHub repository</p>            
-<pre class="language-html copy-to-clipboard "><code>{{ gitlink }}release/tooltip-extension.min.css</code></pre>
+            <a href="https://github.com/versile2/Tooltip-CSS-dataset-Extension/tree/main/src/css" target="_blank">Download</a> from the GitHub repository</p>            
+<pre class="language-html copy-to-clipboard "><code>{{ gitlink }}src/css/tooltip-extension.min.css</code></pre>
         </div>
         <div id="npm" class="tab-pane is-hidden" role="tabpanel" style="height: 100px;">
 
-            <p>Use npm to install the `tooltip-extension` package (**recommended**)
+            <p>Use npm to install the `tooltip-extension` package (**not available yet**)
 
 <pre class="language-bash copy-to-clipboard"><code>npm install tooltip-extension</code></pre>
         </div>
         <div id="cdn" class="tab-pane is-hidden" role="tabpanel" style="height: 100px;">
-            <p>Use a CDN to link to the Tooltip Extension stylesheet and script</p>
+            <p>Use a CDN to link to the Tooltip Extension stylesheet and script (**not available yet**)</p>
 <pre class="language-html copy-to-clipboard"><code>&lt;link rel="stylesheet" href="https://cdn.example.com/tooltip-extension/tooltip.css"&gt;</code></pre>
         </div>
     </div>    
