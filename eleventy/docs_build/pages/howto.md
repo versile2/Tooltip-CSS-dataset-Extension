@@ -324,7 +324,7 @@ order: 3
    <a id="hiddenA" class="button" data-tooltip="hidden when checked">has-tooltip-hidden</a>
  </div>
  <div class="column is-4">
-   <a class="button" data-tooltip="always on" class="has-tooltip-active">has-tooltip-active</a>
+   <a class="button has-tooltip-active" data-tooltip="always on">has-tooltip-active</a>
  </div>
 </div>
         <p>There are special cases where you might want to hide a tooltip via code, you can do so by adding and removing <code>class="has-tooltip-hidden"</code> You might also want a tooltip to always show, regardless of hover. For that scenario you would use <code>class="has-tooltip-active"</code></p>
@@ -333,7 +333,7 @@ order: 3
         <div class="panel-block tab-pane is-hidden panel-height" id="previewCodemodifier" role="tabpanel" aria-labelledby="preview-code-modifier">
 <pre class="language-html copy-to-clipboard"><code>&lt;label for=&quot;hiddenCbox&quot;&gt;Hide Tooltip&amp;nbsp;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;hiddenCbox&quot; /&gt;
 &lt;a id=&quot;hiddenA&quot; class=&quot;button&quot; data-tooltip=&quot;hidden when checked&quot;&gt;has-tooltip-hidden&lt;/a&gt;
-&lt;a class=&quot;button&quot; data-tooltip=&quot;always on&quot; class=&quot;has-tooltip-active&quot;&gt;has-tooltip-active&lt;/a&gt;
+&lt;a class=&quot;button has-tooltip-active&quot; data-tooltip=&quot;always on&quot; &gt;has-tooltip-active&lt;/a&gt;
 </code></pre>
         </div>
     </div>
