@@ -17,8 +17,9 @@
   }
 }
 
-.has-tooltip-active {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0s; // Start immediately on hover
+.has-tooltip-fixed {
+  &::before,
+  &::after {
+    width: 100% !important;
+  }
 }

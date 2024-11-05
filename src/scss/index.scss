@@ -10,11 +10,11 @@
   &::before {
     content: "";
     position: absolute;
-    background: transparent;    
+    background: transparent;
     border: v.$tooltip-arrow-size solid transparent;
     background-color: $back-color;
     clip-path: polygon(0%0%, 100%0%, 100%100%);
-    z-index: calc(v.$tooltip-z-index + 1);    
+    z-index: calc(v.$tooltip-z-index + 1);
   }
 }
 
@@ -27,10 +27,10 @@
     font-size: v.$tooltip-font-size;
     font-weight: v.$tooltip-font-weight;
     line-height: v.$tooltip-font-lineheight;
-    
+
     border-radius: v.$tooltip-radius;
     border: 1px solid $back-color;
-    content: attr(data-tooltip);    
+    content: attr(data-tooltip);
 
     box-sizing: border-box;
     width: max-content;
@@ -43,59 +43,69 @@
 [data-tooltip] {
   position: relative;
   display: inline-block;
-  
+
   &:before,
   &:after {
     position: absolute;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
     visibility: hidden;
     opacity: 0;
     z-index: v.$tooltip-z-index;
-    pointer-events: none;      
+    pointer-events: none;
   }
-  
+
   @include s.base-state {
     @include tooltip-box(v.$tooltip-background-color, v.$tooltip-color);
+
     &.has-tooltip-arrow {
       @include tooltip-arrow(v.$tooltip-background-color);
-    }    
+    }
 
     // Set bottom as the default only if no other direction class is applied
-    &:not(.has-tooltip-top):not(.has-tooltip-top-left):not(.has-tooltip-top-right):not(.has-tooltip-left):not(.has-tooltip-right):not(.has-tooltip-bottom-left):not(.has-tooltip-bottom-right) {
+    &:not(.has-tooltip-top):not(.has-tooltip-top-left):not(.has-tooltip-top-right):not(.has-tooltip-left):not(.has-tooltip-right):not(.has-tooltip-bottom-left):not(.has-tooltip-bottom-right):not(.has-tooltip-center) {
       @include p.tooltip-direction('bottom');
     }
 
     @include sz.tooltip-sized;
   }
-    &.has-tooltip-top {
-      @include p.tooltip-direction('top');
-    }
-    &.has-tooltip-top-left {
-      @include p.tooltip-direction('top-left');
-    }
-    &.has-tooltip-top-right {
-      @include p.tooltip-direction('top-right');
-    }
-    
-    &.has-tooltip-left {
-      @include p.tooltip-direction('left');
-    }
-    &.has-tooltip-right {
-      @include p.tooltip-direction('right');
-    }
-    
-    &.has-tooltip-bottom-left {
-      @include p.tooltip-direction('bottom-left');
-    }
-    &.has-tooltip-bottom-right {
-      @include p.tooltip-direction('bottom-right');
-    }
-    
+
+  &.has-tooltip-center {
+    @include p.tooltip-direction('center');
+  }
+
+  &.has-tooltip-top {
+    @include p.tooltip-direction('top');
+  }
+
+  &.has-tooltip-top-left {
+    @include p.tooltip-direction('top-left');
+  }
+
+  &.has-tooltip-top-right {
+    @include p.tooltip-direction('top-right');
+  }
+
+  &.has-tooltip-left {
+    @include p.tooltip-direction('left');
+  }
+
+  &.has-tooltip-right {
+    @include p.tooltip-direction('right');
+  }
+
+  &.has-tooltip-bottom-left {
+    @include p.tooltip-direction('bottom-left');
+  }
+
+  &.has-tooltip-bottom-right {
+    @include p.tooltip-direction('bottom-right');
+  }
+
   // Loop through tooltip colors and apply to both arrow and tooltip box
   @each $name, $values in v.$tooltip-colors {
     $background-color: map.get($values, "background");
     $text-color: map.get($values, "text");
-    
+
     &.has-tooltip-#{$name} {
       @include tooltip-box($background-color, $text-color);
 
@@ -108,15 +118,18 @@
         &.has-tooltip-top-right::before {
           border-color: $background-color transparent transparent transparent;
         }
+
         &.has-tooltip-bottom::before,
         &.has-tooltip-bottom-left::before,
         &.has-tooltip-bottom-right::before {
           border-color: transparent transparent $background-color transparent;
         }
+
         &.has-tooltip-left::before {
           border-color: transparent transparent transparent $background-color;
         }
-        &.has-tooltip-right::before {            
+
+        &.has-tooltip-right::before {
           border-color: transparent $background-color transparent transparent;
         }
       }
@@ -127,16 +140,19 @@
         text-align: left;
       }
     }
+
     &.has-tooltip-text-centered {
       &::after {
         text-align: center;
       }
     }
+
     &.has-tooltip-text-right {
       &::after {
         text-align: right;
       }
     }
   }
-@include a.tooltip-fade;
-  }
+
+  @include a.tooltip-fade;
+}

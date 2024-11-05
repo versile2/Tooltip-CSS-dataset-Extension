@@ -249,3 +249,10 @@ pre.copy-to-clipboard .copy-icon {
 .content {
   overflow: visible !important;
 }
+
+.full-height-scrollable {
+  height: 100%;
+  max-height: 180px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

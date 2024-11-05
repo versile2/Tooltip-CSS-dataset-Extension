@@ -47,7 +47,7 @@ order: 4
 						<div class="position-grid__cell">
 							<a href="#" data-tooltip="right" class="has-tooltip-right">right</a>
 						</div>
-						<div class="position-grid__cell"><a data-tooltip="This is a really long default tooltip to evaluate what happens when you have a very long tooltip without any options set.">.</a></div>
+						<div class="position-grid__cell"><a class="has-tooltip-center" data-tooltip="center">center</a></div>
 						<div class="position-grid__cell">
 							<a href="#" data-tooltip="left" class="has-tooltip-left">left</a>
 						</div>
@@ -65,8 +65,7 @@ order: 4
 							>
 						</div>
 					</div>
-					<h3>Color Modifiers</h3>
-					<h4>By Status Error, Warning, Info, Success</h4>
+					<h3>Color By Status Error, Warning, Info, Success</h3>
 					<p>
 						<a
 							class="status-icon has-tooltip-error has-tooltip-left"
@@ -117,7 +116,7 @@ order: 4
 							</svg>
 						</a>
 					</p>
-					<h4>By Primary, Secondary, or Tertiary Colors</h4>
+					<h3>Color By Primary, Secondary, or Tertiary Colors</h3>
 					<p>
 						<a
 							class="status-icon has-tooltip-primary has-tooltip-left"
@@ -150,7 +149,7 @@ order: 4
 						</svg>
 						</a>
 					</p>					
-					<h3>Delay Modifiers</h3>
+					<h3>Delay and Extra Modifiers</h3>
 					<div class="position-grid">
 						<div class="position-grid__cell">
 						<a href="#" data-tooltip="top-left" style="--tooltip-delay: 1s" class="has-tooltip-top">top w/1s delay</a>
@@ -169,7 +168,16 @@ order: 4
 						</div>
 						<div class="position-grid__cell">
 							<a href="#" data-tooltip="always on" class="has-tooltip-active">has-tooltip-active</a>
-						</div>												
+						</div>
+						<div class="position-grid__cell">
+						<a href="#" data-tooltip="left aligned text" class="has-tooltip-text-left has-tooltip-fixed">has-tooltip-text-left</a>
+						</div>
+						<div class="position-grid__cell">
+						<a href="#" data-tooltip="centered aligned text" class="has-tooltip-text-center has-tooltip-fixed">has-tooltip-text-center</a>
+						</div>
+						<div class="position-grid__cell">
+						<a href="#" data-tooltip="right aligned text" class="has-tooltip-text-right has-tooltip-fixed">has-tooltip-text-right</a>
+						</div>															
 					</div>
 					<h3>Size variations</h3>
 					<p>

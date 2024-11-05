@@ -22,7 +22,7 @@ permalink: "/"
         Show your support by giving us a <a href="{{ gitlink }}" target="_blank" class="has-text-primary has-text-weight-bold">star 🌟 on GitHub</a> and sharing with your network!
       </p>
 
-      <p>Tooltip Extensions is inspired by and modeled from <a href="https://github.com/CreativeBulma/bulma-tooltip" target="_blank" class="has-text-link">Bulma CSS Tooltip Extensions</a>. It is designed to blend beautifully with Bulma and MudBlazor styles, all while staying flexible and lightweight. It will work without any dependencies whatsoever!</p>
+      <p>Tooltip Extensions is inspired by and modeled from <a href="https://github.com/CreativeBulma/bulma-tooltip" target="_blank" class="has-text-link">Bulma CSS Tooltip Extensions</a> and <a href="https://github.com/chinchang/hint.css" target="_blank" class="has-text-link">Hint.css</a>. It is designed to blend beautifully with Bulma and MudBlazor styles, all while staying flexible and lightweight. It will work without any dependencies whatsoever!</p>
     </div>
   </div>
 </section>

@@ -116,7 +116,7 @@ $tooltip-colors: (
 
 <h2 class="subtitle is-3 my-4">3. Compile SCSS</h2>
 
-<p>After making your changes, compile the SCSS to generate the updated CSS file. Run the following command from bash in the `src` directory:</p>
+<p>After making your changes, compile the SCSS to generate the updated CSS file. Run the following command from bash in the root directory:</p>
 
 <pre class="language-bash copy-to-clipboard">
   <code>node src/compile-scss.js</code>
@@ -138,6 +138,6 @@ $tooltip-colors: (
 
 <p>Remember to test your customizations across different browsers and devices to ensure consistency.</p>
 
-<p>For more advanced customizations or if you encounter any issues, please refer to the [documentation](./docs) or [open an issue]({{ gitlink }}/issues) on GitHub.</p>
+<p>For more advanced customizations or if you encounter any issues, please refer to the <a href="https://versile2.github.io/Tooltip-CSS-dataset-Extension/">Documentation</a> or <a href="{{ gitlink }}/issues" target="_blank">open an issue</a> on GitHub.</p>
 </div>
 </div>

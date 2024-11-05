@@ -34,8 +34,9 @@ order: 3
       </div>
     </div>
     <div class="panel-block tab-pane is-hidden panel-height" id="previewCodedefault" role="tabpanel" aria-labelledby="preview-code-default">
+<div class="full-height-scrollable">
 <pre class="language-html copy-to-clipboard"><code>&lt;button class=&quot;button mb-2&quot; data-tooltip=&quot;Tooltip content&quot;&gt;tooltip default&lt;/button&gt;
-</code></pre>
+</code></pre></div>
     </div>
   </div>
 </div>
@@ -68,8 +69,8 @@ order: 3
       </div>
         </div>
         <div class="panel-block tab-pane is-hidden panel-height" id="previewCodearrow" role="tabpanel" aria-labelledby="preview-code-arrow">
-<pre class="language-html copy-to-clipboard"><code>&lt;button class=&quot;button mb-2 has-tooltip-arrow&quot; data-tooltip=&quot;Tooltip content&quot;&gt;tooltip default&lt;/button&gt;
-</code></pre>
+<div class="full-height-scrollable"><pre class="language-html copy-to-clipboard"><code>&lt;button class=&quot;button mb-2 has-tooltip-arrow&quot; data-tooltip=&quot;Tooltip content&quot;&gt;tooltip default&lt;/button&gt;
+</code></pre></div>
         </div>
     </div>
 </div>
@@ -113,7 +114,7 @@ order: 3
     <button class="button is-small is-fullwidth mb-1 has-tooltip-arrow has-tooltip-right" data-tooltip="right">right</button>
   </div>
   <div>
-    <button class="button is-small is-fullwidth mb-1 has-tooltip-arrow" data-tooltip="center">.</button>
+    <button class="button is-small is-fullwidth mb-1 has-tooltip-center" data-tooltip="center">center</button>
   </div>
   <div>
     <button class="button is-small is-fullwidth mb-1 has-tooltip-arrow has-tooltip-left" data-tooltip="left">left</button>
@@ -133,7 +134,7 @@ order: 3
       </div>
         </div>
         <div class="panel-block tab-pane is-hidden panel-height" id="previewCodeposition" role="tabpanel" aria-labelledby="preview-code-position">
-<pre class="lang-html copy-to-clipboard"><code>&lt;div class=&quot;fixed-grid has-gap-0 has-3-cols&quot;&gt;
+<div class="full-height-scrollable"><pre class="lang-html copy-to-clipboard"><code>&lt;div class=&quot;fixed-grid has-gap-0 has-3-cols&quot;&gt;
 &lt;div class=&quot;grid&quot;&gt;
   &lt;div&gt;
     &lt;button class=&quot;button is-small is-fullwidth mb-1 has-tooltip-arrow has-tooltip-bottom-right&quot; data-tooltip=&quot;bottom-right&quot;&gt;bottom-right&lt;/button&gt;  &lt;/div&gt;  &lt;div&gt;
@@ -142,7 +143,7 @@ order: 3
     &lt;button class=&quot;button is-small is-fullwidth mb-1 has-tooltip-arrow has-tooltip-bottom-left&quot; data-tooltip=&quot;bottom-left&quot;&gt;bottom-left&lt;/button&gt;   &lt;/div&gt;   &lt;div&gt;
     &lt;button class=&quot;button is-small is-fullwidth mb-1 has-tooltip-arrow has-tooltip-right&quot; data-tooltip=&quot;right&quot;&gt;right&lt;/button&gt;
   &lt;/div&gt;   &lt;div&gt;
-    &lt;button class=&quot;button is-small is-fullwidth mb-1 has-tooltip-arrow&quot; data-tooltip=&quot;center&quot;&gt;.&lt;/button&gt;
+    &lt;button class=&quot;button is-small is-fullwidth mb-1 has-tooltip-center&quot; data-tooltip=&quot;center&quot;&gt;center&lt;/button&gt;
   &lt;/div&gt;   &lt;div&gt;
     &lt;button class=&quot;button is-small is-fullwidth mb-1 has-tooltip-arrow has-tooltip-left&quot; data-tooltip=&quot;left&quot;&gt;left&lt;/button&gt;
   &lt;/div&gt;   &lt;div&gt;
@@ -151,7 +152,7 @@ order: 3
   &lt;/div&gt;   &lt;div&gt;
     &lt;button class=&quot;button is-small is-fullwidth mb-1 has-tooltip-arrow has-tooltip-top-left&quot; data-tooltip=&quot;top-left&quot;&gt;top-left&lt;/button&gt;
   &lt;/div&gt; &lt;/div&gt;&lt;/div&gt;
-</code></pre>
+</code></pre></div>
         </div>
     </div>
 </div>
@@ -191,7 +192,7 @@ order: 3
       </div>
         </div>
         <div class="panel-block tab-pane is-hidden panel-height" id="previewCodecolor" role="tabpanel" aria-labelledby="preview-code-color">
-<pre class="language-html copy-to-clipboard"><code>&lt;a class=&quot;button mb-2 has-tooltip-arrow has-tooltip-info has-tooltip-left&quot; data-tooltip=&quot;Info Colored&quot;&gt;info&lt;/a&gt;
+<div class="full-height-scrollable"><pre class="language-html copy-to-clipboard"><code>&lt;a class=&quot;button mb-2 has-tooltip-arrow has-tooltip-info has-tooltip-left&quot; data-tooltip=&quot;Info Colored&quot;&gt;info&lt;/a&gt;
 &lt;a class=&quot;button mb-2 has-tooltip-arrow has-tooltip-success has-tooltip-bottom-left&quot; data-tooltip=&quot;Success Colored&quot;&gt;success&lt;/a&gt;
 &lt;a class=&quot;button mb-2 has-tooltip-arrow has-tooltip-warning has-tooltip-bottom-right&quot; data-tooltip=&quot;Warning Colored&quot;&gt;warning&lt;/a&gt;
 &lt;a class=&quot;button mb-2 has-tooltip-arrow has-tooltip-error has-tooltip-right&quot; data-tooltip=&quot;Error Colored&quot;&gt;error&lt;/a&gt;
@@ -199,7 +200,7 @@ order: 3
 &lt;a class=&quot;button mb-2 has-tooltip-arrow has-tooltip-primary has-tooltip-left&quot; data-tooltip=&quot;Primary Colored&quot;&gt;primary&lt;/a&gt;
 &lt;a class=&quot;button mb-2 has-tooltip-arrow has-tooltip-secondary has-tooltip-bottom&quot; data-tooltip=&quot;Secondary Colored&quot;&gt;secondary&lt;/a&gt;
 &lt;a class=&quot;button mb-2 has-tooltip-arrow has-tooltip-tertiary has-tooltip-right&quot; data-tooltip=&quot;Tertiary Colored&quot;&gt;tertiary&lt;/a&gt;
-</code></pre>
+</code></pre></div>
         </div>
     </div>
 </div>
@@ -246,11 +247,11 @@ order: 3
       </div>
         </div>
         <div class="panel-block tab-pane is-hidden panel-height" id="previewCodesize" role="tabpanel" aria-labelledby="preview-code-size">
-<pre class="language-html copy-to-clipboard"><code>&lt;a class=&quot;button has-tooltip-small has-tooltip-top&quot; style=&quot;width: 80px;&quot; data-tooltip=&quot;Small tooltips default to 80px in width and wrap content from there.&quot;&gt;Small&lt;/a&gt;
+<div class="full-height-scrollable"><pre class="language-html copy-to-clipboard"><code>&lt;a class=&quot;button has-tooltip-small has-tooltip-top&quot; style=&quot;width: 80px;&quot; data-tooltip=&quot;Small tooltips default to 80px in width and wrap content from there.&quot;&gt;Small&lt;/a&gt;
 &lt;a class=&quot;button has-tooltip-medium has-tooltip-top&quot; style=&quot;width: 150px;&quot; data-tooltip=&quot;Medium tooltips default to 150px in width and wrap content from there.&quot;&gt;Medium&lt;/a&gt;
 &lt;a class=&quot;button has-tooltip-large has-tooltip-top&quot; style=&quot;width: 300px;&quot; data-tooltip=&quot;Large tooltips default to 300px in width and wrap content from there.&quot;&gt;Large&lt;/a&gt;
 &lt;a class=&quot;button has-tooltip-fit has-tooltip-top&quot; style="width: 200px;" data-tooltip=&quot;Fit tooltips default to the same width of the parent container and wrap content from there.&quot;&gt;Fit&lt;/a&gt;
-</code></pre>
+</code></pre></div>
         </div>
     </div>
 </div>
@@ -285,10 +286,10 @@ order: 3
       </div>
         </div>
         <div class="panel-block tab-pane is-hidden panel-height" id="previewCodedelay" role="tabpanel" aria-labelledby="preview-code-delay">
-<pre class="language-html copy-to-clipboard"><code>&lt;button class=&quot;button mb-2 has-tooltip-arrow has-tooltip-left&quot; style=&quot;--tooltip-delay: 0ms;&quot; data-tooltip=&quot;No delay&quot;&gt;no delay&lt;/button&gt;
+<div class="full-height-scrollable"><pre class="language-html copy-to-clipboard"><code>&lt;button class=&quot;button mb-2 has-tooltip-arrow has-tooltip-left&quot; style=&quot;--tooltip-delay: 0ms;&quot; data-tooltip=&quot;No delay&quot;&gt;no delay&lt;/button&gt;
 &lt;button class=&quot;button mb-2 has-tooltip-arrow&quot; data-tooltip=&quot;Default 200ms delay&quot;&gt;default delay&lt;/button&gt;
 &lt;button class=&quot;button mb-2 has-tooltip-arrow has-tooltip-right&quot; style=&quot;--tooltip-delay: 1s;&quot; data-tooltip=&quot;1 second delay&quot;&gt;1s delay&lt;/button&gt;
-</code></pre>
+</code></pre></div>
         </div>
     </div>
 </div>
@@ -317,59 +318,44 @@ order: 3
         <div class="panel-block tab-pane is-active panel-height" id="previewmodifier" role="tabpanel" aria-labelledby="preview-modifier">
       <div class="content mb-n4">
 <div class="columns is-mobile">
- <div class="column is-4 is-flex is-align-items-center is-justify-content-center">
+  <div class="column is-4 is-flex is-align-items-center is-justify-content-center">
+    <a class="button has-tooltip-fixed has-tooltip-text-left has-tooltip-large" data-tooltip="Left aligned tooltip, must be used with has-tooltip-fixed">has-tooltip-text-left</a>
+  </div>
+  <div class="column is-4 is-flex is-align-items-center is-justify-content-center">
+    <a class="button has-tooltip-fixed has-tooltip-text-center has-tooltip-large" data-tooltip="Center aligned tooltip, must be used with has-tooltip-fixed, however center is default behavior.">has-tooltip-text-center</a>
+  </div>
+  <div class="column is-4 is-flex is-align-items-center is-justify-content-center">
+    <a class="button has-tooltip-fixed has-tooltip-text-right has-tooltip-large" data-tooltip="Right aligned tooltip, must be used with has-tooltip-fixed">has-tooltip-text-right</a>
+    </div>
+  </div>      
+<div class="columns is-mobile">
+ <div class="column is-3 is-flex is-align-items-center is-justify-content-center">
    <label for="hiddenCbox">Hide Tooltip&nbsp;</label><input type="checkbox" id="hiddenCbox" />
  </div>
- <div class="column is-4">
+ <div class="column is-3">
    <a id="hiddenA" class="button" data-tooltip="hidden when checked">has-tooltip-hidden</a>
  </div>
- <div class="column is-4">
+ <div class="column is-3">
    <a class="button has-tooltip-active" data-tooltip="always on">has-tooltip-active</a>
  </div>
+ <div class="column is-3">
+   <a class="button has-tooltip-fixed" data-tooltip="Matches tooltip width and max-width; It is generally used within size styles but uses default size of large.">has-tooltip-fixed</a>
+ </div> 
 </div>
-        <p>There are special cases where you might want to hide a tooltip via code, you can do so by adding and removing <code>class="has-tooltip-hidden"</code> You might also want a tooltip to always show, regardless of hover. For that scenario you would use <code>class="has-tooltip-active"</code></p>
+        <p>There are special cases where you might want to hide a tooltip via code, you can do so by adding and removing <code>class="has-tooltip-hidden"</code> You might also want a tooltip to always show, regardless of hover. For that scenario you would use <code>class="has-tooltip-active"</code> Finally, using a fixed-width tooltip might suit your fancy, but this style is generally used with size and text styles.</p>
       </div>
         </div>
         <div class="panel-block tab-pane is-hidden panel-height" id="previewCodemodifier" role="tabpanel" aria-labelledby="preview-code-modifier">
-<pre class="language-html copy-to-clipboard"><code>&lt;label for=&quot;hiddenCbox&quot;&gt;Hide Tooltip&amp;nbsp;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;hiddenCbox&quot; /&gt;
+<div class="full-height-scrollable"><pre class="language-html copy-to-clipboard"><code>&lt;a class=&quot;button has-tooltip-fixed has-tooltip-text-left has-tooltip-large&quot; data-tooltip=&quot;Left aligned tooltip, must be used with has-tooltip-fixed&quot;&gt;has-tooltip-text-left&lt;/a&gt;
+&lt;a class=&quot;button has-tooltip-fixed has-tooltip-text-center has-tooltip-large&quot; data-tooltip=&quot;Center aligned tooltip, must be used with has-tooltip-fixed, however center is default behavior.&quot;&gt;has-tooltip-text-center&lt;/a&gt;
+&lt;a class=&quot;button has-tooltip-fixed has-tooltip-text-right has-tooltip-large&quot; data-tooltip=&quot;Right aligned tooltip, must be used with has-tooltip-fixed&quot;&gt;has-tooltip-text-right&lt;/a&gt;
+
+&lt;label for=&quot;hiddenCbox&quot;&gt;Hide Tooltip&amp;nbsp;&lt;/label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;hiddenCbox&quot; /&gt;
 &lt;a id=&quot;hiddenA&quot; class=&quot;button&quot; data-tooltip=&quot;hidden when checked&quot;&gt;has-tooltip-hidden&lt;/a&gt;
 &lt;a class=&quot;button has-tooltip-active&quot; data-tooltip=&quot;always on&quot; &gt;has-tooltip-active&lt;/a&gt;
-</code></pre>
+</code></pre></div>
         </div>
     </div>
-</div>
-
-<!-- Responsive Tab (not yet implemented) -->
-<div class="panel mt-4 is-hidden" data-pagefind-body>
-  <div class="panel-heading">
-    <div class="columns is-mobile is-multiline is-centered">
-      <div class="column is-12-mobile is-flex is-justify-content-start custom-mobile-center">
-        <p>Responsiveness</p>
-      </div>
-    <div class="column is-12-mobile is-flex is-justify-content-end custom-mobile-center">
-      <code class="has-background-grey-lighter has-text-grey-dark px-2 py-1 is-size-7 copy-to-clipboard">class='has-tooltip-[direction]-[target]'</code>
-    </div>
-  </div>
-</div>
-  <div class="panel-block">
-    <div class="panel-content">
-      <p>Tooltip position can be based on responsiveness breakpoints by adding one of the following classes to the HTML element containing the tooltip:</p>
-      <ul>
-        <li class="has-tooltip-right-mobile" data-tooltip="has-tooltip-right-mobile"><code class="copy-to-clipboard">has-tooltip-[direction]-mobile</code></li>
-        <li class="has-tooltip-top-tablet" data-tooltip="has-tooltip-top-tablet"><code class="copy-to-clipboard">has-tooltip-[direction]-tablet</code></li>
-        <li class="has-tooltip-left-tablet-only" data-tooltip="has-tooltip-left-tablet-only"><code class="copy-to-clipboard">has-tooltip-[direction]-tablet-only</code></li>
-        <li class="has-tooltip-right-touch" data-tooltip="has-tooltip-right-touch"><code class="copy-to-clipboard">has-tooltip-[direction]-touch</code></li>
-        <li class="has-tooltip-top-desktop" data-tooltip="has-tooltip-top-desktop"><code class="copy-to-clipboard">has-tooltip-[direction]-desktop</code></li>
-        <li class="has-tooltip-left-desktop-only" data-tooltip="has-tooltip-left-desktop-only"><code class="copy-to-clipboard">has-tooltip-[direction]-desktop-only</code></li>
-        <li class="has-tooltip-right-until-widescreen" data-tooltip="has-tooltip-right-until-widescreen"><code class="copy-to-clipboard">has-tooltip-[direction]-until-widescreen</code></li>
-        <li class="has-tooltip-top-widescreen" data-tooltip="has-tooltip-top-widescreen"><code class="copy-to-clipboard">has-tooltip-[direction]-widescreen</code></li>
-        <li class="has-tooltip-left-widescreen-only" data-tooltip="has-tooltip-left-widescreen-only"><code class="copy-to-clipboard">has-tooltip-[direction]-widescreen-only</code></li>
-        <li class="has-tooltip-right-until-fullhd" data-tooltip="has-tooltip-right-until-fullhd"><code class="copy-to-clipboard">has-tooltip-[direction]-until-fullhd</code></li>
-        <li class="has-tooltip-top-fullhd" data-tooltip="has-tooltip-top-fullhd"><code class="copy-to-clipboard">has-tooltip-[direction]-fullhd</code></li>
-      </ul>
-<p>Don't forget to replace <code>[direction]</code>&nbsp;by one of the avaiblable directions: <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code></p>
-    </div>
-  </div>
 </div>
 
 <!-- Hidden Tab -->
