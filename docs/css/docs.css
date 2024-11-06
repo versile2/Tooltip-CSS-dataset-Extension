@@ -208,10 +208,8 @@
 
 code {
   position: relative;
-}
-
-pre.copy-to-clipboard {
-  position: relative;
+  min-height: 16px;
+  vertical-align: middle;
 }
 
 .copy-icon {
@@ -219,26 +217,22 @@ pre.copy-to-clipboard {
   background-image: url('../icons/clippy.svg');
   background-position: 50% 50%;
   background-size: 16px 16px;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;  
   --tooltip-hide-delay: 1s;
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  cursor: pointer;
   width: 16px;
   height: 16px;
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  cursor: pointer;
-  border-radius: 4px;
-  background-color: #FFF7DD;  
-  z-index: 13000;
+  background-color: transparent;
+  color: #333;
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Specific positioning for copy-to-clipboard inside pre elements */
-pre.copy-to-clipboard .copy-icon {
-  top: 27px;
-  right: 27px;
-  background-color: #FFF7DD;
-  opacity: .7;
+.panel-block > .copy-icon {
+  top: 20px;
+  right: 40px;
 }
 
 .panel-block {
@@ -252,6 +246,5 @@ pre.copy-to-clipboard .copy-icon {
 .full-height-scrollable {
   height: 100%;
   max-height: 180px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-y: auto !important;
 }

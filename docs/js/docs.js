@@ -28,15 +28,18 @@
     var codes = document.querySelectorAll('pre.copy-to-clipboard, code.copy-to-clipboard') || [];
   
     codes.forEach(function(codeElement) {
-
+      var parentElement = codeElement.closest('.panel-block') || codeElement;
       // Create the copy icon element
-      var copyIcon = document.createElement('div');
-      copyIcon.setAttribute('data-tooltip', 'Click to copy');
-      copyIcon.classList.add('copy-icon');
-      copyIcon.classList.add('tooltip-arrow');
-      copyIcon.classList.add('tooltip-left');
-      copyIcon.classList.add('tooltip-hidden');      
-      codeElement.appendChild(copyIcon);
+      var copyIcon = document.createElement('span');
+      copyIcon.classList.add('copy-icon'); 
+      parentElement.appendChild(copyIcon);
+
+      parentElement.setAttribute('data-tooltip', 'Click to copy');
+      parentElement.classList.add(parentElement === codeElement ? 'tooltip-center' : 'tooltip-top');
+      if (parentElement !== codeElement) {
+        parentElement.classList.add('tooltip-arrow');
+      } 
+      parentElement.classList.add('tooltip-hidden');
 
       // Initialize clipboard functionality if not already initialized
       if (!clipInit) {
@@ -52,34 +55,40 @@
   
         clip.on('success', function(e) {
           e.clearSelection();
-          var inPre = e.trigger.parentNode.tagName === 'PRE';
-  
+          var inPre = e.trigger.parentNode.tagName === 'PRE';          
+          var codeElement = inPre ? e.trigger.parentNode.querySelector('code') : e.trigger.parentNode;
+          var parentElement = codeElement.closest('.panel-block') || codeElement;
           // Set data-tooltip attribute and add custom tooltip classes
-          e.trigger.dataset.tooltip = 'Copied to clipboard!';
-          e.trigger.classList.remove('tooltip-hidden');
-          e.trigger.classList.add('tooltip-active');
+          parentElement.dataset.tooltip = 'Copied to clipboard!';
+          parentElement.classList.remove('tooltip-hidden');
+          parentElement.classList.add('tooltip-active');
+          parentElement.classList.add('tooltip-success');
   
           // Remove tooltip after 2 seconds
           setTimeout(function() {
-            delete e.trigger.dataset.tooltip;
-            e.trigger.classList.add('tooltip-hidden');
-            e.trigger.classList.remove('tooltip-active');
+            parentElement.dataset.tooltip = 'Click to Copy';
+            parentElement.classList.add('tooltip-hidden');
+            parentElement.classList.remove('tooltip-active');
+            parentElement.classList.remove('tooltip-success');
           }, 2000);
         });
   
         clip.on('error', function(e) {
           var inPre = e.trigger.parentNode.tagName === 'PRE';
-  
+          var codeElement = inPre ? e.trigger.parentNode.querySelector('code') : e.trigger.parentNode;
+          var parentElement = codeElement.closest('.panel-block') || codeElement;
           // Set data-tooltip attribute and add custom tooltip classes
-          e.trigger.dataset.tooltip = fallbackMessage(e.action);
-          e.trigger.classList.remove('tooltip-hidden');
-          e.trigger.classList.add('tooltip-active');
+          parentElement.dataset.tooltip = fallbackMessage(e.action);
+          parentElement.classList.remove('tooltip-hidden');
+          parentElement.classList.add('tooltip-active');
+          parentElement.classList.add('tooltip-error');
   
           // Remove tooltip after 2 seconds
           setTimeout(function() {
-            delete e.trigger.dataset.tooltip;
-            e.trigger.classList.add('tooltip-hidden');
-            e.trigger.classList.remove('tooltip-active');
+            parentElement.dataset.tooltip = 'Click to Copy';
+            parentElement.classList.add('tooltip-hidden');
+            parentElement.classList.remove('tooltip-active');
+            parentElement.classList.remove('tooltip-error');
           }, 2000);
         });
   
