@@ -1,5 +1,5 @@
 [data-tooltip] {
-  &.has-tooltip-hidden-mobile {
+  &.tooltip-hidden-mobile {
     @media screen and (max-width: 768px) {
       &::after,
       &::before {
@@ -9,7 +9,7 @@
     }
   }
 
-  &.has-tooltip-hidden-tablet {
+  &.tooltip-hidden-tablet {
     @media screen and (min-width: 769px) and (max-width: 1023px) {
       &::after,
       &::before {
@@ -19,7 +19,7 @@
     }
   }
 
-  &.has-tooltip-hidden-desktop {
+  &.tooltip-hidden-desktop {
     @media screen and (min-width: 1024px) {
       &::after,
       &::before {

@@ -206,40 +206,39 @@
   100% { background-color: transparent; }
 }
 
-/* Clipboard Copy */
-.copy-to-clipboard {
+code {
+  position: relative;
+}
+
+pre.copy-to-clipboard {
   position: relative;
 }
 
 .copy-icon {
-  content: '';
+  content: "";
   background-image: url('../icons/clippy.svg');
   background-position: 50% 50%;
   background-size: 16px 16px;
   background-repeat: no-repeat;
-  width: 27px;
-  height: 1.45rem;
+  --tooltip-hide-delay: 1s;
+  width: 16px;
+  height: 16px;
   position: absolute;
-  top: 0px;
-  right: -21px;
+  top: 2px;
+  right: 2px;
   cursor: pointer;
   border-radius: 4px;
   background-color: #FFF7DD;  
-  z-index: 3000;
-  opacity: 0;
+  z-index: 13000;
   transition: opacity 0.3s ease-in-out;
 }
 
 /* Specific positioning for copy-to-clipboard inside pre elements */
 pre.copy-to-clipboard .copy-icon {
-  top: 23px;
+  top: 27px;
   right: 27px;
   background-color: #FFF7DD;
   opacity: .7;
-}
-
-.copy-to-clipboard:hover .copy-icon {
-  opacity: 1;
 }
 
 .panel-block {

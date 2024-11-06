@@ -28,11 +28,16 @@
     var codes = document.querySelectorAll('pre.copy-to-clipboard, code.copy-to-clipboard') || [];
   
     codes.forEach(function(codeElement) {
+
       // Create the copy icon element
       var copyIcon = document.createElement('div');
+      copyIcon.setAttribute('data-tooltip', 'Click to copy');
       copyIcon.classList.add('copy-icon');
+      copyIcon.classList.add('tooltip-arrow');
+      copyIcon.classList.add('tooltip-left');
+      copyIcon.classList.add('tooltip-hidden');      
       codeElement.appendChild(copyIcon);
-  
+
       // Initialize clipboard functionality if not already initialized
       if (!clipInit) {
         var clip = new ClipboardJS('.copy-icon', {
@@ -51,13 +56,14 @@
   
           // Set data-tooltip attribute and add custom tooltip classes
           e.trigger.dataset.tooltip = 'Copied to clipboard!';
-          e.trigger.classList.add('has-tooltip-arrow');
-          e.trigger.classList.add(inPre ? 'has-tooltip-left' : 'has-tooltip-bottom');
+          e.trigger.classList.remove('tooltip-hidden');
+          e.trigger.classList.add('tooltip-active');
   
           // Remove tooltip after 2 seconds
           setTimeout(function() {
             delete e.trigger.dataset.tooltip;
-            e.trigger.classList.remove('has-tooltip-arrow', 'has-tooltip-left', 'has-tooltip-bottom');
+            e.trigger.classList.add('tooltip-hidden');
+            e.trigger.classList.remove('tooltip-active');
           }, 2000);
         });
   
@@ -66,13 +72,14 @@
   
           // Set data-tooltip attribute and add custom tooltip classes
           e.trigger.dataset.tooltip = fallbackMessage(e.action);
-          e.trigger.classList.add('has-tooltip-arrow');
-          e.trigger.classList.add(inPre ? 'has-tooltip-left' : 'has-tooltip-bottom');
+          e.trigger.classList.remove('tooltip-hidden');
+          e.trigger.classList.add('tooltip-active');
   
           // Remove tooltip after 2 seconds
           setTimeout(function() {
             delete e.trigger.dataset.tooltip;
-            e.trigger.classList.remove('has-tooltip-arrow', 'has-tooltip-left', 'has-tooltip-bottom');
+            e.trigger.classList.add('tooltip-hidden');
+            e.trigger.classList.remove('tooltip-active');
           }, 2000);
         });
   
@@ -211,9 +218,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const tooltipElements = document.querySelectorAll('[data-tooltip]');
         tooltipElements.forEach(function(element) {
             if (checkbox.checked) {
-                element.classList.add('has-tooltip-arrow');
+                element.classList.add('tooltip-arrow');
             } else {
-                element.classList.remove('has-tooltip-arrow');
+                element.classList.remove('tooltip-arrow');
             }
         });
     });
@@ -223,9 +230,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hiddenCbox) {
     hiddenCbox.addEventListener('change', function() {
         if (hiddenCbox.checked) {
-            tooltipToHide.classList.add('has-tooltip-hidden');
+            tooltipToHide.classList.add('tooltip-hidden');
         } else {
-            tooltipToHide.classList.remove('has-tooltip-hidden');
+            tooltipToHide.classList.remove('tooltip-hidden');
         }
     });
   }

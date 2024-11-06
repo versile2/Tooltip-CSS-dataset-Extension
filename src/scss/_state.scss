@@ -1,6 +1,4 @@
 @mixin base-state {
-  &:not(.is-loading),
-  &:not(.is-disabled),
   &:not([disabled]) {
     cursor: pointer;
     overflow: visible;
@@ -9,7 +7,7 @@
   }
 }
 
-.has-tooltip-hidden {
+.tooltip-hidden {
   &::before,
   &::after {
     opacity: 0 !important;
@@ -17,7 +15,7 @@
   }
 }
 
-.has-tooltip-fixed {
+.tooltip-fixed {
   &::after {
     width: 100% !important;
   }

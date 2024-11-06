@@ -243,6 +243,14 @@
 			a:hover svg {
 				fill: white;
 			}
+			.tooltip-mudchip {
+				--tooltip-border-radius: 12px;
+				--tooltip-foreground-color: #fff;
+				--tooltip-background-color: indianred;
+				--tooltip-show-delay: 1s;
+				--tooltip-hide-delay: 1s;
+				--tooltip-font-weight: 500;
+			}
 		</style>
 		<link rel="stylesheet" href="src/css/tooltip-extensions.min.css" />
 	</head>
@@ -262,15 +270,15 @@
 				<div class="titlebar">
 					<div class="buttons">
 						<a
-							class="titlebar__btn close has-tooltip-bottom"
+							class="titlebar__btn close tooltip-bottom"
 							data-tooltip="Close"
 						></a>
 						<a
-							class="titlebar__btn minimize has-tooltip-bottom"
+							class="titlebar__btn minimize tooltip-bottom"
 							data-tooltip="Minimize"
 						></a>
 						<a
-							class="titlebar__btn zoom has-tooltip-bottom"
+							class="titlebar__btn zoom tooltip-bottom"
 							data-tooltip="Zoom"
 						></a>
 					</div>
@@ -282,35 +290,35 @@
 					</div>
 					<div class="position-grid">
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="bottom-right" class="has-tooltip-bottom-right"
+							<a href="#" data-tooltip="bottom-right" class="tooltip-bottom-right"
 								>bottom-right</a
 							>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="bottom" class="has-tooltip-bottom">bottom</a>
+							<a href="#" data-tooltip="bottom" class="tooltip-bottom">bottom</a>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="bottom-left" class="has-tooltip-bottom-left"
+							<a href="#" data-tooltip="bottom-left" class="tooltip-bottom-left"
 								>bottom-left</a
 							>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="right" class="has-tooltip-right">right</a>
+							<a href="#" data-tooltip="right" class="tooltip-right">right</a>
 						</div>
-						<div class="position-grid__cell"><a data-tooltip="This is a really long default tooltip to evaluate what happens when you have a very long tooltip without any options set.">.</a></div>
+						<div class="position-grid__cell"><a data-tooltip="center" class="tooltip-center tooltip-mudchip">center</a></div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="left" class="has-tooltip-left">left</a>
+							<a href="#" data-tooltip="left" class="tooltip-left">left</a>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="top-right" class="has-tooltip-top-right"
+							<a href="#" data-tooltip="top-right" class="tooltip-top-right"
 								>top-right</a
 							>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="top" class="has-tooltip-top">top</a>
+							<a href="#" data-tooltip="top" class="tooltip-top">top</a>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="top-left" class="has-tooltip-top-left"
+							<a href="#" data-tooltip="top-left" class="tooltip-top-left"
 								>top-left</a
 							>
 						</div>
@@ -320,7 +328,7 @@
 					<h4>By Status Error, Warning, Info, Success</h4>
 					<p>
 						<a
-							class="status-icon has-tooltip-error has-tooltip-left"
+							class="status-icon tooltip-error tooltip-left"
 							style="background: rgb(244,67,54)"
 							data-tooltip="This is an error tooltip"
 						>
@@ -332,7 +340,7 @@
 							</svg>
 						</a>
 						<a
-							class="status-icon has-tooltip-warning has-tooltip-bottom-left"
+							class="status-icon tooltip-warning tooltip-bottom-left"
 							style="background: rgb(255,152,0)"
 							data-tooltip="This is a warning tooltip"
 						>
@@ -344,7 +352,7 @@
 							</svg>
 						</a>
 						<a
-							class="status-icon has-tooltip-info has-tooltip-bottom-right"
+							class="status-icon tooltip-info tooltip-bottom-right"
 							style="background: rgb(33,150,243)"
 							data-tooltip="This is an info tooltip"
 						>
@@ -356,7 +364,7 @@
 							</svg>
 						</a>
 						<a
-							class="status-icon has-tooltip-success has-tooltip-right"
+							class="status-icon tooltip-success tooltip-right"
 							style="background: rgb(0,200,83)"
 							data-tooltip="This is success tooltip"
 						>
@@ -372,7 +380,7 @@
 					<h4>By Primary, Secondary, or Tertiary Colors</h4>
 					<p>
 						<a
-							class="status-icon has-tooltip-primary has-tooltip-left"
+							class="status-icon tooltip-primary tooltip-left"
 							style="background: rgb(89,74,226)"
 							data-tooltip="This is a Primary tooltip"
 						>
@@ -382,7 +390,7 @@
 						</svg>
 						</a>
 						<a
-							class="status-icon has-tooltip-secondary"
+							class="status-icon tooltip-secondary"
 							style="background: rgb(255,64,129)"
 							data-tooltip="This is a Secondary tooltip"
 						>
@@ -392,7 +400,7 @@
 						</svg>
 						</a>
 						<a
-							class="status-icon has-tooltip-tertiary has-tooltip-right"
+							class="status-icon tooltip-tertiary tooltip-right"
 							style="background: rgb(30,200,165)"
 							data-tooltip="This is a Tertiary tooltip"
 						>
@@ -406,29 +414,29 @@
 					<h3>Delay Modifiers</h3>
 					<div class="position-grid">
 						<div class="position-grid__cell">
-						<a href="#" data-tooltip="top-left" style="--tooltip-delay: 1s" class="has-tooltip-top">top w/1s delay</a>
+						<a href="#" data-tooltip="top-left" style="--tooltip-delay: 1s" class="tooltip-top">top w/1s delay</a>
 						</div>
 						<div class="position-grid__cell">
-						<a href="#" data-tooltip="top-left" style="--tooltip-delay: 500ms" class="has-tooltip-top">top w/500ms delay</a>
+						<a href="#" data-tooltip="top-left" style="--tooltip-delay: 500ms" class="tooltip-top">top w/500ms delay</a>
 						</div>
 						<div class="position-grid__cell">
-						<a href="#" data-tooltip="top-left" style="--tooltip-delay: 0s" class="has-tooltip-top">top w/0s delay</a>
+						<a href="#" data-tooltip="top-left" style="--tooltip-delay: 0s" class="tooltip-top">top w/0s delay</a>
 						</div>
 						<div class="position-grid__cell" style="display: flex; align-items: center; justify-content: center;">
 							<label for="hiddenCbox">Hide Tooltip</label><input type="checkbox" id="hiddenCbox" />
 						  </div>										  
 						<div class="position-grid__cell">
-							<a id="hiddenA" href="#" data-tooltip="hidden when checked">has-tooltip-hidden</a>
+							<a id="hiddenA" href="#" data-tooltip="hidden when checked">tooltip-hidden</a>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="always on" class="has-tooltip-active">has-tooltip-active</a>
+							<a href="#" data-tooltip="always on" class="tooltip-active">tooltip-active</a>
 						</div>												
 					</div>
 					<h3>Size variations</h3>
 
 					<p>
 						<a
-							class="has-tooltip-small"
+							class="tooltip-small"
 							style="
 								border: 1px solid #eee;
 								padding: 3px 6px;
@@ -441,7 +449,7 @@
 						</a>
 
 						<a
-							class="has-tooltip-medium"
+							class="tooltip-medium"
 							style="
 								border: 1px solid #eee;
 								padding: 3px 6px;
@@ -454,7 +462,7 @@
 						</a>
 
 						<a
-							class="has-tooltip-large"
+							class="tooltip-large"
 							style="
 								border: 1px solid #eee;
 								padding: 3px 6px;
@@ -467,7 +475,7 @@
 						</a>
 
 						<a
-							class="has-tooltip-fit"
+							class="tooltip-fit"
 							style="
 								border: 1px solid #eee;
 								padding: 3px 56px;
@@ -488,7 +496,7 @@
 			Modeled from
 			<a
 				data-tooltip="@chinchang457"
-				class="has-tooltip-top"
+				class="tooltip-top"
 				href="https://twitter.com/chinchang457"
 				>Kushagra Gour</a
 			>
@@ -507,9 +515,9 @@
         const tooltipElements = document.querySelectorAll('[data-tooltip]');
         tooltipElements.forEach(function(element) {
             if (checkbox.checked) {
-                element.classList.add('has-tooltip-arrow');
+                element.classList.add('tooltip-arrow');
             } else {
-                element.classList.remove('has-tooltip-arrow');
+                element.classList.remove('tooltip-arrow');
             }
         });
     });
@@ -517,9 +525,9 @@
     // New hidden checkbox handler
     hiddenCbox.addEventListener('change', function() {
         if (hiddenCbox.checked) {
-            tooltipToHide.classList.add('has-tooltip-hidden');
+            tooltipToHide.classList.add('tooltip-hidden');
         } else {
-            tooltipToHide.classList.remove('has-tooltip-hidden');
+            tooltipToHide.classList.remove('tooltip-hidden');
         }
     });
 });

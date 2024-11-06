@@ -3,8 +3,8 @@
 @mixin tooltip-hover {
   &:hover::before,
   &:hover::after,
-  &.has-tooltip-active::before,
-  &.has-tooltip-active::after {
+  &.tooltip-active::before,
+  &.tooltip-active::after {
     @content;
     visibility: visible;
     opacity: 1;
@@ -74,17 +74,20 @@
 
 @mixin center-positioned-tooltip {
   &:before {
-    margin: 0;
+    margin: 0px;
+    margin-bottom: -1 * v.$tooltip-arrow-size;
     transform: rotate(var(--rotation));
   }
 
   &:before,
 	&:after {
 		left: 50%; 
+    bottom: 50%;
 	}
 
   &:after {
-    transform: translateX(-50%);
+    margin-bottom: calc(-1 * v.$tooltip-height / 2);
+    transform: translateX(-50%);    
   }
 
   &:hover {
@@ -131,8 +134,8 @@
 }
 
 @mixin set-margin($property, $transitionDirection, $translateX: 0) {
-  --tooltip-distance: var(--tooltip-distance, v.$tooltip-distance);
-  $value: #{$property}(calc(var(--tooltip-distance) * $transitionDirection));
+  $tooltip-distance: v.$tooltip-distance !default;
+  $value: #{$property}(#{$tooltip-distance * $transitionDirection});
 
   &:before {
     transform: #{$value} rotate(var(--rotation));

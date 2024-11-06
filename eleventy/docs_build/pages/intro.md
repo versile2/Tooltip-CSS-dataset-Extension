@@ -14,8 +14,9 @@ permalink: "/"
       <h2 class="subtitle">Why Tooltip Extensions?</h2>
       <ul>
         <li>📌 Easy to implement with no JavaScript required.</li>
-        <li>🎨 Works seamlessly with nearly all CSS libaries.</li>
+        <li>🌐 Works seamlessly with nearly all CSS libaries.</li>
         <li>⚙️ Offers versatile positioning options and built-in styling for MudBlazor with fallback defaults.</li>
+        <li>🎨 Allows overriding of styles to create complex tooltips and to set options during dev without having to recompile</li>
       </ul>
 
       <p class="has-text-centered">
