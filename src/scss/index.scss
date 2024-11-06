@@ -14,7 +14,7 @@
     border: v.$tooltip-arrow-size solid transparent;
     background-color: $back-color;
     clip-path: polygon(0%0%, 100%0%, 100%100%);
-    z-index: calc(v.$tooltip-z-index + 1);
+    z-index: calc(var(--tooltip-z-index, v.$tooltip-z-index) + 1);
   }
 }
 
@@ -23,12 +23,12 @@
     background: $back-color;
     color: $fore-color;
     padding: v.$tooltip-padding;
-    font-family: v.$tooltip-font-family;
-    font-size: v.$tooltip-font-size;
-    font-weight: v.$tooltip-font-weight;
-    line-height: v.$tooltip-font-lineheight;
+    font-family: var(--tooltip-font-family, v.$tooltip-font-family);
+    font-size: var(--tooltip-font-size, v.$tooltip-font-size);
+    font-weight: var(--tooltip-font-weight, v.$tooltip-font-weight);
+    line-height: var(--tooltip-font-lineheight, v.$tooltip-font-lineheight);
 
-    border-radius: v.$tooltip-radius;
+    border-radius: var(--tooltip-border-radius, v.$tooltip-border-radius);
     border: 1px solid $back-color;
     content: attr(data-tooltip);
 
@@ -50,15 +50,17 @@
     transform: translate3d(0, 0, 0);
     visibility: hidden;
     opacity: 0;
-    z-index: v.$tooltip-z-index;
+    z-index: var(--tooltip-z-index, v.$tooltip-z-index);
     pointer-events: none;
   }
 
   @include s.base-state {
-    @include tooltip-box(v.$tooltip-background-color, v.$tooltip-color);
+    $back-color: var(--tooltip-background-color, v.$tooltip-background-color);
+    $fore-color: var(--tooltip-foreground-color, v.$tooltip-color);
+    @include tooltip-box($back-color, $fore-color);
 
     &.has-tooltip-arrow {
-      @include tooltip-arrow(v.$tooltip-background-color);
+      @include tooltip-arrow($back-color);
     }
 
     // Set bottom as the default only if no other direction class is applied

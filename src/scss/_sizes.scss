@@ -5,25 +5,25 @@
     // set max-width if a size class isn't used
     &:not(.has-tooltip-small):not(.has-tooltip-medium):not(.has-tooltip-large):not(.has-tooltip-fit) {
       &::after {
-        max-width: v.$tooltip-size-large;
+        max-width: var(--tooltip-size-large, v.$tooltip-size-large);
       }
     }
 
   &.has-tooltip-small {
     &::after {
-      max-width: v.$tooltip-size-small;
+      max-width: var(--tooltip-size-small, v.$tooltip-size-small);
     }
   }
   
   &.has-tooltip-medium {
     &::after {
-      max-width: v.$tooltip-size-medium;
+      max-width: var(--tooltip-size-medium,v.$tooltip-size-medium);
     }
   }
   
   &.has-tooltip-large {
     &::after {
-      max-width: v.$tooltip-size-large;
+      max-width: var(--tooltip-size-large, v.$tooltip-size-large);
     }
   }
   

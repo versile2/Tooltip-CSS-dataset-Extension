@@ -131,8 +131,8 @@
 }
 
 @mixin set-margin($property, $transitionDirection, $translateX: 0) {
-  $tooltip-distance: v.$tooltip-animation-distance;
-  $value: #{$property}(#{$tooltip-distance * $transitionDirection});
+  --tooltip-distance: var(--tooltip-distance, v.$tooltip-distance);
+  $value: #{$property}(calc(var(--tooltip-distance) * $transitionDirection));
 
   &:before {
     transform: #{$value} rotate(var(--rotation));
