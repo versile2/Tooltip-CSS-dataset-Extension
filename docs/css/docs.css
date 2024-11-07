@@ -257,7 +257,7 @@ code {
 .tooltip-chip {
   --tooltip-show-delay: 1000ms;
   --tooltip-post-delay: 0ms;
-  --tooltip-borderradius: 12px;
+  --tooltip-border-radius: 12px;
   --tooltip-background-color: blue;
   --tooltip-foreground-color: red;
   --tooltip-distance: 4px;
