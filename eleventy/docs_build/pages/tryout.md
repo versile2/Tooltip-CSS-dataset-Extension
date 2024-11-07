@@ -12,15 +12,15 @@ order: 4
 				<div class="titlebar">
 					<div class="buttons">
 						<a
-							class="titlebar__btn close has-tooltip-bottom"
+							class="titlebar__btn close tooltip-bottom"
 							data-tooltip="Close"
 						></a>
 						<a
-							class="titlebar__btn minimize has-tooltip-bottom"
+							class="titlebar__btn minimize tooltip-bottom"
 							data-tooltip="Minimize"
 						></a>
 						<a
-							class="titlebar__btn zoom has-tooltip-bottom"
+							class="titlebar__btn zoom tooltip-bottom"
 							data-tooltip="Zoom"
 						></a>
 					</div>
@@ -32,35 +32,35 @@ order: 4
 					</div>
 					<div class="position-grid">
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="bottom-right" class="has-tooltip-bottom-right"
+							<a href="#" data-tooltip="bottom-right" class="tooltip-bottom-right"
 								>bottom-right</a
 							>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="bottom" class="has-tooltip-bottom">bottom</a>
+							<a href="#" data-tooltip="bottom" class="tooltip-bottom">bottom</a>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="bottom-left" class="has-tooltip-bottom-left"
+							<a href="#" data-tooltip="bottom-left" class="tooltip-bottom-left"
 								>bottom-left</a
 							>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="right" class="has-tooltip-right">right</a>
+							<a href="#" data-tooltip="right" class="tooltip-right">right</a>
 						</div>
-						<div class="position-grid__cell"><a class="has-tooltip-center" data-tooltip="center">center</a></div>
+						<div class="position-grid__cell"><a class="tooltip-center" data-tooltip="center">center</a></div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="left" class="has-tooltip-left">left</a>
+							<a href="#" data-tooltip="left" class="tooltip-left">left</a>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="top-right" class="has-tooltip-top-right"
+							<a href="#" data-tooltip="top-right" class="tooltip-top-right"
 								>top-right</a
 							>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="top" class="has-tooltip-top">top</a>
+							<a href="#" data-tooltip="top" class="tooltip-top">top</a>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="top-left" class="has-tooltip-top-left"
+							<a href="#" data-tooltip="top-left" class="tooltip-top-left"
 								>top-left</a
 							>
 						</div>
@@ -68,7 +68,7 @@ order: 4
 					<h3>Color By Status Error, Warning, Info, Success</h3>
 					<p>
 						<a
-							class="status-icon has-tooltip-error has-tooltip-left"
+							class="status-icon tooltip-error tooltip-left"
 							style="background: rgb(244,67,54)"
 							data-tooltip="This is an error tooltip"
 						>
@@ -80,7 +80,7 @@ order: 4
 							</svg>
 						</a>
 						<a
-							class="status-icon has-tooltip-warning has-tooltip-bottom-left"
+							class="status-icon tooltip-warning tooltip-bottom-left"
 							style="background: rgb(255,152,0)"
 							data-tooltip="This is a warning tooltip"
 						>
@@ -92,7 +92,7 @@ order: 4
 							</svg>
 						</a>
 						<a
-							class="status-icon has-tooltip-info has-tooltip-bottom-right"
+							class="status-icon tooltip-info tooltip-bottom-right"
 							style="background: rgb(33,150,243)"
 							data-tooltip="This is an info tooltip"
 						>
@@ -104,7 +104,7 @@ order: 4
 							</svg>
 						</a>
 						<a
-							class="status-icon has-tooltip-success has-tooltip-right"
+							class="status-icon tooltip-success tooltip-right"
 							style="background: rgb(0,200,83)"
 							data-tooltip="This is success tooltip"
 						>
@@ -119,7 +119,7 @@ order: 4
 					<h3>Color By Primary, Secondary, or Tertiary Colors</h3>
 					<p>
 						<a
-							class="status-icon has-tooltip-primary has-tooltip-left"
+							class="status-icon tooltip-primary tooltip-left"
 							style="background: rgb(89,74,226)"
 							data-tooltip="This is a Primary tooltip"
 						>
@@ -129,7 +129,7 @@ order: 4
 						</svg>
 						</a>
 						<a
-							class="status-icon has-tooltip-secondary"
+							class="status-icon tooltip-secondary"
 							style="background: rgb(255,64,129)"
 							data-tooltip="This is a Secondary tooltip"
 						>
@@ -139,7 +139,7 @@ order: 4
 						</svg>
 						</a>
 						<a
-							class="status-icon has-tooltip-tertiary has-tooltip-right"
+							class="status-icon tooltip-tertiary tooltip-right"
 							style="background: rgb(30,200,165)"
 							data-tooltip="This is a Tertiary tooltip"
 						>
@@ -152,37 +152,46 @@ order: 4
 					<h3>Delay and Extra Modifiers</h3>
 					<div class="position-grid">
 						<div class="position-grid__cell">
-						<a href="#" data-tooltip="top-left" style="--tooltip-delay: 1s" class="has-tooltip-top">top w/1s delay</a>
+						<a href="#" data-tooltip="Show Delay 1s" style="--tooltip-show-delay: 1s" class="tooltip-top">top w/1s show delay</a>
 						</div>
 						<div class="position-grid__cell">
-						<a href="#" data-tooltip="top-left" style="--tooltip-delay: 500ms" class="has-tooltip-top">top w/500ms delay</a>
+						<a href="#" data-tooltip="Show Delay 500ms" style="--tooltip-show-delay: 500ms" class="tooltip-top">top w/500ms show delay</a>
 						</div>
 						<div class="position-grid__cell">
-						<a href="#" data-tooltip="top-left" style="--tooltip-delay: 0s" class="has-tooltip-top">top w/0s delay</a>
+						<a href="#" data-tooltip="Show Delay 0s" style="--tooltip-show-delay: 0s" class="tooltip-top">top w/0s show delay</a>
 						</div>
+						<div class="position-grid__cell">
+						<a href="#" data-tooltip="Hide Delay 1s" style="--tooltip-hide-delay: 1s" class="tooltip-top">top w/1s hide delay</a>
+						</div>
+						<div class="position-grid__cell">
+						<a href="#" data-tooltip="Hide Delay 500ms" style="--tooltip-hide-delay: 500ms" class="tooltip-top">top w/500ms hide delay</a>
+						</div>
+						<div class="position-grid__cell">
+						<a href="#" data-tooltip="Hide Delay 0s" style="--tooltip-hide-delay: 0s" class="tooltip-top">top w/0s hide delay</a>
+						</div>
+						<div class="position-grid__cell">
+						<a href="#" data-tooltip="left aligned text" class="tooltip-text-left tooltip-fixed">tooltip-text-left</a>
+						</div>
+						<div class="position-grid__cell">
+						<a href="#" data-tooltip="centered aligned text" class="tooltip-text-center tooltip-fixed">tooltip-text-center</a>
+						</div>
+						<div class="position-grid__cell">
+						<a href="#" data-tooltip="right aligned text" class="tooltip-text-right tooltip-fixed">tooltip-text-right</a>
+						</div>									
 						<div class="position-grid__cell" style="display: flex; align-items: center; justify-content: center;">
 							<label for="hiddenCbox">Hide Tooltip</label><input type="checkbox" id="hiddenCbox" />
 						  </div>										  
 						<div class="position-grid__cell">
-							<a id="hiddenA" href="#" data-tooltip="hidden when checked">has-tooltip-hidden</a>
+							<a id="hiddenA" href="#" data-tooltip="hidden when checked">tooltip-hidden</a>
 						</div>
 						<div class="position-grid__cell">
-							<a href="#" data-tooltip="always on" class="has-tooltip-active">has-tooltip-active</a>
-						</div>
-						<div class="position-grid__cell">
-						<a href="#" data-tooltip="left aligned text" class="has-tooltip-text-left has-tooltip-fixed">has-tooltip-text-left</a>
-						</div>
-						<div class="position-grid__cell">
-						<a href="#" data-tooltip="centered aligned text" class="has-tooltip-text-center has-tooltip-fixed">has-tooltip-text-center</a>
-						</div>
-						<div class="position-grid__cell">
-						<a href="#" data-tooltip="right aligned text" class="has-tooltip-text-right has-tooltip-fixed">has-tooltip-text-right</a>
-						</div>															
+							<a href="#" data-tooltip="always on" class="tooltip-active">tooltip-active</a>
+						</div>														
 					</div>
 					<h3>Size variations</h3>
 					<p>
 						<a
-							class="has-tooltip-small has-tooltip-top"
+							class="tooltip-small tooltip-top"
 							style="
 								border: 1px solid #eee;
 								padding: 3px 6px;
@@ -194,7 +203,7 @@ order: 4
 							Small
 						</a>
 						<a
-							class="has-tooltip-medium has-tooltip-top"
+							class="tooltip-medium tooltip-top"
 							style="
 								border: 1px solid #eee;
 								padding: 3px 6px;
@@ -206,7 +215,7 @@ order: 4
 							Medium
 						</a>
 						<a
-							class="has-tooltip-large has-tooltip-top"
+							class="tooltip-large tooltip-top"
 							style="
 								border: 1px solid #eee;
 								padding: 3px 6px;
@@ -218,7 +227,7 @@ order: 4
 							Large
 						</a>
 						<a
-							class="has-tooltip-fit has-tooltip-top"
+							class="tooltip-fit tooltip-top"
 							style="
 								border: 1px solid #eee;
 								padding: 3px 56px;

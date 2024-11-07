@@ -231,8 +231,13 @@ code {
 }
 
 .panel-block > .copy-icon {
-  top: 20px;
-  right: 40px;
+  top: 40px;
+  right: 50px;
+  background-color: white;
+}
+
+.panel-block pre code .copy-icon {
+  filter: invert(1) brightness(2); /* Inverts color and makes it white */
 }
 
 .panel-block {
@@ -247,4 +252,13 @@ code {
   height: 100%;
   max-height: 180px;
   overflow-y: auto !important;
+}
+
+.tooltip-chip {
+  --tooltip-pre-delay: 1000ms;
+  --tooltip-post-delay: 0ms;
+  --tooltip-borderradius: 12px;
+  --tooltip-background-color: blue;
+  --tooltip-foreground-color: red;
+  --tooltip-distance: 4px;
 }

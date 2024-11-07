@@ -211,7 +211,7 @@
   to access the source files.</p>
 </div>
 <h2 class="subtitle is-3 my-4">2. Modify the Variables</h2>
-<p>Navigate to the <code>src</code> directory and open the <code>_variables.scss</code> file. This file contains all the customizable variables for your tooltips.</p>
+<p>Navigate to the <code>src</code> directory and open the <code>_variables.scss</code> file. This file contains all the customizable variables for your tooltips you can replace the mud styles with whatever framework you are using to utilize those defaults.</p>
 <div class="panel mt-4">
   <div class="panel-heading">
     <div class="columns is-mobile is-multiline is-centered">
@@ -227,15 +227,15 @@
     <div class="panel-content" style="max-height: 300px; overflow-y: auto;margin-top: -5px;">
 <pre class="language-scss copy-to-clipboard"><code>// Defaults to MudBlazor, then a default value
 <p>// Animation
-$tooltip-animation-duration: var(--mud-tooltip-animation-duration, 0.35s) !default;
-$tooltip-animation-transition: var(--mud-tooltip-transition,  slide) !default;
-$tooltip-animation-distance: 8px !default;
-$tooltip-hide-delay: var(--mud-tooltip-hide-delay, 200ms) !default;</p>
+$tooltip-animation-duration: 0.35s !default;
+$tooltip-animation-transition: var(--tooltip-transition,  var(--mud-tooltip-transition, slide)) !default;
+$tooltip-hide-delay: var(--tooltip-hide-delay, var(--mud-tooltip-hide-delay, 200ms)) !default;
+$tooltip-show-delay: var(--tooltip-show-delay, var(--mud-tooltip-show-delay, 300ms)) !default;</p>
 <p>// Typography
-$tooltip-font-family: var(--mud-typography-caption-family, &quot;Helvetica Neue&quot;, Arial, sans-serif) !default;
-$tooltip-font-size: var(--mud-typography-caption-size, 0.875rem) !default;
-$tooltip-font-weight: var(--mud-typography-caption-weight, 400) !default;
-$tooltip-font-lineheight: var(--mud-typography-caption-lineheight, 1.4) !default;</p>
+$tooltip-font-family: var(--tooltip-font-family, var(--mud-typography-caption-family, &quot;Helvetica Neue&quot;, Arial, sans-serif)) !default;
+$tooltip-font-size: var(--tooltip-font-size, var(--mud-typography-caption-size, 0.875rem)) !default;
+$tooltip-font-weight: var(--tooltip-font-weight, var(--mud-typography-caption-weight, 400)) !default;
+$tooltip-font-lineheight: var(--tooltip-font-lineheight, var(--mud-typography-caption-lineheight, 1.4)) !default;</p>
 <p>// Sizing
 $tooltip-arrow-size: 6px !default;
 $tooltip-vertical-padding: var(--mud-tooltip-vertical-padding, 8px) !default;
@@ -243,54 +243,47 @@ $tooltip-horizontal-padding: var(--mud-tooltip-horizontal-padding, 4px) !default
 $tooltip-padding: $tooltip-horizontal-padding $tooltip-vertical-padding !default;
 $tooltip-height: calc($tooltip-font-size + 2 * $tooltip-vertical-padding) !default;
 $tooltip-offset-x: 2 * $tooltip-arrow-size !default;
-$tooltip-radius: var(--mud-default-borderradius, 4px) !default;
-$tooltip-z-index: var(--mud-zindex-tooltip, 9999) !default;
-$tooltip-size-small: 80px !default;
-$tooltip-size-medium: 150px !default;
-$tooltip-size-large: 300px !default;
-$tooltip-size-fit: 100% !default;</p>
+$tooltip-border-radius: var(--tooltip-border-radius, var(--mud-default-borderradius, 4px)) !default;
+$tooltip-z-index: var(--tooltip-z-index, var(--mud-zindex-tooltip, 9999)) !default;
+$tooltip-size-small: var(--tooltip-size-small, 80px) !default;
+$tooltip-size-medium: var(--tooltip-size-medium, 150px) !default;
+$tooltip-size-large: var(--tooltip-size-large, 300px) !default;
+$tooltip-distance: 8px !default;</p>
 <p>// Colors
-$tooltip-background-color: var(--mud-palette-gray-darker, #616161) !default;
-$tooltip-color: var(--mud-palette-dark-text, rgb(255,255,255)) !default;</p>
+$tooltip-background-color: var(--tooltip-background-color, var(--mud-palette-gray-darker, #616161)) !default;
+$tooltip-color: var(--tooltip-foreground-color, var(--mud-palette-dark-text, rgb(255,255,255))) !default;</p>
 <p>// Color system
 $tooltip-colors: (
 &quot;primary&quot;: (
 background: var(--mud-palette-primary, rgb(89,74,226)),
-background-light: var(--mud-palette-primary-lighten, rgb(118,106,231)),
 text: var(--mud-palette-primary-text, rgb(255,255,255))
 ),
 &quot;secondary&quot;: (
 background: var(--mud-palette-secondary, rgb(255,64,129)),
-background-light: var(--mud-palette-secondary-lighten, rgb(255,102,153)),
 text: var(--mud-palette-secondary-text, rgb(255,255,255))
 ),
 &quot;tertiary&quot;: (
 background: var(--mud-palette-tertiary, rgb(30,200,165)),
-background-light: var(--mud-palette-tertiary-lighten, rgb(42,23,187)),
 text: var(--mud-palette-tertiary-text, rgb(255,255,255))
 ),
 &quot;warning&quot;: (
 background: var(--mud-palette-warning, rgb(255,152,0)),
-background-light: var(--mud-palette-warning-lighten, rgb(255,167,36)),
 text: var(--mud-palette-warning-text, rgb(255,255,255))
 ),
 &quot;info&quot;: (
 background: var(--mud-palette-info, rgb(33,150,243)),
-background-light: var(--mud-palette-info-lighten, rgb(71,167,245)),
 text: var(--mud-palette-info-text, rgb(255,255,255))
 ),
 &quot;success&quot;: (
 background: var(--mud-palette-success, rgb(0,200,83)),
-background-light: var(--mud-palette-success-lighten, rgb(0,235,98)),
 text: var(--mud-palette-success-text, rgb(255,255,255))
 ),
 &quot;error&quot;: (
 background: var(--mud-palette-error, rgb(244,67,54)),
-background-light: var(--mud-palette-error-lighten, rgb(246,96,85)),
 text: var(--mud-palette-error-text, rgb(255,255,255))
 )
-) !default;</p>
-<p></p></code></pre>
+) !default;
+</p></code></pre>
 </div><p></p>
   </div>
 </div>

@@ -35,7 +35,7 @@
   transform: translate3d(0, 0, 0);
   visibility: hidden;
   opacity: 0;
-  z-index: var(--mud-zindex-tooltip, var(--tooltip-z-index, 9999));
+  z-index: var(--tooltip-z-index, var(--mud-zindex-tooltip, 9999));
   pointer-events: none;
 }
 [data-tooltip]:not([disabled]) {
@@ -44,15 +44,15 @@
   position: relative;
 }
 [data-tooltip]:not([disabled])::after {
-  background: var(--mud-palette-gray-darker, var(--tooltip-background-color, #616161));
-  color: var(--mud-palette-dark-text, var(--tooltip-foreground-color, rgb(255, 255, 255)));
+  background: var(--tooltip-background-color, var(--mud-palette-gray-darker, #616161));
+  color: var(--tooltip-foreground-color, var(--mud-palette-dark-text, rgb(255, 255, 255)));
   padding: var(--mud-tooltip-horizontal-padding, 4px) var(--mud-tooltip-vertical-padding, 8px);
-  font-family: var(--mud-typography-caption-family, var(--tooltip-font-family, "Helvetica Neue", Arial, sans-serif));
-  font-size: var(--mud-typography-caption-size, var(--tooltip-font-size, 0.875rem));
-  font-weight: var(--mud-typography-caption-weight, var(--tooltip-font-weight, 400));
-  line-height: var(--mud-typography-caption-lineheight, var(--tooltip-font-lineheight, 1.4));
-  border-radius: var(--mud-default-borderradius, var(--tooltip-border-radius, 4px));
-  border: 1px solid var(--mud-palette-gray-darker, var(--tooltip-background-color, #616161));
+  font-family: var(--tooltip-font-family, var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif));
+  font-size: var(--tooltip-font-size, var(--mud-typography-caption-size, 0.875rem));
+  font-weight: var(--tooltip-font-weight, var(--mud-typography-caption-weight, 400));
+  line-height: var(--tooltip-font-lineheight, var(--mud-typography-caption-lineheight, 1.4));
+  border-radius: var(--tooltip-border-radius, var(--mud-default-borderradius, 4px));
+  border: 1px solid var(--tooltip-background-color, var(--mud-palette-gray-darker, #616161));
   content: attr(data-tooltip);
   box-sizing: border-box;
   width: max-content;
@@ -65,9 +65,9 @@
   position: absolute;
   background: transparent;
   border: 6px solid transparent;
-  background-color: var(--mud-palette-gray-darker, var(--tooltip-background-color, #616161));
+  background-color: var(--tooltip-background-color, var(--mud-palette-gray-darker, #616161));
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-  z-index: calc(var(--mud-zindex-tooltip, var(--tooltip-z-index, 9999)) + 1);
+  z-index: calc(var(--tooltip-z-index, var(--mud-zindex-tooltip, 9999)) + 1);
 }
 [data-tooltip]:not([disabled]):not(.tooltip-top):not(.tooltip-top-left):not(.tooltip-top-right):not(.tooltip-left):not(.tooltip-right):not(.tooltip-bottom-left):not(.tooltip-bottom-right):not(.tooltip-center) {
   --rotation: -45deg;
@@ -87,13 +87,14 @@
   transform: translateX(-50%);
 }
 [data-tooltip]:not([disabled]):not(.tooltip-top):not(.tooltip-top-left):not(.tooltip-top-right):not(.tooltip-left):not(.tooltip-right):not(.tooltip-bottom-left):not(.tooltip-bottom-right):not(.tooltip-center):hover:before {
-  transform: translateY(8px) rotate(var(--rotation));
+  transform: translateY(calc(var(--tooltip-distance, 8px) * 1)) rotate(var(--rotation));
 }
 [data-tooltip]:not([disabled]):not(.tooltip-top):not(.tooltip-top-left):not(.tooltip-top-right):not(.tooltip-left):not(.tooltip-right):not(.tooltip-bottom-left):not(.tooltip-bottom-right):not(.tooltip-center):hover:after {
-  transform: translateX(-50%) translateY(8px);
+  transform: translateX(-50%) translateY(calc(var(--tooltip-distance, 8px) * 1));
 }
 [data-tooltip]:not([disabled]):not(.tooltip-small):not(.tooltip-medium):not(.tooltip-large):not(.tooltip-fit)::after {
-  max-width: var(--tooltip-size- large, 300px);
+  max-width: var(--tooltip-width, var(--tooltip-size-large, 300px));
+  width: var(--tooltip-width, auto);
 }
 [data-tooltip]:not([disabled]).tooltip-small::after {
   max-width: var(--tooltip-size-small, 80px);
@@ -102,7 +103,7 @@
   max-width: var(--tooltip-size-medium, 150px);
 }
 [data-tooltip]:not([disabled]).tooltip-large::after {
-  max-width: var(--tooltip-size- large, 300px);
+  max-width: var(--tooltip-size-large, 300px);
 }
 [data-tooltip]:not([disabled]).tooltip-fit::after {
   max-width: 100%;
@@ -120,7 +121,7 @@
   bottom: 50%;
 }
 [data-tooltip].tooltip-center:after {
-  margin-bottom: calc(-1 * (var(--mud-typography-caption-size, var(--tooltip-font-size, 0.875rem)) + 2 * var(--mud-tooltip-vertical-padding, 8px)) / 2);
+  margin-bottom: calc(-1 * (var(--tooltip-font-size, var(--mud-typography-caption-size, 0.875rem)) + 2 * var(--mud-tooltip-vertical-padding, 8px)) / 2);
   transform: translateX(-50%);
 }
 [data-tooltip].tooltip-top {
@@ -141,10 +142,10 @@
   transform: translateX(-50%);
 }
 [data-tooltip].tooltip-top:hover:before {
-  transform: translateY(-8px) rotate(var(--rotation));
+  transform: translateY(calc(var(--tooltip-distance, 8px) * -1)) rotate(var(--rotation));
 }
 [data-tooltip].tooltip-top:hover:after {
-  transform: translateX(-50%) translateY(-8px);
+  transform: translateX(-50%) translateY(calc(var(--tooltip-distance, 8px) * -1));
 }
 [data-tooltip].tooltip-top-left {
   --rotation: 135deg;
@@ -167,10 +168,10 @@
   margin-left: 12px;
 }
 [data-tooltip].tooltip-top-left:hover:before {
-  transform: translateY(-8px) rotate(var(--rotation));
+  transform: translateY(calc(var(--tooltip-distance, 8px) * -1)) rotate(var(--rotation));
 }
 [data-tooltip].tooltip-top-left:hover:after {
-  transform: translateX(-100%) translateY(-8px);
+  transform: translateX(-100%) translateY(calc(var(--tooltip-distance, 8px) * -1));
 }
 [data-tooltip].tooltip-top-right {
   --rotation: 135deg;
@@ -193,10 +194,10 @@
   margin-left: -12px;
 }
 [data-tooltip].tooltip-top-right:hover:before {
-  transform: translateY(-8px) rotate(var(--rotation));
+  transform: translateY(calc(var(--tooltip-distance, 8px) * -1)) rotate(var(--rotation));
 }
 [data-tooltip].tooltip-top-right:hover:after {
-  transform: translateY(-8px);
+  transform: translateY(calc(var(--tooltip-distance, 8px) * -1));
 }
 [data-tooltip].tooltip-left {
   --rotation: 45deg;
@@ -207,17 +208,17 @@
   transform: rotate(var(--rotation));
 }
 [data-tooltip].tooltip-left:after {
-  margin-bottom: calc(-1 * (var(--mud-typography-caption-size, var(--tooltip-font-size, 0.875rem)) + 2 * var(--mud-tooltip-vertical-padding, 8px)) / 2);
+  margin-bottom: calc(-1 * (var(--tooltip-font-size, var(--mud-typography-caption-size, 0.875rem)) + 2 * var(--mud-tooltip-vertical-padding, 8px)) / 2);
 }
 [data-tooltip].tooltip-left:before, [data-tooltip].tooltip-left:after {
   right: 100%;
   bottom: 50%;
 }
 [data-tooltip].tooltip-left:hover:before {
-  transform: translateX(-8px) rotate(var(--rotation));
+  transform: translateX(calc(var(--tooltip-distance, 8px) * -1)) rotate(var(--rotation));
 }
 [data-tooltip].tooltip-left:hover:after {
-  transform: translateX(-8px);
+  transform: translateX(calc(var(--tooltip-distance, 8px) * -1));
 }
 [data-tooltip].tooltip-right {
   --rotation: -135deg;
@@ -228,17 +229,17 @@
   transform: rotate(var(--rotation));
 }
 [data-tooltip].tooltip-right:after {
-  margin-bottom: calc(-1 * (var(--mud-typography-caption-size, var(--tooltip-font-size, 0.875rem)) + 2 * var(--mud-tooltip-vertical-padding, 8px)) / 2);
+  margin-bottom: calc(-1 * (var(--tooltip-font-size, var(--mud-typography-caption-size, 0.875rem)) + 2 * var(--mud-tooltip-vertical-padding, 8px)) / 2);
 }
 [data-tooltip].tooltip-right:before, [data-tooltip].tooltip-right:after {
   left: 100%;
   bottom: 50%;
 }
 [data-tooltip].tooltip-right:hover:before {
-  transform: translateX(8px) rotate(var(--rotation));
+  transform: translateX(calc(var(--tooltip-distance, 8px) * 1)) rotate(var(--rotation));
 }
 [data-tooltip].tooltip-right:hover:after {
-  transform: translateX(8px);
+  transform: translateX(calc(var(--tooltip-distance, 8px) * 1));
 }
 [data-tooltip].tooltip-bottom-left {
   --rotation: -45deg;
@@ -261,10 +262,10 @@
   margin-left: 12px;
 }
 [data-tooltip].tooltip-bottom-left:hover:before {
-  transform: translateY(8px) rotate(var(--rotation));
+  transform: translateY(calc(var(--tooltip-distance, 8px) * 1)) rotate(var(--rotation));
 }
 [data-tooltip].tooltip-bottom-left:hover:after {
-  transform: translateX(-100%) translateY(8px);
+  transform: translateX(-100%) translateY(calc(var(--tooltip-distance, 8px) * 1));
 }
 [data-tooltip].tooltip-bottom-right {
   --rotation: -45deg;
@@ -287,20 +288,20 @@
   margin-left: -12px;
 }
 [data-tooltip].tooltip-bottom-right:hover:before {
-  transform: translateY(8px) rotate(var(--rotation));
+  transform: translateY(calc(var(--tooltip-distance, 8px) * 1)) rotate(var(--rotation));
 }
 [data-tooltip].tooltip-bottom-right:hover:after {
-  transform: translateY(8px);
+  transform: translateY(calc(var(--tooltip-distance, 8px) * 1));
 }
 [data-tooltip].tooltip-primary::after {
   background: var(--mud-palette-primary, rgb(89, 74, 226));
   color: var(--mud-palette-primary-text, rgb(255, 255, 255));
   padding: var(--mud-tooltip-horizontal-padding, 4px) var(--mud-tooltip-vertical-padding, 8px);
-  font-family: var(--mud-typography-caption-family, var(--tooltip-font-family, "Helvetica Neue", Arial, sans-serif));
-  font-size: var(--mud-typography-caption-size, var(--tooltip-font-size, 0.875rem));
-  font-weight: var(--mud-typography-caption-weight, var(--tooltip-font-weight, 400));
-  line-height: var(--mud-typography-caption-lineheight, var(--tooltip-font-lineheight, 1.4));
-  border-radius: var(--mud-default-borderradius, var(--tooltip-border-radius, 4px));
+  font-family: var(--tooltip-font-family, var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif));
+  font-size: var(--tooltip-font-size, var(--mud-typography-caption-size, 0.875rem));
+  font-weight: var(--tooltip-font-weight, var(--mud-typography-caption-weight, 400));
+  line-height: var(--tooltip-font-lineheight, var(--mud-typography-caption-lineheight, 1.4));
+  border-radius: var(--tooltip-border-radius, var(--mud-default-borderradius, 4px));
   border: 1px solid var(--mud-palette-primary, rgb(89, 74, 226));
   content: attr(data-tooltip);
   box-sizing: border-box;
@@ -316,7 +317,7 @@
   border: 6px solid transparent;
   background-color: var(--mud-palette-primary, rgb(89, 74, 226));
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-  z-index: calc(var(--mud-zindex-tooltip, var(--tooltip-z-index, 9999)) + 1);
+  z-index: calc(var(--tooltip-z-index, var(--mud-zindex-tooltip, 9999)) + 1);
 }
 [data-tooltip].tooltip-primary.tooltip-arrow.tooltip-top::before, [data-tooltip].tooltip-primary.tooltip-arrow.tooltip-top-left::before, [data-tooltip].tooltip-primary.tooltip-arrow.tooltip-top-right::before {
   border-color: var(--mud-palette-primary, rgb(89, 74, 226)) transparent transparent transparent;
@@ -343,11 +344,11 @@
   background: var(--mud-palette-secondary, rgb(255, 64, 129));
   color: var(--mud-palette-secondary-text, rgb(255, 255, 255));
   padding: var(--mud-tooltip-horizontal-padding, 4px) var(--mud-tooltip-vertical-padding, 8px);
-  font-family: var(--mud-typography-caption-family, var(--tooltip-font-family, "Helvetica Neue", Arial, sans-serif));
-  font-size: var(--mud-typography-caption-size, var(--tooltip-font-size, 0.875rem));
-  font-weight: var(--mud-typography-caption-weight, var(--tooltip-font-weight, 400));
-  line-height: var(--mud-typography-caption-lineheight, var(--tooltip-font-lineheight, 1.4));
-  border-radius: var(--mud-default-borderradius, var(--tooltip-border-radius, 4px));
+  font-family: var(--tooltip-font-family, var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif));
+  font-size: var(--tooltip-font-size, var(--mud-typography-caption-size, 0.875rem));
+  font-weight: var(--tooltip-font-weight, var(--mud-typography-caption-weight, 400));
+  line-height: var(--tooltip-font-lineheight, var(--mud-typography-caption-lineheight, 1.4));
+  border-radius: var(--tooltip-border-radius, var(--mud-default-borderradius, 4px));
   border: 1px solid var(--mud-palette-secondary, rgb(255, 64, 129));
   content: attr(data-tooltip);
   box-sizing: border-box;
@@ -363,7 +364,7 @@
   border: 6px solid transparent;
   background-color: var(--mud-palette-secondary, rgb(255, 64, 129));
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-  z-index: calc(var(--mud-zindex-tooltip, var(--tooltip-z-index, 9999)) + 1);
+  z-index: calc(var(--tooltip-z-index, var(--mud-zindex-tooltip, 9999)) + 1);
 }
 [data-tooltip].tooltip-secondary.tooltip-arrow.tooltip-top::before, [data-tooltip].tooltip-secondary.tooltip-arrow.tooltip-top-left::before, [data-tooltip].tooltip-secondary.tooltip-arrow.tooltip-top-right::before {
   border-color: var(--mud-palette-secondary, rgb(255, 64, 129)) transparent transparent transparent;
@@ -390,11 +391,11 @@
   background: var(--mud-palette-tertiary, rgb(30, 200, 165));
   color: var(--mud-palette-tertiary-text, rgb(255, 255, 255));
   padding: var(--mud-tooltip-horizontal-padding, 4px) var(--mud-tooltip-vertical-padding, 8px);
-  font-family: var(--mud-typography-caption-family, var(--tooltip-font-family, "Helvetica Neue", Arial, sans-serif));
-  font-size: var(--mud-typography-caption-size, var(--tooltip-font-size, 0.875rem));
-  font-weight: var(--mud-typography-caption-weight, var(--tooltip-font-weight, 400));
-  line-height: var(--mud-typography-caption-lineheight, var(--tooltip-font-lineheight, 1.4));
-  border-radius: var(--mud-default-borderradius, var(--tooltip-border-radius, 4px));
+  font-family: var(--tooltip-font-family, var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif));
+  font-size: var(--tooltip-font-size, var(--mud-typography-caption-size, 0.875rem));
+  font-weight: var(--tooltip-font-weight, var(--mud-typography-caption-weight, 400));
+  line-height: var(--tooltip-font-lineheight, var(--mud-typography-caption-lineheight, 1.4));
+  border-radius: var(--tooltip-border-radius, var(--mud-default-borderradius, 4px));
   border: 1px solid var(--mud-palette-tertiary, rgb(30, 200, 165));
   content: attr(data-tooltip);
   box-sizing: border-box;
@@ -410,7 +411,7 @@
   border: 6px solid transparent;
   background-color: var(--mud-palette-tertiary, rgb(30, 200, 165));
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-  z-index: calc(var(--mud-zindex-tooltip, var(--tooltip-z-index, 9999)) + 1);
+  z-index: calc(var(--tooltip-z-index, var(--mud-zindex-tooltip, 9999)) + 1);
 }
 [data-tooltip].tooltip-tertiary.tooltip-arrow.tooltip-top::before, [data-tooltip].tooltip-tertiary.tooltip-arrow.tooltip-top-left::before, [data-tooltip].tooltip-tertiary.tooltip-arrow.tooltip-top-right::before {
   border-color: var(--mud-palette-tertiary, rgb(30, 200, 165)) transparent transparent transparent;
@@ -437,11 +438,11 @@
   background: var(--mud-palette-warning, rgb(255, 152, 0));
   color: var(--mud-palette-warning-text, rgb(255, 255, 255));
   padding: var(--mud-tooltip-horizontal-padding, 4px) var(--mud-tooltip-vertical-padding, 8px);
-  font-family: var(--mud-typography-caption-family, var(--tooltip-font-family, "Helvetica Neue", Arial, sans-serif));
-  font-size: var(--mud-typography-caption-size, var(--tooltip-font-size, 0.875rem));
-  font-weight: var(--mud-typography-caption-weight, var(--tooltip-font-weight, 400));
-  line-height: var(--mud-typography-caption-lineheight, var(--tooltip-font-lineheight, 1.4));
-  border-radius: var(--mud-default-borderradius, var(--tooltip-border-radius, 4px));
+  font-family: var(--tooltip-font-family, var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif));
+  font-size: var(--tooltip-font-size, var(--mud-typography-caption-size, 0.875rem));
+  font-weight: var(--tooltip-font-weight, var(--mud-typography-caption-weight, 400));
+  line-height: var(--tooltip-font-lineheight, var(--mud-typography-caption-lineheight, 1.4));
+  border-radius: var(--tooltip-border-radius, var(--mud-default-borderradius, 4px));
   border: 1px solid var(--mud-palette-warning, rgb(255, 152, 0));
   content: attr(data-tooltip);
   box-sizing: border-box;
@@ -457,7 +458,7 @@
   border: 6px solid transparent;
   background-color: var(--mud-palette-warning, rgb(255, 152, 0));
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-  z-index: calc(var(--mud-zindex-tooltip, var(--tooltip-z-index, 9999)) + 1);
+  z-index: calc(var(--tooltip-z-index, var(--mud-zindex-tooltip, 9999)) + 1);
 }
 [data-tooltip].tooltip-warning.tooltip-arrow.tooltip-top::before, [data-tooltip].tooltip-warning.tooltip-arrow.tooltip-top-left::before, [data-tooltip].tooltip-warning.tooltip-arrow.tooltip-top-right::before {
   border-color: var(--mud-palette-warning, rgb(255, 152, 0)) transparent transparent transparent;
@@ -484,11 +485,11 @@
   background: var(--mud-palette-info, rgb(33, 150, 243));
   color: var(--mud-palette-info-text, rgb(255, 255, 255));
   padding: var(--mud-tooltip-horizontal-padding, 4px) var(--mud-tooltip-vertical-padding, 8px);
-  font-family: var(--mud-typography-caption-family, var(--tooltip-font-family, "Helvetica Neue", Arial, sans-serif));
-  font-size: var(--mud-typography-caption-size, var(--tooltip-font-size, 0.875rem));
-  font-weight: var(--mud-typography-caption-weight, var(--tooltip-font-weight, 400));
-  line-height: var(--mud-typography-caption-lineheight, var(--tooltip-font-lineheight, 1.4));
-  border-radius: var(--mud-default-borderradius, var(--tooltip-border-radius, 4px));
+  font-family: var(--tooltip-font-family, var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif));
+  font-size: var(--tooltip-font-size, var(--mud-typography-caption-size, 0.875rem));
+  font-weight: var(--tooltip-font-weight, var(--mud-typography-caption-weight, 400));
+  line-height: var(--tooltip-font-lineheight, var(--mud-typography-caption-lineheight, 1.4));
+  border-radius: var(--tooltip-border-radius, var(--mud-default-borderradius, 4px));
   border: 1px solid var(--mud-palette-info, rgb(33, 150, 243));
   content: attr(data-tooltip);
   box-sizing: border-box;
@@ -504,7 +505,7 @@
   border: 6px solid transparent;
   background-color: var(--mud-palette-info, rgb(33, 150, 243));
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-  z-index: calc(var(--mud-zindex-tooltip, var(--tooltip-z-index, 9999)) + 1);
+  z-index: calc(var(--tooltip-z-index, var(--mud-zindex-tooltip, 9999)) + 1);
 }
 [data-tooltip].tooltip-info.tooltip-arrow.tooltip-top::before, [data-tooltip].tooltip-info.tooltip-arrow.tooltip-top-left::before, [data-tooltip].tooltip-info.tooltip-arrow.tooltip-top-right::before {
   border-color: var(--mud-palette-info, rgb(33, 150, 243)) transparent transparent transparent;
@@ -531,11 +532,11 @@
   background: var(--mud-palette-success, rgb(0, 200, 83));
   color: var(--mud-palette-success-text, rgb(255, 255, 255));
   padding: var(--mud-tooltip-horizontal-padding, 4px) var(--mud-tooltip-vertical-padding, 8px);
-  font-family: var(--mud-typography-caption-family, var(--tooltip-font-family, "Helvetica Neue", Arial, sans-serif));
-  font-size: var(--mud-typography-caption-size, var(--tooltip-font-size, 0.875rem));
-  font-weight: var(--mud-typography-caption-weight, var(--tooltip-font-weight, 400));
-  line-height: var(--mud-typography-caption-lineheight, var(--tooltip-font-lineheight, 1.4));
-  border-radius: var(--mud-default-borderradius, var(--tooltip-border-radius, 4px));
+  font-family: var(--tooltip-font-family, var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif));
+  font-size: var(--tooltip-font-size, var(--mud-typography-caption-size, 0.875rem));
+  font-weight: var(--tooltip-font-weight, var(--mud-typography-caption-weight, 400));
+  line-height: var(--tooltip-font-lineheight, var(--mud-typography-caption-lineheight, 1.4));
+  border-radius: var(--tooltip-border-radius, var(--mud-default-borderradius, 4px));
   border: 1px solid var(--mud-palette-success, rgb(0, 200, 83));
   content: attr(data-tooltip);
   box-sizing: border-box;
@@ -551,7 +552,7 @@
   border: 6px solid transparent;
   background-color: var(--mud-palette-success, rgb(0, 200, 83));
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-  z-index: calc(var(--mud-zindex-tooltip, var(--tooltip-z-index, 9999)) + 1);
+  z-index: calc(var(--tooltip-z-index, var(--mud-zindex-tooltip, 9999)) + 1);
 }
 [data-tooltip].tooltip-success.tooltip-arrow.tooltip-top::before, [data-tooltip].tooltip-success.tooltip-arrow.tooltip-top-left::before, [data-tooltip].tooltip-success.tooltip-arrow.tooltip-top-right::before {
   border-color: var(--mud-palette-success, rgb(0, 200, 83)) transparent transparent transparent;
@@ -578,11 +579,11 @@
   background: var(--mud-palette-error, rgb(244, 67, 54));
   color: var(--mud-palette-error-text, rgb(255, 255, 255));
   padding: var(--mud-tooltip-horizontal-padding, 4px) var(--mud-tooltip-vertical-padding, 8px);
-  font-family: var(--mud-typography-caption-family, var(--tooltip-font-family, "Helvetica Neue", Arial, sans-serif));
-  font-size: var(--mud-typography-caption-size, var(--tooltip-font-size, 0.875rem));
-  font-weight: var(--mud-typography-caption-weight, var(--tooltip-font-weight, 400));
-  line-height: var(--mud-typography-caption-lineheight, var(--tooltip-font-lineheight, 1.4));
-  border-radius: var(--mud-default-borderradius, var(--tooltip-border-radius, 4px));
+  font-family: var(--tooltip-font-family, var(--mud-typography-caption-family, "Helvetica Neue", Arial, sans-serif));
+  font-size: var(--tooltip-font-size, var(--mud-typography-caption-size, 0.875rem));
+  font-weight: var(--tooltip-font-weight, var(--mud-typography-caption-weight, 400));
+  line-height: var(--tooltip-font-lineheight, var(--mud-typography-caption-lineheight, 1.4));
+  border-radius: var(--tooltip-border-radius, var(--mud-default-borderradius, 4px));
   border: 1px solid var(--mud-palette-error, rgb(244, 67, 54));
   content: attr(data-tooltip);
   box-sizing: border-box;
@@ -598,7 +599,7 @@
   border: 6px solid transparent;
   background-color: var(--mud-palette-error, rgb(244, 67, 54));
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
-  z-index: calc(var(--mud-zindex-tooltip, var(--tooltip-z-index, 9999)) + 1);
+  z-index: calc(var(--tooltip-z-index, var(--mud-zindex-tooltip, 9999)) + 1);
 }
 [data-tooltip].tooltip-error.tooltip-arrow.tooltip-top::before, [data-tooltip].tooltip-error.tooltip-arrow.tooltip-top-left::before, [data-tooltip].tooltip-error.tooltip-arrow.tooltip-top-right::before {
   border-color: var(--mud-palette-error, rgb(244, 67, 54)) transparent transparent transparent;
@@ -622,15 +623,15 @@
   text-align: right;
 }
 [data-tooltip]::before, [data-tooltip]::after {
-  transition: opacity var(--mud-tooltip-animation-duration, 0.35s) var(--mud-tooltip-transition, var(--tooltip-transition, slide)), visibility var(--mud-tooltip-animation-duration, 0.35s) var(--mud-tooltip-transition, var(--tooltip-transition, slide));
+  transition: opacity 0.35s var(--tooltip-transition, var(--mud-tooltip-transition, slide)), visibility 0.35s var(--tooltip-transition, var(--mud-tooltip-transition, slide));
   opacity: 0;
   visibility: hidden;
 }
 [data-tooltip]:hover::before, [data-tooltip]:hover::after, [data-tooltip].tooltip-active::before, [data-tooltip].tooltip-active::after {
   opacity: 1;
   visibility: visible;
-  transition-delay: var(--mud-tooltip-show-delay, var(--tooltip-show-delay, 300ms));
+  transition-delay: var(--tooltip-show-delay, var(--mud-tooltip-show-delay, 300ms));
 }
 [data-tooltip]:not(:hover)::before, [data-tooltip]:not(:hover)::after {
-  transition-delay: var(--mud-tooltip-hide-delay, var(--tooltip-hide-delay, 200ms));
+  transition-delay: var(--tooltip-hide-delay, var(--mud-tooltip-hide-delay, 200ms));
 }

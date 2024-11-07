@@ -2,10 +2,12 @@
 
 @mixin tooltip-sized {  
   
-    // set max-width if a size class isn't used
+    // set max-width if a size class isn't used to large
+    // set width to static size if variable is defined
     &:not(.tooltip-small):not(.tooltip-medium):not(.tooltip-large):not(.tooltip-fit) {
-      &::after {
-        max-width: v.$tooltip-size-large;
+      &::after {    
+        max-width: var(--tooltip-width, v.$tooltip-size-large);
+        width: var(--tooltip-width, auto);
       }
     }
 

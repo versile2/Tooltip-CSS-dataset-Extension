@@ -28,14 +28,14 @@
     var codes = document.querySelectorAll('pre.copy-to-clipboard, code.copy-to-clipboard') || [];
   
     codes.forEach(function(codeElement) {
-      var parentElement = codeElement.closest('.panel-block') || codeElement;
+      var parentElement = codeElement;
       // Create the copy icon element
       var copyIcon = document.createElement('span');
       copyIcon.classList.add('copy-icon'); 
       parentElement.appendChild(copyIcon);
 
       parentElement.setAttribute('data-tooltip', 'Click to copy');
-      parentElement.classList.add(parentElement === codeElement ? 'tooltip-center' : 'tooltip-top');
+      parentElement.classList.add(parentElement === codeElement ? 'tooltip-left' : 'tooltip-top');
       if (parentElement !== codeElement) {
         parentElement.classList.add('tooltip-arrow');
       } 
