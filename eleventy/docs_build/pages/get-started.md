@@ -13,27 +13,28 @@ order: 2
         <div class="panel-tabs">
             <div class="tabs is-toggle is-boxed">
 <ul class="mt-2">
-    <li class="is-active" data-toggle="tab" data-target="#github" aria-selected="true"><a>1. Github</a></li>
+    <li class="is-active" data-toggle="tab" data-target="#cdn" aria-selected="false"><a>1. CDN</a></li>
     <li data-toggle="tab" data-target="#npm" aria-selected="false"><a>2. NPM</a></li>
-    <li data-toggle="tab" data-target="#cdn" aria-selected="false"><a>3. CDN</a></li>
+    <li data-toggle="tab" data-target="#github" aria-selected="true"><a>3. Github</a></li>    
 </ul>
             </div>
         </div>
-    <div class="panel-block tab-content mt-2">
-        <div id="github" class="tab-pane is-active" role="tabpanel" style="height: 100px;">        
+    <div class="panel-block tab-content mt-2 pb-2">    
+        <div id="github" class="tab-pane is-hidden" role="tabpanel">        
             <p>
             <a href="https://github.com/versile2/Tooltip-CSS-dataset-Extension/tree/main/src/css" target="_blank">Download</a> from the GitHub repository</p>            
 <pre class="language-html copy-to-clipboard "><code>{{ gitlink }}src/css/tooltip-extension.min.css</code></pre>
         </div>
-        <div id="npm" class="tab-pane is-hidden" role="tabpanel" style="height: 100px;">
+        <div id="npm" class="tab-pane is-hidden" role="tabpanel">
 
-            <p>Use npm to install the `tooltip-extension` package (**not available yet**)
+            <p>Use npm to install the `@jilael/css-tooltips` package 
 
-<pre class="language-bash copy-to-clipboard"><code>npm install tooltip-extension</code></pre>
+<pre class="language-bash copy-to-clipboard"><code>npm i @jilael/css-tooltips</code></pre>
+Relevant CSS files will be located in <code>node_modules/@jilael/css-tooltips/css<code>
         </div>
-        <div id="cdn" class="tab-pane is-hidden" role="tabpanel" style="height: 100px;">
-            <p>Use a CDN to link to the Tooltip Extension stylesheet and script (**not available yet**)</p>
-<pre class="language-html copy-to-clipboard"><code>&lt;link rel="stylesheet" href="https://cdn.example.com/tooltip-extension/tooltip.css"&gt;</code></pre>
+        <div id="cdn" class="tab-pane is-active" role="tabpanel">
+            <p>Use a CDN to link to the Tooltip Extension stylesheet and script</p>
+<pre class="lang-html copy-to-clipboard"><code>&lt;link rel="stylesheet" href="https://unpkg.com/@jilael/css-tooltips@0.3.0/css/tooltip-extensions.min.css"&gt;</code></pre>
         </div>
     </div>    
 </div>
@@ -45,7 +46,7 @@ order: 2
     All you have to do is to add <code data-tooltip="Test Tooltip">data-tooltip='Test Tooltip'</code>&nbsp;and you have your very first tooltip!
 </p>
 
-<h2 class="subtitle is-3 my-4">Classes</h2>
+<h2 class="subtitle is-3 my-4"><a href="../howto/#classesid">Classes</a></h2>
 <p>
     You can set a myriad of options for the Tooltips themselves by using CSS classes on the html element where you add a data-tooltip.
     <ol class="ml-4 mt-2">
@@ -58,7 +59,7 @@ order: 2
     </ol>
 </p>
 
-<h2 class="subtitle is-3 my-4">Styles</h2>
+<h2 class="subtitle is-3 my-4"><a href="../howto/#stylesid">Styles</a></h2>
 <p>
     You can set a myriad of style options for the Tooltips themselves by using the style attribute on the html element you add a data-tooltip option to. You can create CSS classes using these styles or apply them individually. You can even apply these styles globally by setting :root {} in your CSS file.
     <ol class="ml-4 mt-2">
