@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npx eleventy --serve",
-    "build": "npx eleventy"
+    "build": "npx eleventy",
+    "test:security": "node scripts/check-liquidjs-version.js"
   },
   "keywords": [
     "tooltip",
@@ -22,5 +23,8 @@
   },
   "devDependencies": {
     "pagefind": "^1.1.1"
+  },
+  "overrides": {
+    "liquidjs": "^10.25.0"
   }
 }
